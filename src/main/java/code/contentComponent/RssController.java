@@ -118,7 +118,6 @@ public class RssController {
         } catch (FeedException e) {
             Log.error("Unable to read feed");
         }
-
         return rssItems;
 
     }
