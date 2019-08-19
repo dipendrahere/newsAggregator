@@ -1,6 +1,6 @@
 package code.databaseService;
 
-import shared.Article;
+import code.models.Article;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,9 +26,9 @@ public class DBConnect {
     public void insertArticle(Article article){
         try{
             java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            String exactDate = simpleDateFormat.format(article.getPubDate());
-            String query = "insert into articles values(" +article.getId() +",\""+article.getTitle()+"\","+article.getCategoryId()+",\""+
-                    article.getUrl()+"\",\""+exactDate+"\",\""+article.getRss()+"\",\""+article.getContent()+"\");";
+            String exactDate = simpleDateFormat.format(article.getPublishedDate());
+            String query = "insert into articles values(" +article.getId() +",\""+article.getTitle()+"\","+article.getCategoryType()+",\""+
+                    article.getUrl()+"\",\""+exactDate+"\",\""+article.getRssLink()+"\",\""+article.getContent()+"\");";
             int count = statment.executeUpdate(query);
             System.out.println("insert row "+count);
         }
