@@ -118,7 +118,6 @@ public class RssController {
         } catch (FeedException e) {
             Log.error("Unable to read feed");
         }
-
         return rssItems;
 
     }
@@ -134,7 +133,8 @@ public class RssController {
                 articleBuilder.setCategoryType(CategoryType.SPORTS)
                         .setPublishedDate(item.getPubDate())
                         .setRssLink(item.getRssLink())
-                        .setContent(GlobalFunctions.extractFromUrl(item.getLink()));
+                        .setContent(GlobalFunctions.extractFromUrl(item.getLink()))
+                        .setTitle(item.getTitle());
             } catch (BoilerpipeProcessingException e) {
                 Log.error("Unable to extract data from url - boilerpipe");
             } catch (MalformedURLException e) {
