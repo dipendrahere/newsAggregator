@@ -1,0 +1,9 @@
+http://feeds.washingtonpost.com/rss/rss_early-lead
+http://rss.nytimes.com/services/xml/rss/nyt/Sports.xml
+http://www.buzzfeed.com/sports.xml
+http://sports.espn.go.com/espn/rss/news
+http://www.latimes.com/sports/rss2.0.xml
+http://www.cbssports.com/partners/feeds/rss/home_news
+http://www.si.com/rss/si_topstories.rss
+https://sports.yahoo.com/top/rss.xml
+http://www.theguardian.com/sport/us-sport/rss
