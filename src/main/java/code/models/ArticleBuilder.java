@@ -15,6 +15,7 @@ public class ArticleBuilder {
         a.setContent(article.getContent());
         a.setPublishedDate(article.getPublishedDate());
         a.setRssLink(article.getRssLink());
+        a.setTitle(article.getTitle());
         return a;
     }
 
@@ -23,6 +24,10 @@ public class ArticleBuilder {
         return this;
     }
 
+    public ArticleBuilder setTitle(String title){
+        article.setTitle(title);
+        return this;
+    }
     public ArticleBuilder setContent(String content){
         article.setContent(content);
         return this;

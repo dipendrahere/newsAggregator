@@ -10,11 +10,20 @@ public class Article {
     private Date publishedDate;
     private String url;
     private String content;
+    private String Title;
     private String rssLink;
 
     public Article(String url){
         this.url = url;
         this.id = GlobalFunctions.getMd5(url);
+    }
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
     }
 
     public String getId() {

@@ -1,4 +1,4 @@
-package DatabaseService;
+package code.databaseService;
 
 import shared.Article;
 
