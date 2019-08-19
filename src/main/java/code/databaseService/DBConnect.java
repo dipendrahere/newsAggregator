@@ -1,11 +1,8 @@
 package code.databaseService;
 
 import code.models.Article;
-<<<<<<< HEAD
 import code.utility.GlobalFunctions;
 import code.utility.Log;
-=======
->>>>>>> master
 
 import java.sql.*;
 import java.util.List;
@@ -36,7 +33,7 @@ public class DBConnect {
             for(int i=0;i<articles.size();i++){
                 Article article = articles.get(i);
                 String exactDate = simpleDateFormat.format(article.getPublishedDate());
-                query += "(\"" +article.getId() +"\",\""+article.getId()+"\","+ article.getCategoryType().ordinal()+",\""+
+                query += "(\"" +article.getId() +"\",\""+article.getTitle()+"\","+ article.getCategoryType().ordinal()+",\""+
                         article.getUrl()+"\",\""+exactDate+"\",\""+article.getRssLink()+"\",\""+article.getContent()+"\"),";
             }
             if(query.endsWith(",")){
@@ -54,14 +51,9 @@ public class DBConnect {
         try{
             java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String exactDate = simpleDateFormat.format(article.getPublishedDate());
-<<<<<<< HEAD
-            String query = "insert into articles values(\"" +article.getId() +"\",\""+article.getId()+"\","+article.getCategoryType().ordinal()+",\""+
+            String query = "insert into articles values(\"" +article.getId() +"\",\""+article.getTitle()+"\","+article.getCategoryType().ordinal()+",\""+
                     article.getUrl()+"\",\""+exactDate+"\",\""+article.getRssLink()+"\",\""+article.getContent()+"\");";
             System.out.println(query);
-=======
-            String query = "insert into articles values(" +article.getId() +",\""+article.getTitle()+"\","+article.getCategoryType()+",\""+
-                    article.getUrl()+"\",\""+exactDate+"\",\""+article.getRssLink()+"\",\""+article.getContent()+"\");";
->>>>>>> master
             int count = statment.executeUpdate(query);
             System.out.println("insert row "+count);
         }
