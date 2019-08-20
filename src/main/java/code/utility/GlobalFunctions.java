@@ -54,4 +54,5 @@ public class GlobalFunctions {
             throw new RuntimeException(e);
         }
     }
+
 }
