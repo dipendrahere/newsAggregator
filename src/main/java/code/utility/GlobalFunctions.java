@@ -18,6 +18,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class GlobalFunctions {
 
+
     public static String extractFromUrl(String url) throws Exception {
         UserAgentManager userAgentManager = new RandomUserAgentManager();
         CrawlerConfig crawlerConfig = new DefaultProxyCrawlerConfig("Taxonomy-Test", userAgentManager);

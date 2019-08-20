@@ -43,7 +43,10 @@ public class DBConnect {
             PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles values (?,?,?,?,?,?,?);");
             for(int i=0;i<articles.size();i++) {
                 Article article = articles.get(i);
-                String exactDate = simpleDateFormat.format(article.getPublishedDate());
+                String exactDate = null;
+                if(article.getPublishedDate() != null){
+                    exactDate = simpleDateFormat.format(article.getPublishedDate());
+                }
                 preparedStatement.setString(1, article.getId());
                 preparedStatement.setString(2, article.getTitle());
                 preparedStatement.setInt(3, article.getCategoryType().value);
