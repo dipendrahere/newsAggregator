@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="newsAggregator" target="8" />
+      <module name="newsAggregator" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
