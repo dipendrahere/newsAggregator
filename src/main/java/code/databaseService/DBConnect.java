@@ -13,7 +13,7 @@ public class DBConnect {
     private ResultSet resultSet;
     private static DBConnect db;
 
-    public static DBConnect getInstance(){
+    public static synchronized DBConnect getInstance(){
         if (db==null)
             db = new DBConnect();
         return db;
@@ -46,7 +46,7 @@ public class DBConnect {
                 String exactDate = simpleDateFormat.format(article.getPublishedDate());
                 preparedStatement.setString(1, article.getId());
                 preparedStatement.setString(2, article.getTitle());
-                preparedStatement.setInt(3, article.getCategoryType().value);
+                preparedStatement.setInt(3, article.getCategoryType().value.getKey());
                 preparedStatement.setString(4, article.getUrl());
                 preparedStatement.setString(5, exactDate);
                 preparedStatement.setString(6, article.getRssLink());
@@ -69,7 +69,7 @@ public class DBConnect {
             PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles values (?,?,?,?,?,?,?);");
             preparedStatement.setString(1, article.getId());
             preparedStatement.setString(2, article.getTitle());
-            preparedStatement.setInt(3, article.getCategoryType().value);
+            preparedStatement.setInt(3, article.getCategoryType().value.getKey());
             preparedStatement.setString(4, article.getUrl());
             preparedStatement.setString(5, exactDate);
             preparedStatement.setString(6, article.getRssLink());

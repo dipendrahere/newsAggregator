@@ -26,8 +26,14 @@ import de.l3s.boilerpipe.BoilerpipeProcessingException;
 
 
 public class RssController {
+    private CategoryType categoryType;
 
-    public void visitCategory(String filePath){
+    public RssController(CategoryType categoryType){
+        this.categoryType = categoryType;
+    }
+
+    public void visitCategory(){
+        String filePath = categoryType.value.getFilepath();
         List<String> rssList = getRSSLinksfromFile(filePath);
         List<CompletableFuture<List<Article>>> allRssCompletable = new ArrayList<>();
         for(String rssLink: rssList){
@@ -145,7 +151,7 @@ public class RssController {
         return CompletableFuture.supplyAsync(() -> {
             ArticleBuilder articleBuilder = new ArticleBuilder(item.getLink());
             try {
-                articleBuilder.setCategoryType(CategoryType.SPORTS)
+                articleBuilder.setCategoryType(categoryType)
                         .setPublishedDate(item.getPubDate())
                         .setRssLink(item.getRssLink())
                         .setContent(GlobalFunctions.extractFromUrl(item.getLink()))

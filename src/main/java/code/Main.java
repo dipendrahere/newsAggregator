@@ -1,5 +1,6 @@
 package code;
 
+import code.contentComponent.PollingService;
 import code.contentComponent.RssController;
 import code.databaseService.DBConnect;
 import code.models.Article;
@@ -12,8 +13,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        RssController rssController = new RssController();
-        rssController.visitCategory("src/main/resources/rssSports.txt");
+        PollingService.getInstance().poll();
 
 //        List<Article> list = new ArrayList<>();
 //
