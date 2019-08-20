@@ -65,6 +65,7 @@ public class Article {
     public void setRssLink(String rssLink) {
         this.rssLink = rssLink;
     }
+
 }
 
 

@@ -9,6 +9,8 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
+
+import code.databaseService.DBConnect;
 import code.models.Article;
 import code.models.ArticleBuilder;
 import code.models.CategoryType;
@@ -51,9 +53,7 @@ public class RssController {
     private void fetchArticlesFromRss(CompletableFuture<List<Article>> futureForRss) {
         try {
             List<Article> articles = futureForRss.get();
-            for (Article a : articles) {
-                System.out.println(a.getContent());
-            }
+            writeInDB(articles);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -99,7 +99,7 @@ public class RssController {
     }
 
     private Boolean isLinkRead(String link){
-        return true;
+        return !DBConnect.getInstance().isArticlePresent(link);
     }
 
     private CompletableFuture<List<RSSItem>> getEntriesFromRss(String path){
@@ -129,12 +129,16 @@ public class RssController {
         } catch (FeedException e) {
             Log.error("Unable to read feed");
         }
+        rssItems = rssItems.stream().filter(item -> {
+            return isLinkRead(item.getLink());
+        }).collect(Collectors.toList());
+
         return rssItems;
 
     }
 
-    private void writeInDB(Article article){
-        System.out.println(article.getTitle());
+    private void writeInDB(List<Article> articles){
+        DBConnect.getInstance().insertArticles(articles);
     }
 
     private CompletableFuture<Article> getArticlesFromFeed(RSSItem item){
@@ -154,6 +158,7 @@ public class RssController {
                 Log.error("Something went wrong");
             }
             Article article = articleBuilder.build();
+            Log.debug("article with link: " + article.getUrl() + " is fetched");
             return article;
         }).exceptionally(ex -> {
             Log.error("Something happened when " + item.getLink() + " was crawled");
