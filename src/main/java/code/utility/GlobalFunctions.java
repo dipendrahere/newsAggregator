@@ -9,6 +9,7 @@ import net.media.mnetcrawler.bean.SyncCrawlResponse;
 import net.media.mnetcrawler.util.RandomUserAgentManager;
 import net.media.mnetcrawler.util.UserAgentManager;
 
+
 import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -16,6 +17,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class GlobalFunctions {
+
 
     public static String extractFromUrl(String url) throws Exception {
         UserAgentManager userAgentManager = new RandomUserAgentManager();

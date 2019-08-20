@@ -11,13 +11,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
 public class Main {
     public static void main(String[] args) {
         PollingService.getInstance().poll();
 
 //        List<Article> list = new ArrayList<>();
 //
-//        Article a = new ArticleBuilder("url")
+//        Article a = new ArticleBuilder("url4")
 //                .setCategoryType(CategoryType.SPORTS)
 //                .setContent("content")
 //                .setRssLink("Rss")
@@ -25,7 +26,7 @@ public class Main {
 //                .setPublishedDate(new Date())
 //                .build();
 //
-//        Article b = new ArticleBuilder("url1")
+//        Article b = new ArticleBuilder("url5")
 //                .setCategoryType(CategoryType.SPORTS)
 //                .setContent("content")
 //                .setRssLink("Rss")
@@ -35,7 +36,7 @@ public class Main {
 //
 //        list.add(a);
 //        list.add(b);
-//        DBConnect.getInstance().insertArticle(a);
+//        DBConnect.getInstance().insertArticles(list);
 
     }
 }

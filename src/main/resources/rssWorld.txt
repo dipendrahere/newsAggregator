@@ -1,0 +1,5 @@
+http://www1.cbn.com/app_feeds/rss/news/rss.php?section=world
+https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+https://www.npr.org/rss/rss.php?id=1001
+https://www.bbc.com/news/10628494
+https://rss.nytimes.com/services/xml/rss/nyt/World.xml
