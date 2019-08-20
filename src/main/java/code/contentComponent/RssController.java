@@ -29,16 +29,24 @@ public class RssController {
 
     public void visitCategory(String filePath){
         List<String> rssList = getRSSLinksfromFile(filePath);
-
+        List<CompletableFuture<List<Article>>> allRssCompletable = new ArrayList<>();
         for(String rssLink: rssList){
             CompletableFuture<List<Article>> futureForRss = getArticlesFromRss(rssLink);
-
-            // FIXME: Place driver at proper place
-            fetchArticlesFromRss(futureForRss);
-
-            //TODO: REMOVE
-            break;
+            allRssCompletable.add(futureForRss);
         }
+        CompletableFuture<List<Article>>[] arr = allRssCompletable.stream()
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList())
+                .toArray(new CompletableFuture[allRssCompletable.size()]);
+        CompletableFuture<Void> allOfRss = CompletableFuture.allOf(arr);
+        CompletableFuture<List<Article>> articlefuture = allOfRss.thenApply(f -> {
+            return Arrays.stream(arr)
+                    .map(future -> future.join())
+                    .filter(Objects::nonNull)
+                    .flatMap(List::stream)
+                    .collect(Collectors.toList());
+        });
+        fetchArticlesFromRss(articlefuture);
     }
 
 
@@ -55,6 +63,7 @@ public class RssController {
 
     private CompletableFuture<List<Article>> getArticlesFromRss(String rssLink){
         return getEntriesFromRss(rssLink).thenCompose(list -> {
+            list = list.stream().filter(Objects::nonNull).collect(Collectors.toList());
             CompletableFuture<Article>[] completableFutures = list.stream().map(item -> {
                 return getArticlesFromFeed(item);
             }).filter(Objects::nonNull)
@@ -69,7 +78,8 @@ public class RssController {
             });
             return articlefuture;
         }).exceptionally(ex -> {
-            Log.error("Problem occurred when " + rssLink + " was parsed");
+            Log.error("Problem occurred when " + rssLink + " was parsed "+ex.getMessage());
+
             return null;
         });
     }
@@ -113,6 +123,7 @@ public class RssController {
                 RSSItem item = new RSSItem(entry, path);
                 rssItems.add(item);
             }
+            Log.debug("READ: " +  path);
         } catch (IOException e) {
             Log.error("Could not create XML reader");
         } catch (FeedException e) {
@@ -143,6 +154,8 @@ public class RssController {
                 Log.error("Unable to extract data from url - boilerpipe");
             } catch (MalformedURLException e) {
                 Log.error("Unable to form url for " + item.getLink());
+            } catch (Exception e) {
+                Log.error("Something went wrong");
             }
             Article article = articleBuilder.build();
             Log.debug("article with link: " + article.getUrl() + " is fetched");
