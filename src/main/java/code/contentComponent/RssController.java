@@ -135,9 +135,9 @@ public class RssController {
             }
             Log.debug("READ: " +  path);
         } catch (IOException e) {
-            Log.error("Could not create XML reader");
+            Log.error("Could not create XML reader " + path);
         } catch (FeedException e) {
-            Log.error("Unable to read feed");
+            Log.error("Unable to read feed - " + path + " - "+categoryType.toString());
         }
         rssItems = rssItems.stream().filter(item -> {
             return isLinkRead(item.getLink());

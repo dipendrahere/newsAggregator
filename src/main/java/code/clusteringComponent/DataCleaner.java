@@ -19,7 +19,12 @@ public class DataCleaner {
 
     static public String clean(String s){
         s = s.toLowerCase();
-        s = s.trim().replaceAll("[\\p{Punct}]", "").replaceAll(" +", " ");
+        s = s.trim().replaceAll("[\\p{Punct}]", " ");
+        s = s.replaceAll("[^\\x00-\\x7F]", "");
+        s = s.replaceAll("[\\p{Cntrl}&&[^\r\n\t]]", " ");
+        s = s.replaceAll("\\p{C}", " ");
+        s = s.replaceAll("[^a-zA-Z0-9]", " ");
+        s = s.replaceAll(" +", " ");
         s = removeStopWords(s);
         Stemmer stemmer = new SnowballStemmer(SnowballStemmer.ALGORITHM.ENGLISH);
         s = Arrays.stream(s.split(" ")).map(word -> {

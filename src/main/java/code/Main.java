@@ -16,9 +16,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.println(DataCleaner.clean("Hello ' th'e of i sas sfdfe ! %$ @, ,,  paying playing player played saying sayer says paid done doer goer goes }} {{ , 303  /["));
+        System.out.println(DataCleaner.clean("Hello ' th'e of i demo's sas sfdfe ! %$ @, ,,  paying playing player played saying sayer says paid done doer goer goes }} {{ , 303  /["));
 //        PropertyConfigurator.configure("src/main/resources/log4j.properties");
-        PollingService.getInstance().poll();
+//        PollingService.getInstance().poll();
 
 //        List<Article> list = new ArrayList<>();
 //
