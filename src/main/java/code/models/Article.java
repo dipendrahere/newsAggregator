@@ -1,6 +1,7 @@
 package code.models;
 
 import code.utility.GlobalFunctions;
+import org.apache.commons.math3.ml.clustering.Clusterable;
 
 import java.util.Date;
 
@@ -65,7 +66,6 @@ public class Article {
     public void setRssLink(String rssLink) {
         this.rssLink = rssLink;
     }
-
 }
 
 

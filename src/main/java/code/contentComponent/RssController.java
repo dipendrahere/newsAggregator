@@ -10,6 +10,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
+import code.clusteringComponent.DataCleaner;
 import code.databaseService.DBConnect;
 import code.models.Article;
 import code.models.ArticleBuilder;
@@ -23,6 +24,9 @@ import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
 import de.l3s.boilerpipe.BoilerpipeProcessingException;
+import opennlp.tools.stemmer.Stemmer;
+
+import javax.xml.crypto.Data;
 
 
 public class RssController {
@@ -154,7 +158,7 @@ public class RssController {
                 articleBuilder.setCategoryType(categoryType)
                         .setPublishedDate(item.getPubDate())
                         .setRssLink(item.getRssLink())
-                        .setContent(GlobalFunctions.extractFromUrl(item.getLink()))
+                        .setContent(DataCleaner.clean(GlobalFunctions.extractFromUrl(item.getLink())))
                         .setTitle(item.getTitle());
             } catch (BoilerpipeProcessingException e) {
                 Log.error("Unable to extract data from url - boilerpipe");

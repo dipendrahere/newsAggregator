@@ -21,6 +21,5 @@ http://www.theverge.com/science/rss/index.xml
 http://grist.org/feed/
 http://www.theguardian.com/science/rss
 http://www.theguardian.com/us/environment/rss
-http://www.viralnova.com/feed
 https://www.usnews.com/topics/subjects/science/rss
 https://www.usnews.com/rss/news
