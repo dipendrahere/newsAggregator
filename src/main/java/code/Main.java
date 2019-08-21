@@ -6,6 +6,7 @@ import code.databaseService.DBConnect;
 import code.models.Article;
 import code.models.ArticleBuilder;
 import code.models.CategoryType;
+import code.utility.GlobalFunctions;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,7 +15,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        PollingService.getInstance().poll();
+    //    PollingService.getInstance().poll();
+        GlobalFunctions.tfIdf("i am vipin kumar vipin");
 
 //        List<Article> list = new ArrayList<>();
 //
