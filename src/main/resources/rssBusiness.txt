@@ -10,7 +10,7 @@ http://www.business-standard.com/rss/home_page_top_stories.rss
 http://feeds.harvardbusiness.org/harvardbusiness?format=xml
 http://au.ibtimes.com/rss/articles/region/1.rss
 http://www.businessweek.com/search/rssfeed.htm
-http://www.hu ngtonpost.com/feeds/verticals/business/news.xml
+http://www.huffingtonpost.com/feeds/verticals/business/news.xml
 http://www.ft.com/rss/home/us
 http://rss.cnn.com/rss/edition_business.rss
 http://www.bloomberg.com/feed/podcast/law.xml
