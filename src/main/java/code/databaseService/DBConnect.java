@@ -8,9 +8,9 @@ import java.sql.*;
 import java.util.List;
 
 public class DBConnect {
-    private Connection connnection;
-    private Statement statment;
-    private ResultSet resultSet;
+    private static Connection connnection;
+    private static Statement statment;
+    private static ResultSet resultSet;
     private static DBConnect db;
 
     public static synchronized DBConnect getInstance(){
@@ -34,7 +34,7 @@ public class DBConnect {
         }
     }
 
-    public void insertArticles(List<Article> articles){
+    public static synchronized void insertArticles(List<Article> articles){
         if(articles.size() == 0){
             return;
         }
@@ -43,7 +43,10 @@ public class DBConnect {
             PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles values (?,?,?,?,?,?,?);");
             for(int i=0;i<articles.size();i++) {
                 Article article = articles.get(i);
-                String exactDate = simpleDateFormat.format(article.getPublishedDate());
+                String exactDate = null;
+                if(article.getPublishedDate() != null){
+                    exactDate = simpleDateFormat.format(article.getPublishedDate());
+                }
                 preparedStatement.setString(1, article.getId());
                 preparedStatement.setString(2, article.getTitle());
                 preparedStatement.setInt(3, article.getCategoryType().value.getKey());
@@ -82,7 +85,7 @@ public class DBConnect {
         }
     }
 
-    public boolean isArticlePresent(String url){
+    public static synchronized boolean isArticlePresent(String url){
         boolean ret = true;
         try {
             String id = GlobalFunctions.getMd5(url);
