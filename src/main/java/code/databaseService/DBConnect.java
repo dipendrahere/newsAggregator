@@ -1,10 +1,13 @@
 package code.databaseService;
 
 import code.models.Article;
+import code.models.ArticleBuilder;
+import code.models.CategoryType;
 import code.utility.GlobalFunctions;
 import code.utility.Log;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DBConnect {
@@ -22,7 +25,7 @@ public class DBConnect {
     private DBConnect(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsaggregator     ","root","vipin1407");
+            connnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsaggregator","root","vipin1407");
             statment = connnection.createStatement();
         }
         catch (ClassNotFoundException e) {
@@ -96,6 +99,28 @@ public class DBConnect {
             }
         } catch (SQLException e) {
             Log.error("Unable to query for article present url: " + url);
+        }
+        return ret;
+    }
+
+    public static synchronized List<Article> fetchArticles(CategoryType categoryType){
+        List<Article> ret = new ArrayList<>();
+        try{
+            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles");
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Article a = new ArticleBuilder(resultSet.getString(4))
+                        .setTitle(resultSet.getString(2))
+                        .setCategoryType(CategoryType.values()[resultSet.getInt(3)-1])
+                        .setPublishedDate(resultSet.getDate(5))
+                        .setRssLink(resultSet.getString(6))
+                        .setContent(resultSet.getString(7))
+                        .build();
+                ret.add(a);
+            }
+        }
+        catch (SQLException e){
+            Log.error("unable to fetch Article");
         }
         return ret;
     }
