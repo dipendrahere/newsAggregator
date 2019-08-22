@@ -1,7 +1,6 @@
 package code.models;
 
 import code.utility.GlobalFunctions;
-import org.apache.commons.math3.ml.clustering.Clusterable;
 
 import java.util.Date;
 
@@ -66,6 +65,28 @@ public class Article {
     public void setRssLink(String rssLink) {
         this.rssLink = rssLink;
     }
+
+    public int hashCode() {
+        return content.hashCode();
+    }
+
+    public String toString() {
+        return content;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Article other = (Article) obj;
+        if (hashCode() != other.hashCode())
+            return false;
+        return true;
+    }
+
 }
 
 

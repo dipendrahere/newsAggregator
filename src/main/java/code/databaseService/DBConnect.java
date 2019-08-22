@@ -25,7 +25,7 @@ public class DBConnect {
     private DBConnect(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsaggregator","root","vipin1407");
+            connnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsaggregator","root","Hello@123");
             statment = connnection.createStatement();
         }
         catch (ClassNotFoundException e) {
@@ -106,7 +106,8 @@ public class DBConnect {
     public static synchronized List<Article> fetchArticles(CategoryType categoryType){
         List<Article> ret = new ArrayList<>();
         try{
-            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles where category_id = "+ categoryType.value.getKey());
+            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles where category_id = "+categoryType.value.getKey());
+
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 Article a = new ArticleBuilder(resultSet.getString(4))

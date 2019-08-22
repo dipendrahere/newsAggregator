@@ -1,6 +1,8 @@
-package code.models;
+package code.idfHelper;
 
 import code.databaseService.DBConnect;
+import code.models.Article;
+import code.models.CategoryType;
 import javafx.util.Pair;
 import java.util.HashMap;
 import java.util.Iterator;
