@@ -86,9 +86,7 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             dsuSize[i] = 1;
             pq.add(new PriorityQueue<>(n,new PairComparatorAsc()));
         }
-
-
-        return new ArrayList<>();
+        return performClustering();
     }
 
     private void calculateDistanceMatrix() throws DissimilarArticleException, CategoryNotFoundException {
@@ -115,7 +113,7 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
         }
     }
 
-    private void performClustering(){
+    private List<Cluster<T>> performClustering(){
         try {
             calculateDistanceMatrix();
         }
@@ -143,7 +141,20 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             pq.get(temp.getValue()).poll();
             count++;
         }
+
+
+        //TODO : CREATE LIST AND RETURN THEN REMOVE THIS
+        printClusters();
+
+        return getAllClusters();
     }
+
+    private List<Cluster<T>> getAllClusters(){
+        List<Cluster<T>> clusters = new ArrayList<>();
+
+        return clusters;
+    }
+
 
     private void printLargestCluster(){
         int maxi = 0;
