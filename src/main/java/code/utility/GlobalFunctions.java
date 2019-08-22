@@ -4,6 +4,7 @@ import code.exceptions.CategoryNotFoundException;
 import code.exceptions.DissimilarArticleException;
 import code.idfHelper.*;
 import code.models.Article;
+import code.models.Cluster;
 import de.l3s.boilerpipe.BoilerpipeProcessingException;
 import de.l3s.boilerpipe.extractors.ArticleExtractor;
 import net.media.mnetcrawler.CrawlerConfig;
@@ -14,6 +15,9 @@ import net.media.mnetcrawler.util.RandomUserAgentManager;
 import net.media.mnetcrawler.util.UserAgentManager;
 
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
@@ -138,5 +142,61 @@ public class GlobalFunctions {
             temp.put(aa.getKey(), aa.getValue());
         }
         return temp;
+    }
+
+
+    public static void deleteFile(File file)
+            throws IOException{
+        if(file.isDirectory()){
+            if(file.list().length==0){
+                file.delete();
+            }else{
+                String files[] = file.list();
+                for (String temp : files) {
+                    File fileDelete = new File(file, temp);
+                    deleteFile(fileDelete);
+                }
+                if(file.list().length==0){
+                    file.delete();
+                }
+            }
+        }else{
+            file.delete();
+        }
+    }
+
+    public static void dumpClusters(List<Cluster<Article>> clusters) throws IOException {
+        int count = 1;
+        File directory = new File("clusters");
+        if(!directory.exists()){
+            System.out.println("Directory does not exist.");
+        }else{
+            try{
+                deleteFile(directory);
+
+            }catch(IOException e){
+                e.printStackTrace();
+                System.exit(0);
+            }
+        }
+        File d = new File("clusters");
+        d.mkdir();
+        System.out.println("Total Clusters: "+clusters.size());
+        for(Cluster<Article> cluster: clusters){
+            File file = new File("clusters/"+count);
+            count++;
+            if (file.createNewFile())
+            {
+                System.out.println("File is created!");
+            } else {
+                System.out.println("File already exists.");
+            }
+
+            FileWriter writer = new FileWriter(file);
+          for(Article a : cluster.getPoints()){
+                writer.write(a.toString());
+            }
+            writer.close();
+        }
     }
 }

@@ -44,5 +44,6 @@ public class Main {
         System.out.println(list.size());
         HierarchicalClusterer<Article> hierarchicalCluster = new HierarchicalClusterer<Article>(0.7);
         List<Cluster<Article>> clusters = hierarchicalCluster.cluster(list);
+
     }
 }
