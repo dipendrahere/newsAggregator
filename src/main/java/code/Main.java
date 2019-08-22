@@ -1,5 +1,6 @@
 package code;
 
+import code.contentComponent.PollingService;
 import code.models.Cluster;
 import code.clusteringComponent.DBScanClusterer;
 import code.databaseService.DBConnect;
@@ -21,12 +22,12 @@ public class Main {
 
         //        System.out.println(DataCleaner.clean("Hello ' th'e of i sas sfdfe ! %$ @, ,,  paying playing player played saying sayer says paid done doer goer goes }} {{ , 303  /["));
 //        PropertyConfigurator.configure("src/main/resources/log4j.properties");
-//        PollingService.getInstance().poll();
+        PollingService.getInstance().poll();
 
-        List<Article> articles = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
-        DBScanClusterer<Article> clusterer = new DBScanClusterer<>(0.6, 2);
-        int count = 0;
-        List<Cluster<Article>> clusters = clusterer.cluster(articles);
+//        List<Article> articles = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
+//        DBScanClusterer<Article> clusterer = new DBScanClusterer<>(0.6, 2);
+//        int count = 0;
+//        List<Cluster<Article>> clusters = clusterer.cluster(articles);
 
 
         /* Test for tf-idf function
