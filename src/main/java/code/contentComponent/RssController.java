@@ -63,6 +63,7 @@ public class RssController {
     private void fetchArticlesFromRss(CompletableFuture<List<Article>> futureForRss) {
         try {
             List<Article> articles = futureForRss.get();
+            articles = articles.stream().filter(article -> article.getContent().length() != 0).collect(Collectors.toList());
             writeInDB(articles);
         } catch (InterruptedException e) {
             e.printStackTrace();

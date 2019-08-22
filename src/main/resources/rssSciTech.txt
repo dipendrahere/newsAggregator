@@ -4,5 +4,4 @@ http://nautil.us/rss/all
 http://feeds.newscientist.com/science-news
 http://feeds.newscientist.com/space
 https://www.usnews.com/topics/subjects/science/rss
-https://www.usnews.com/rss/news
 https://www.cnbc.com/id/19854910/device/rss/rss.html
