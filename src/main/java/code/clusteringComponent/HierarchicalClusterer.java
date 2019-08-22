@@ -3,29 +3,46 @@ package code.clusteringComponent;
 import code.exceptions.CategoryNotFoundException;
 import code.exceptions.DissimilarArticleException;
 import code.models.Article;
+import code.models.Cluster;
 import code.utility.GlobalFunctions;
 import javafx.util.Pair;
+import org.apache.commons.lang.NullArgumentException;
+import org.apache.commons.math3.util.MathUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
-public class HierarchicalCluster {
-    public List<Article> articles;
-    public int n;
-    public double[][] distanceMatrix;
-    List<PriorityQueue< Pair<Double,Integer> > >pq = new ArrayList<>();
-    public int[] dsu;
-    public int[] dsuSize;
-    public double eps = 0.7;
-    public int getParent(int k){
+public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
+
+    final private class PairComparator implements Comparator<Pair<Double,Integer>> {
+        @Override
+        public int compare(Pair<Double, Integer> o1, Pair<Double, Integer> o2) {
+            if(o1.getKey() > o2.getKey()){
+                return 1;
+            }
+            else if(o1.getKey() < o2.getKey()){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        }
+    }
+
+    private List<T> articles;
+    private int n;
+    private double[][] distanceMatrix;
+    private List<PriorityQueue< Pair<Double,Integer> > >pq = new ArrayList<>();
+    private int[] dsu;
+    private int[] dsuSize;
+    private double eps;
+    private int getParent(int k){
         while (k != dsu[k]){
             k = dsu[k];
         }
         return k;
     }
 
-    public void merge(int i,int j){
+    private void merge(int i,int j){
         int p = getParent(i);
         int q = getParent(j);
         if(dsuSize[p] >= dsuSize[q]){
@@ -38,8 +55,12 @@ public class HierarchicalCluster {
         }
     }
 
+    public HierarchicalClusterer(double eps){
+        this.eps = eps;
+    }
 
-    public HierarchicalCluster(List<Article> articles){
+    public List<Cluster<T>> cluster(List<T> articles) throws NullArgumentException {
+        MathUtils.checkNotNull(articles);
         this.articles = articles;
         n = articles.size();
         distanceMatrix = new double[n][n];
@@ -50,8 +71,11 @@ public class HierarchicalCluster {
             dsuSize[i] = 1;
             pq.add(new PriorityQueue<>(n,new PairComparator()));
         }
+        return new ArrayList<>();
     }
-    public void calculateDistanceMatrix() throws DissimilarArticleException, CategoryNotFoundException {
+
+
+    private void calculateDistanceMatrix() throws DissimilarArticleException, CategoryNotFoundException {
         for(int i=0;i<articles.size();i++){
             for(int j=0;j<=i;j++){
                 if(i == j){
@@ -64,7 +88,7 @@ public class HierarchicalCluster {
         }
     }
 
-    public void initPriorityQueues(){
+    private void initPriorityQueues(){
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 if(i == j){
@@ -75,7 +99,7 @@ public class HierarchicalCluster {
         }
     }
 
-    public void performClustering(){
+    private void performClustering(){
         try {
             calculateDistanceMatrix();
         }
@@ -105,7 +129,7 @@ public class HierarchicalCluster {
         }
     }
 
-    public void printLargestCluster(){
+    private void printLargestCluster(){
         int maxi = 0;
         int index = -1;
         for(int i=0;i<n;i++){
@@ -121,7 +145,7 @@ public class HierarchicalCluster {
         }
     }
 
-    public void printDistMat(){
+    private void printDistMat(){
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 System.out.print(distanceMatrix[i][j] + " ");

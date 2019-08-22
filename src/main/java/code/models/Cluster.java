@@ -1,4 +1,4 @@
-package code.clusteringComponent;
+package code.models;
 
 import java.util.ArrayList;
 import java.util.List;

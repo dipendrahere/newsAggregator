@@ -5,13 +5,14 @@ import java.util.*;
 import code.exceptions.CategoryNotFoundException;
 import code.exceptions.DissimilarArticleException;
 import code.models.Article;
+import code.models.Cluster;
 import code.utility.GlobalFunctions;
 import code.utility.Log;
 import org.apache.commons.lang.NullArgumentException;
 import org.apache.commons.math3.exception.NotPositiveException;
 import org.apache.commons.math3.util.MathUtils;
 
-public class DBScanClusterer<T extends Article> {
+public class DBScanClusterer<T extends Article> implements Clusterer<T>{
     private final double eps;
     private final int minPts;
 
@@ -19,6 +20,7 @@ public class DBScanClusterer<T extends Article> {
         NOISE,
         PART_OF_CLUSTER
     }
+
     public DBScanClusterer(final double eps, final int minPts)
             throws NotPositiveException {
         if (eps < 0.0d) {
@@ -40,7 +42,7 @@ public class DBScanClusterer<T extends Article> {
         return minPts;
     }
 
-    public List<Cluster<T>> cluster(final Collection<T> points) throws NullArgumentException {
+    public List<Cluster<T>> cluster(final List<T> points) throws NullArgumentException {
 
         // sanity checks
         MathUtils.checkNotNull(points);

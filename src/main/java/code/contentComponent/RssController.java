@@ -24,9 +24,6 @@ import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
 import de.l3s.boilerpipe.BoilerpipeProcessingException;
-import opennlp.tools.stemmer.Stemmer;
-
-import javax.xml.crypto.Data;
 
 
 public class RssController {
