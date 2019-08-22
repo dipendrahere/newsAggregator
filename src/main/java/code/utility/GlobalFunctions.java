@@ -1,6 +1,7 @@
 package code.utility;
 
 import code.databaseService.DBConnect;
+import code.exceptions.CategoryNotFoundException;
 import code.exceptions.DissimilarArticleException;
 import code.models.*;
 import de.l3s.boilerpipe.BoilerpipeProcessingException;
@@ -69,11 +70,11 @@ public class GlobalFunctions {
         return Math.sqrt(ret);
     }
 
-    public static Double cosineDissimilarity(Article a, Article b) throws DissimilarArticleException{
+    public static Double cosineDissimilarity(Article a, Article b) throws DissimilarArticleException,CategoryNotFoundException{
         double dissimilarity = 1 - cosineSimilarity(a, b);
         return dissimilarity > 0 ? dissimilarity : 0;
     }
-    public static Double cosineSimilarity(Article a, Article b) throws DissimilarArticleException {
+    public static Double cosineSimilarity(Article a, Article b) throws DissimilarArticleException, CategoryNotFoundException {
         if(a.getCategoryType() != b.getCategoryType()){
             throw new DissimilarArticleException();
         }
@@ -92,7 +93,7 @@ public class GlobalFunctions {
                 helper = BusinessTfidfHelper.getInstance();
                 break;
             default:
-                throw new DissimilarArticleException();
+                throw new CategoryNotFoundException();
         }
         double ret = 0;
         HashMap<String,Double> hm1 = helper.tfIdf(a);

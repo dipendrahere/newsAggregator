@@ -1,11 +1,13 @@
 package code.clusteringComponent;
 
+import code.exceptions.CategoryNotFoundException;
 import code.exceptions.DissimilarArticleException;
 import code.models.Article;
 import code.utility.GlobalFunctions;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -50,7 +52,7 @@ public class HierarchicalCluster {
             pq.add(new PriorityQueue<>(n,new PairComparator()));
         }
     }
-    public void calculateDistanceMatrix() throws DissimilarArticleException {
+    public void calculateDistanceMatrix() throws DissimilarArticleException, CategoryNotFoundException {
         for(int i=0;i<articles.size();i++){
             for(int j=0;j<=i;j++){
                 if(i == j){
@@ -114,8 +116,44 @@ public class HierarchicalCluster {
             }
         }
         for(int i=0;i<n;i++){
-            if(dsu[i] == index){
-                System.out.println(articles.get(i).getUrl());
+            if(getParent(dsu[i]) == index){
+                System.out.println(articles.get(i).getTitle());
+            }
+        }
+    }
+
+    public void printClusters(){
+        List<Pair<Integer,Integer>> list = new ArrayList<>();
+        for(int i=0;i<n;i++){
+            if(getParent(i) == i){
+                list.add(new Pair<>(dsuSize[i],i));
+            }
+        }
+        list.sort(new PairComp());
+        for(int i=0;i<Math.min(3,list.size());i++){
+            for(int j=0;j<n;j++){
+                if(getParent(dsu[j]) == list.get(i).getValue()){
+                    System.out.println(articles.get(j).getTitle()+ "  " + articles.get(j).getUrl());
+                }
+            }
+            System.out.println();
+            System.out.println();
+        }
+
+    }
+
+
+    public class PairComp implements Comparator<Pair<Integer,Integer>> {
+        @Override
+        public int compare(Pair<Integer, Integer> o1, Pair<Integer, Integer> o2) {
+            if(o1.getKey() < o2.getKey()){
+                return 1;
+            }
+            else if(o1.getKey() > o2.getKey()){
+                return -1;
+            }
+            else{
+                return 0;
             }
         }
     }

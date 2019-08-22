@@ -46,7 +46,7 @@ public class Main {
         System.out.println(list.size());
         HierarchicalCluster hierarchicalCluster = new HierarchicalCluster(list);
         hierarchicalCluster.performClustering();
-        hierarchicalCluster.printLargestCluster();
+        hierarchicalCluster.printClusters();
 
 
     }
