@@ -1,4 +1,6 @@
-package code.models;
+package code.idfHelper;
+
+import code.models.CategoryType;
 
 public class WorldTfIdfHelper extends TfIdfHelper {
     private static WorldTfIdfHelper helper = new WorldTfIdfHelper(CategoryType.WORLD);

@@ -1,4 +1,6 @@
-package code.models;
+package code.idfHelper;
+
+import code.models.CategoryType;
 
 public class SportsTfIdfHelper extends TfIdfHelper{
     private static SportsTfIdfHelper helper = new SportsTfIdfHelper(CategoryType.SPORTS);

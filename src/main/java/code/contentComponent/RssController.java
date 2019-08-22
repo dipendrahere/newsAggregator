@@ -24,9 +24,6 @@ import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
 import de.l3s.boilerpipe.BoilerpipeProcessingException;
-import opennlp.tools.stemmer.Stemmer;
-
-import javax.xml.crypto.Data;
 
 
 public class RssController {
@@ -63,6 +60,7 @@ public class RssController {
     private void fetchArticlesFromRss(CompletableFuture<List<Article>> futureForRss) {
         try {
             List<Article> articles = futureForRss.get();
+            articles = articles.stream().filter(article -> article.getContent().length() != 0).collect(Collectors.toList());
             writeInDB(articles);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -135,9 +133,9 @@ public class RssController {
             }
             Log.debug("READ: " +  path);
         } catch (IOException e) {
-            Log.error("Could not create XML reader");
+            Log.error("Could not create XML reader " + path);
         } catch (FeedException e) {
-            Log.error("Unable to read feed");
+            Log.error("Unable to read feed - " + path + " - "+categoryType.toString());
         }
         rssItems = rssItems.stream().filter(item -> {
             return isLinkRead(item.getLink());

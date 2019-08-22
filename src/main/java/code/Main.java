@@ -1,19 +1,17 @@
 package code;
 
-import code.clusteringComponent.DataCleaner;
-import code.clusteringComponent.HierarchicalCluster;
-import code.clusteringComponent.PairComparator;
-import code.contentComponent.PollingService;
-import code.contentComponent.RssController;
+import code.clusteringComponent.HierarchicalClusterer;
+import code.models.Cluster;
+import code.clusteringComponent.DBScanClusterer;
 import code.databaseService.DBConnect;
 import code.models.Article;
-import code.models.ArticleBuilder;
 import code.models.CategoryType;
-import code.models.SportsTfIdfHelper;
-import code.utility.GlobalFunctions;
-import javafx.util.Pair;
+import code.utility.Log;
 
-import java.util.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.List;
 
 
 public class Main {
@@ -44,10 +42,8 @@ public class Main {
 
         List<Article> list = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
         System.out.println(list.size());
-        HierarchicalCluster hierarchicalCluster = new HierarchicalCluster(list);
-        hierarchicalCluster.performClustering();
+        HierarchicalClusterer<Article> hierarchicalCluster = new HierarchicalClusterer<Article>(0.7);
+        hierarchicalCluster.cluster(list);
         hierarchicalCluster.printClusters();
-
-
     }
 }

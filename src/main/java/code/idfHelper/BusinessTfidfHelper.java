@@ -1,4 +1,6 @@
-package code.models;
+package code.idfHelper;
+
+import code.models.CategoryType;
 
 public class BusinessTfidfHelper extends TfIdfHelper {
     private static BusinessTfidfHelper helper = new BusinessTfidfHelper(CategoryType.BUSINESS);
