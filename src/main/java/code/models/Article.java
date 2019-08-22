@@ -1,6 +1,7 @@
 package code.models;
 
 import code.utility.GlobalFunctions;
+import code.utility.Log;
 
 import java.util.Date;
 
@@ -71,7 +72,13 @@ public class Article {
     }
 
     public String toString() {
-        return content;
+        try {
+            return getTitle() + " _______ " + getUrl() + " \n";
+        }
+        catch (Exception e){
+            Log.error(e.getMessage());
+        }
+        return null;
     }
 
     public boolean equals(Object obj) {
@@ -86,7 +93,6 @@ public class Article {
             return false;
         return true;
     }
-
 }
 
 
