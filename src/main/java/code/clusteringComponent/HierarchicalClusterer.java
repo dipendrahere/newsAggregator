@@ -145,17 +145,32 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
 
         //TODO : CREATE LIST AND RETURN THEN REMOVE THIS
         printClusters();
-
         return getAllClusters();
     }
 
     private List<Cluster<T>> getAllClusters(){
         List<Cluster<T>> clusters = new ArrayList<>();
-
+        List<Pair<Integer,Integer>> list = new ArrayList<>();
+        for(int i=0;i<n;i++){
+            if(getParent(i) == i){
+                list.add(new Pair<>(dsuSize[i],i));
+            }
+        }
+        list.sort(new PairComparatorDesc());
+        for(int i=0;i < list.size(); i++){
+            Cluster<T> cluster = new Cluster<>(null);
+            for(int j=0;j<n;j++){
+                if(getParent(dsu[j]) == list.get(i).getValue()){
+                    cluster.addPoint(articles.get(j));
+                    System.out.println(articles.get(j).getTitle()+ "  " + articles.get(j).getUrl());
+                }
+            }
+            clusters.add(cluster);
+        }
         return clusters;
     }
 
-
+    // Todo Remove this function after testing
     private void printLargestCluster(){
         int maxi = 0;
         int index = -1;
@@ -172,6 +187,7 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
         }
     }
 
+    // Todo Remove this function after testing
     public void printClusters(){
         List<Pair<Integer,Integer>> list = new ArrayList<>();
         for(int i=0;i<n;i++){
@@ -189,9 +205,9 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             System.out.println();
             System.out.println();
         }
-
     }
 
+    // Todo Remove this function after testing
     private void printDistMat(){
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
@@ -200,6 +216,4 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             System.out.println();
         }
     }
-
-
 }

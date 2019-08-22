@@ -25,7 +25,7 @@ public class DataCleaner {
         s = s.replaceAll("\\p{C}", " ");
         s = s.replaceAll("[^a-zA-Z0-9]", " ");
         s = s.replaceAll(" +", " ");
-        s = removeStopWords(s);
+        //s = removeStopWords(s);
         Stemmer stemmer = new SnowballStemmer(SnowballStemmer.ALGORITHM.ENGLISH);
         s = Arrays.stream(s.split(" ")).map(word -> {
             return stemmer.stem(word);

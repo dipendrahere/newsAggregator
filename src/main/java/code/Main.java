@@ -1,11 +1,13 @@
 package code;
 
 import code.clusteringComponent.HierarchicalClusterer;
+import code.contentComponent.PollingService;
 import code.models.Cluster;
 import code.clusteringComponent.DBScanClusterer;
 import code.databaseService.DBConnect;
 import code.models.Article;
 import code.models.CategoryType;
+import code.utility.GlobalFunctions;
 import code.utility.Log;
 
 import java.io.File;
@@ -17,7 +19,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        //PollingService.getInstance().poll();
+//        PollingService.getInstance().poll();
 //        Article a = new ArticleBuilder("url4")
 //                .setCategoryType(CategoryType.SPORTS)
 //                .setContent("i am vipin kumar")
@@ -44,6 +46,11 @@ public class Main {
         System.out.println(list.size());
         HierarchicalClusterer<Article> hierarchicalCluster = new HierarchicalClusterer<Article>(0.7);
         List<Cluster<Article>> clusters = hierarchicalCluster.cluster(list);
+        try {
+            GlobalFunctions.dumpClusters(clusters);
+        } catch (IOException e) {
+            Log.error("Unable to dump clusters");
+        }
 
     }
 }
