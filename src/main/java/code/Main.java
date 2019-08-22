@@ -3,6 +3,8 @@ package code;
 import code.clusteringComponent.Cluster;
 import code.clusteringComponent.DBScanClusterer;
 import code.clusteringComponent.DataCleaner;
+import code.clusteringComponent.HierarchicalCluster;
+import code.clusteringComponent.PairComparator;
 import code.contentComponent.PollingService;
 import code.databaseService.DBConnect;
 import code.models.Article;
@@ -137,6 +139,5 @@ public class Main {
         list.add(c);
 
          */
-
     }
 }

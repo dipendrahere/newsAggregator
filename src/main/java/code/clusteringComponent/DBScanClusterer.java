@@ -99,7 +99,7 @@ public class DBScanClusterer<T extends Article> {
         final List<T> neighbors = new ArrayList<T>();
         for (final T neighbor : points) {
             try {
-                if (point != neighbor && GlobalFunctions.similarty(neighbor, point) >= eps) {
+                if (point != neighbor && GlobalFunctions.cosineSimilarity(neighbor, point) >= eps) {
                     neighbors.add(neighbor);
                 }
             } catch (DissimilarArticleException e) {
