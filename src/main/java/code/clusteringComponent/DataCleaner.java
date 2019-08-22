@@ -20,7 +20,7 @@ public class DataCleaner {
     static public String clean(String s){
         s = s.toLowerCase();
         s = s.trim().replaceAll("[\\p{Punct}]", "").replaceAll(" +", " ");
-        s = removeStopWords(s);
+        //s = removeStopWords(s);
         Stemmer stemmer = new SnowballStemmer(SnowballStemmer.ALGORITHM.ENGLISH);
         s = Arrays.stream(s.split(" ")).map(word -> {
             return stemmer.stem(word);

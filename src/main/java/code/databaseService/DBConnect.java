@@ -106,7 +106,7 @@ public class DBConnect {
     public static synchronized List<Article> fetchArticles(CategoryType categoryType){
         List<Article> ret = new ArrayList<>();
         try{
-            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles");
+            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles where category_id = "+ categoryType.value.getKey());
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 Article a = new ArticleBuilder(resultSet.getString(4))

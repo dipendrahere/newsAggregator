@@ -1,10 +1,11 @@
 package code.utility;
 
-import code.exceptions.CategoryNotFoundException;
+import code.databaseService.DBConnect;
 import code.exceptions.DissimilarArticleException;
 import code.models.*;
 import de.l3s.boilerpipe.BoilerpipeProcessingException;
 import de.l3s.boilerpipe.extractors.ArticleExtractor;
+import javafx.util.Pair;
 import net.media.mnetcrawler.CrawlerConfig;
 import net.media.mnetcrawler.DefaultProxyCrawlerConfig;
 import net.media.mnetcrawler.SyncCrawler;
@@ -17,9 +18,7 @@ import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class GlobalFunctions {
 
@@ -69,7 +68,12 @@ public class GlobalFunctions {
         }
         return Math.sqrt(ret);
     }
-    public static Double similarty(Article a, Article b) throws DissimilarArticleException {
+
+    public static Double cosineDissimilarity(Article a, Article b) throws DissimilarArticleException{
+        double dissimilarity = 1 - cosineSimilarity(a, b);
+        return dissimilarity > 0 ? dissimilarity : 0;
+    }
+    public static Double cosineSimilarity(Article a, Article b) throws DissimilarArticleException {
         if(a.getCategoryType() != b.getCategoryType()){
             throw new DissimilarArticleException();
         }
@@ -97,9 +101,61 @@ public class GlobalFunctions {
         double dotProduct = 0.0;
         while (hmIterator.hasNext()) {
             Map.Entry mapElement = (Map.Entry)hmIterator.next();
-            dotProduct += (((double)mapElement.getValue()) * hm2.get(mapElement.getKey()));
+            if(hm2.containsKey(mapElement.getKey())){
+                dotProduct += (((double)mapElement.getValue()) * hm2.get(mapElement.getKey()));
+            }
         }
         ret = dotProduct/(Mod(hm1)*Mod(hm2));
         return ret;
+    }
+    // Todo : Remove this function after testing of idf
+    public static Pair<HashMap<String,Integer>,Integer> idf(){
+        HashMap<String,Integer> ret = new HashMap<>();
+        List<Article> articles = DBConnect.getInstance().fetchArticles(CategoryType.SPORTS);
+        for(Article article:articles){
+            String content = article.getContent();
+            String[] words = content.split(" ");
+            HashMap<String,Boolean> temp = new HashMap<>();
+            for(String word : words){
+                if(!temp.containsKey(word)){
+                    temp.put(word,true);
+                }
+            }
+            Iterator hmIterator = temp.entrySet().iterator();
+            while (hmIterator.hasNext()) {
+                Map.Entry mapElement = (Map.Entry)hmIterator.next();
+                if(ret.containsKey(mapElement.getKey())){
+                    ret.put((String)mapElement.getKey(),ret.get(mapElement.getKey())+1);
+                }
+                else{
+                    ret.put((String)mapElement.getKey(),1);
+                }
+            }
+        }
+        return new Pair(ret,articles.size());
+    }
+
+    // Function to sort the Hashmap in assending order
+    public static HashMap<String, Double> sortByValue(HashMap<String, Double> hm)
+    {
+        // Create a list from elements of HashMap
+        List<Map.Entry<String, Double> > list =
+                new LinkedList<Map.Entry<String, Double> >(hm.entrySet());
+
+        // Sort the list
+        Collections.sort(list, new Comparator<Map.Entry<String, Double> >() {
+            public int compare(Map.Entry<String, Double> o1,
+                               Map.Entry<String, Double> o2)
+            {
+                return (o1.getValue()).compareTo(o2.getValue());
+            }
+        });
+
+        // put data from sorted list to hashmap
+        HashMap<String, Double> temp = new LinkedHashMap<String, Double>();
+        for (Map.Entry<String, Double> aa : list) {
+            temp.put(aa.getKey(), aa.getValue());
+        }
+        return temp;
     }
 }
