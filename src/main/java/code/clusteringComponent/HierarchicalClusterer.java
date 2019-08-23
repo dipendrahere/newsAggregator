@@ -74,6 +74,11 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
         return new ArrayList<>();
     }
 
+    @Override
+    public HashMap<String, Integer> clusterIncrementally(List<T> point) throws NullArgumentException {
+        return null;
+    }
+
 
     private void calculateDistanceMatrix() throws DissimilarArticleException, CategoryNotFoundException {
         for(int i=0;i<articles.size();i++){

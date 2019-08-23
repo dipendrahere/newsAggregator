@@ -8,6 +8,7 @@ import code.utility.Log;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class DBConnect {
@@ -60,6 +61,7 @@ public class DBConnect {
                 preparedStatement.addBatch();
             }
             int result[] = preparedStatement.executeBatch();
+            Log.debug("ARTICLES INSERTION PROCESSED: "+articles.size());
         }
         catch (SQLException e){
             Log.error(e.getMessage());
@@ -124,5 +126,10 @@ public class DBConnect {
             Log.error("unable to fetch Article");
         }
         return ret;
+    }
+
+    public static synchronized HashMap<Article, Integer> articleClusterRelationship(){
+        return null;
+        // this should return a hashmap containing all valid articles corresponding to their cluster ids and one with no clusters assigned yet as cluster id null.
     }
 }
