@@ -1,26 +1,28 @@
 package code;
 
-import code.clusteringComponent.HierarchicalClusterer;
 import code.contentComponent.PollingService;
-import code.models.ArticleBuilder;
-import code.models.Cluster;
-import code.clusteringComponent.DBScanClusterer;
-import code.databaseService.DBConnect;
-import code.models.Article;
-import code.models.CategoryType;
-import code.utility.GlobalFunctions;
-import code.utility.Log;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.*;
 
 
 public class Main {
     public static void main(String[] args) {
 
-//        PollingService.getInstance().poll();
+
+//        System.out.println(DataCleaner.clean("Hello ' th'e of i demo's sas sfdfe ! %$ @, ,,  paying playing player played saying sayer says paid done doer goer goes }} {{ , 303  /["));
+
+        //        System.out.println(DataCleaner.clean("Hello ' th'e of i sas sfdfe ! %$ @, ,,  paying playing player played saying sayer says paid done doer goer goes }} {{ , 303  /["));
+//        PropertyConfigurator.configure("src/main/resources/log4j.properties");
+        PollingService.getInstance().poll();
+
+//        List<Article> articles = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
+//        DBScanClusterer<Article> clusterer = new DBScanClusterer<>(0.6, 2);
+//        int count = 0;
+//        List<Cluster<Article>> clusters = clusterer.cluster(articles);
+
+
+        /* Test for tf-idf function
+        List<Article> list = new ArrayList<>();
+
         Article a = new ArticleBuilder("url4")
                 .setCategoryType(CategoryType.SPORTS)
                 .setContent("i am vipin kumar u")
@@ -67,6 +69,6 @@ public class Main {
 //        } catch (IOException e) {
 //            Log.error("Unable to dump clusters");
 //        }
-
+*/
     }
 }
