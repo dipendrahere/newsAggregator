@@ -73,7 +73,8 @@ public class GlobalFunctions {
         return Math.sqrt(ret);
     }
 
-    public static Double cosineDissimilarity(Article a, Article b) throws DissimilarArticleException, CategoryNotFoundException {
+
+    public static Double cosineDissimilarity(Article a, Article b) throws DissimilarArticleException, CategoryNotFoundException{
         double dissimilarity = 1 - cosineSimilarity(a, b);
         return dissimilarity > 0 ? dissimilarity : 0;
     }

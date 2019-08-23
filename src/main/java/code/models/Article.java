@@ -91,8 +91,12 @@ public class Article {
         Article other = (Article) obj;
         if (hashCode() != other.hashCode())
             return false;
+        if(this.getId() != other.getId()){
+            return false;
+        }
         return true;
     }
+
 }
 
 

@@ -69,7 +69,6 @@ public class DBScanClusterer<T extends Article> implements Clusterer<T>{
         return clusters;
     }
 
-    @Override
     public HashMap<String, Integer> clusterIncrementally(List<T> point) throws NullArgumentException {
         HashMap<String, Integer> newArticleMap = new HashMap<>();
         HashMap<Article, Integer> articleClusterMap = DBConnect.getInstance().articleClusterRelationship();
