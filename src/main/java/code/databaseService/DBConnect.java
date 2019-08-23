@@ -7,8 +7,7 @@ import code.utility.GlobalFunctions;
 import code.utility.Log;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class DBConnect {
     private static Connection connnection;
@@ -37,6 +36,7 @@ public class DBConnect {
         }
     }
 
+    // Todo You transaction to insert to avoid inconsistacy in the database
     public static synchronized void insertArticles(List<Article> articles){
         if(articles.size() == 0){
             return;
@@ -44,6 +44,7 @@ public class DBConnect {
         try{
             java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles values (?,?,?,?,?,?,?);");
+            PreparedStatement clusterPreparedStatement = connnection.prepareStatement("insert into clusterArticleRelationship values (?,?);");
             for(int i=0;i<articles.size();i++) {
                 Article article = articles.get(i);
                 String exactDate = null;
@@ -58,8 +59,13 @@ public class DBConnect {
                 preparedStatement.setString(6, article.getRssLink());
                 preparedStatement.setString(7, article.getContent());
                 preparedStatement.addBatch();
+
+                clusterPreparedStatement.setString(1, article.getId());
+                clusterPreparedStatement.setString(2,null);
+                clusterPreparedStatement.addBatch();
             }
-            int result[] = preparedStatement.executeBatch();
+            preparedStatement.executeBatch();
+            clusterPreparedStatement.executeBatch();
         }
         catch (SQLException e){
             Log.error(e.getMessage());
@@ -125,4 +131,54 @@ public class DBConnect {
         }
         return ret;
     }
+
+    public static synchronized void updateClusterIDs(HashMap<String,Integer> hashMap){
+        if(hashMap.size() == 0){
+            return;
+        }
+        try{
+            PreparedStatement preparedStatement = connnection.prepareStatement("Update clusterArticleRelationship set cluster_id = ? where articleId = ?");
+            Iterator iterator = hashMap.entrySet().iterator();
+            while (iterator.hasNext()){
+                Map.Entry mapElement = (Map.Entry)iterator.next();
+                preparedStatement.setInt(1,(Integer)mapElement.getValue());
+                preparedStatement.setString(2,(String)mapElement.getKey());
+                preparedStatement.addBatch();
+            }
+            preparedStatement.executeBatch();
+        }
+        catch (SQLException e){
+            Log.error(e.getMessage());
+            e.printStackTrace();
+            Log.error("Unable to update Cluster id of Articles");
+        }
+
+
+
+    }
+
+    public static synchronized HashMap<Article, Integer> articleClusterRelationship(){
+        HashMap<Article,Integer> ret = new HashMap<>();
+        try{
+            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles join clusterArticleRelationship on articles.id = clusterArticleRelationship.articleId");
+
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Article a = new ArticleBuilder(resultSet.getString(4))
+                        .setTitle(resultSet.getString(2))
+                        .setCategoryType(CategoryType.values()[resultSet.getInt(3)-1])
+                        .setPublishedDate(resultSet.getDate(5))
+                        .setRssLink(resultSet.getString(6))
+                        .setContent(resultSet.getString(7))
+                        .build();
+                int cluster_id = resultSet.getInt(9);
+                ret.put(a,cluster_id);
+            }
+        }
+        catch (SQLException e){
+            Log.error("unable to fetch Article");
+        }
+        return ret;
+    }
+
 }
