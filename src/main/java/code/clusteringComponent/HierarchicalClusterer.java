@@ -8,12 +8,11 @@ import code.utility.GlobalFunctions;
 import javafx.util.Pair;
 import org.apache.commons.lang.NullArgumentException;
 import org.apache.commons.math3.util.MathUtils;
-
 import java.util.*;
 
 public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
 
-    final private class PairComparator implements Comparator<Pair<Double,Integer>> {
+    final private class PairComparatorAsc implements Comparator<Pair<Double,Integer>> {
         @Override
         public int compare(Pair<Double, Integer> o1, Pair<Double, Integer> o2) {
             if(o1.getKey() > o2.getKey()){
@@ -27,6 +26,22 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             }
         }
     }
+
+    final private class PairComparatorDesc implements Comparator<Pair<Integer,Integer>> {
+        @Override
+        public int compare(Pair<Integer, Integer> o1, Pair<Integer, Integer> o2) {
+            if(o1.getKey() < o2.getKey()){
+                return 1;
+            }
+            else if(o1.getKey() > o2.getKey()){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        }
+    }
+
 
     private List<T> articles;
     private int n;
@@ -69,11 +84,16 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
         for(int i=0;i<n;i++){
             dsu[i] = i;
             dsuSize[i] = 1;
-            pq.add(new PriorityQueue<>(n,new PairComparator()));
+            pq.add(new PriorityQueue<>(n,new PairComparatorAsc()));
         }
-        return new ArrayList<>();
+        return performClustering();
     }
 
+    @Override
+    public HashMap<String,Integer> clusterIncrementally(List<T> point) throws NullArgumentException {
+        HashMap<String,Integer> hashMap = new HashMap<>();
+        return hashMap;
+    }
 
     private void calculateDistanceMatrix() throws DissimilarArticleException, CategoryNotFoundException {
         for(int i=0;i<articles.size();i++){
@@ -99,7 +119,7 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
         }
     }
 
-    private void performClustering(){
+    private List<Cluster<T>> performClustering(){
         try {
             calculateDistanceMatrix();
         }
@@ -127,8 +147,36 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             pq.get(temp.getValue()).poll();
             count++;
         }
+
+
+        //TODO : CREATE LIST AND RETURN THEN REMOVE THIS
+        printClusters();
+        return getAllClusters();
     }
 
+    private List<Cluster<T>> getAllClusters(){
+        List<Cluster<T>> clusters = new ArrayList<>();
+        List<Pair<Integer,Integer>> list = new ArrayList<>();
+        for(int i=0;i<n;i++){
+            if(getParent(i) == i){
+                list.add(new Pair<>(dsuSize[i],i));
+            }
+        }
+        list.sort(new PairComparatorDesc());
+        for(int i=0;i < list.size(); i++){
+            Cluster<T> cluster = new Cluster<>(null);
+            for(int j=0;j<n;j++){
+                if(getParent(dsu[j]) == list.get(i).getValue()){
+                    cluster.addPoint(articles.get(j));
+                    System.out.println(articles.get(j).getTitle()+ "  " + articles.get(j).getUrl());
+                }
+            }
+            clusters.add(cluster);
+        }
+        return clusters;
+    }
+
+    // Todo Remove this function after testing
     private void printLargestCluster(){
         int maxi = 0;
         int index = -1;
@@ -139,12 +187,33 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             }
         }
         for(int i=0;i<n;i++){
-            if(dsu[i] == index){
-                System.out.println(articles.get(i).getUrl());
+            if(getParent(dsu[i]) == index){
+                System.out.println(articles.get(i).getTitle());
             }
         }
     }
 
+    // Todo Remove this function after testing
+    public void printClusters(){
+        List<Pair<Integer,Integer>> list = new ArrayList<>();
+        for(int i=0;i<n;i++){
+            if(getParent(i) == i){
+                list.add(new Pair<>(dsuSize[i],i));
+            }
+        }
+        list.sort(new PairComparatorDesc());
+        for(int i=0;i<Math.min(3,list.size());i++){
+            for(int j=0;j<n;j++){
+                if(getParent(dsu[j]) == list.get(i).getValue()){
+                    System.out.println(articles.get(j).getTitle()+ "  " + articles.get(j).getUrl());
+                }
+            }
+            System.out.println();
+            System.out.println();
+        }
+    }
+
+    // Todo Remove this function after testing
     private void printDistMat(){
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
@@ -153,6 +222,4 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             System.out.println();
         }
     }
-
-
 }

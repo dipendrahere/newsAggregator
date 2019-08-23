@@ -67,6 +67,12 @@ public class DBScanClusterer<T extends Article> implements Clusterer<T>{
         return clusters;
     }
 
+    @Override
+    public HashMap<String,Integer> clusterIncrementally(List<T> point) throws NullArgumentException {
+        HashMap<String,Integer> hashMap = new HashMap<>();
+        return hashMap;
+    }
+
     private Cluster<T> expandCluster(final Cluster<T> cluster,
                                      final T point,
                                      final List<T> neighbors,
