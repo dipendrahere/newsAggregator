@@ -12,7 +12,6 @@ https://www.financialexpress.com/feed/
 https://www.businesstoday.in/rss/rssstory.jsp?sid=105
 https://business.financialpost.com/feed/
 https://prod-qt-images.s3.amazonaws.com/production/bloombergquint/feed.xml
-https://www.business-standard.com/rss/home_page_top_stories.rss
 https://www.businessinsider.in/rss_section_feeds/21807169.cms
 http://www.moneycontrol.com/rss/MCtopnews.xml
 https://www.economist.com/business/rss.xml

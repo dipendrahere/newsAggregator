@@ -1,6 +1,5 @@
 https://sports.yahoo.com/top/rss.xml
 https://www.espn.com/espn/rss/news
-https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU
 http://rss.cnn.com/rss/edition_sport.rss
 https://www.skysports.com/rss/12040
 http://nusports.com/rss.aspx?path=general

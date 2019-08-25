@@ -151,7 +151,8 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
 
         //TODO : CREATE LIST AND RETURN THEN REMOVE THIS
         printClusters();
-        return getAllClusters();
+        return null;
+        //return getAllClusters();
     }
 
     private List<Cluster<T>> getAllClusters(){
@@ -202,7 +203,7 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             }
         }
         list.sort(new PairComparatorDesc());
-        for(int i=0;i<Math.min(3,list.size());i++){
+        for(int i=0;i<Math.min(5,list.size());i++){
             for(int j=0;j<n;j++){
                 if(getParent(dsu[j]) == list.get(i).getValue()){
                     System.out.println(articles.get(j).getTitle()+ "  " + articles.get(j).getUrl());

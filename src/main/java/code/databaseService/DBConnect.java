@@ -42,6 +42,7 @@ public class DBConnect {
             return;
         }
         try{
+            Log.debug("Inserting in Db");
             java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles values (?,?,?,?,?,?,?);");
             PreparedStatement clusterPreparedStatement = connnection.prepareStatement("insert into clusterArticleRelationship values (?,?);");
@@ -66,6 +67,7 @@ public class DBConnect {
             }
             preparedStatement.executeBatch();
             clusterPreparedStatement.executeBatch();
+            Log.debug("inserted in DB");
         }
         catch (SQLException e){
             Log.error(e.getMessage());
@@ -97,8 +99,7 @@ public class DBConnect {
     public static synchronized boolean isArticlePresent(String url){
         boolean ret = true;
         try {
-            String id = GlobalFunctions.getMd5(url);
-            String query = "select * from articles where id = \""+id+"\";";
+            String query = "select * from articles where url = \""+url+"\";";
             resultSet = statment.executeQuery(query);
             if (!resultSet.isBeforeFirst() ) {
                 ret = false;
