@@ -1,8 +1,11 @@
 package code.clusteringComponent;
 
+import code.databaseService.DBConnect;
 import code.exceptions.CategoryNotFoundException;
 import code.exceptions.DissimilarArticleException;
+import code.idfHelper.TfIdfHelper;
 import code.models.Article;
+import code.models.CategoryType;
 import code.models.Cluster;
 import code.utility.GlobalFunctions;
 import javafx.util.Pair;
@@ -89,11 +92,6 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
         return performClustering();
     }
 
-    @Override
-    public HashMap<String,Integer> clusterIncrementally(List<T> point) throws NullArgumentException {
-        HashMap<String,Integer> hashMap = new HashMap<>();
-        return hashMap;
-    }
 
 
     private void calculateDistanceMatrix() throws DissimilarArticleException, CategoryNotFoundException {
@@ -149,10 +147,72 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             count++;
         }
 
-
-        //TODO : CREATE LIST AND RETURN THEN REMOVE THIS
-        printClusters();
+//        printClusters();
+//        return null;
         return getAllClusters();
+    }
+
+
+    public HashMap<String,Integer> clusterIncrementally(HashMap<Article,Integer> hashMap){
+        HashMap<Integer,List<Article>> hmap = new HashMap<>();
+        HashMap<String,Integer> ret = new HashMap<>();
+        List<Article> NonClusteredArticles = new ArrayList<>();
+        Iterator iterator = hashMap.entrySet().iterator();
+        while(iterator.hasNext()){
+            Map.Entry mapElement = (Map.Entry)iterator.next();
+            if(mapElement.getValue() == null){
+                NonClusteredArticles.add((Article)mapElement.getKey());
+                continue;
+            }
+            if(hmap.containsKey(mapElement.getValue())){
+                hmap.get(mapElement.getValue()).add((Article)mapElement.getKey());
+            }
+            else{
+                List<Article> list = new ArrayList<>();
+                list.add((Article)mapElement.getKey());
+                hmap.put((Integer)mapElement.getValue(),list);
+            }
+        }
+        for(Article article : NonClusteredArticles){
+            double mini = 10;
+            int ans = 0;
+            iterator = hmap.entrySet().iterator();
+            while (iterator.hasNext()){
+                Map.Entry mapElement = (Map.Entry)iterator.next();
+                double minimumInCluster = 10;
+                List<Article> articles = (List<Article>)mapElement.getValue();
+                for(Article a : articles){
+                    try {
+                        minimumInCluster = Math.min(GlobalFunctions.cosineSimilarity(a,article),minimumInCluster);
+                    }
+                    catch (Exception e){
+                        e.printStackTrace();;
+                    }
+
+                }
+                if(mini > minimumInCluster){
+                    mini = minimumInCluster;
+                    ans = (Integer)mapElement.getKey();
+                }
+            }
+            if(mini > eps){
+                ans = 0;
+            }
+            if(ans == 0){
+                List<Article> temp = new ArrayList<>();
+                temp.add(article);
+                Cluster<Article> newCluster = new Cluster<>(null);
+                temp.forEach(a -> newCluster.addPoint(a));
+                hmap.put(newCluster.getClusterId(),temp);
+                ret.put(article.getId(),newCluster.getClusterId());
+            }
+            else {
+                hmap.get(ans).add(article);
+                ret.put(article.getId(), ans);
+
+            }
+        }
+        return ret;
     }
 
     private List<Cluster<T>> getAllClusters(){
@@ -203,7 +263,7 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             }
         }
         list.sort(new PairComparatorDesc());
-        for(int i=0;i<Math.min(3,list.size());i++){
+        for(int i=0;i<Math.min(5,list.size());i++){
             for(int j=0;j<n;j++){
                 if(getParent(dsu[j]) == list.get(i).getValue()){
                     System.out.println(articles.get(j).getTitle()+ "  " + articles.get(j).getUrl());

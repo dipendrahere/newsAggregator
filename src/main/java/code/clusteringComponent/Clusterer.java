@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface Clusterer <T extends Article> {
     public List<Cluster<T>> cluster(final List<T> points) throws NullArgumentException;
-    public HashMap<String,Integer> clusterIncrementally(final List<T> point) throws  NullArgumentException;
+    public HashMap<String,Integer> clusterIncrementally(final HashMap<Article,Integer> points) throws  NullArgumentException;
 }

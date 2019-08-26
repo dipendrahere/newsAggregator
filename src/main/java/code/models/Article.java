@@ -16,7 +16,7 @@ public class Article {
 
     public Article(String url){
         this.url = url;
-        this.id = GlobalFunctions.getMd5(url);
+        this.id = GlobalFunctions.getMd5(url + new Date().toString());
     }
 
     public String getTitle() {

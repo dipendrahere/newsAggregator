@@ -69,7 +69,13 @@ public class DBScanClusterer<T extends Article> implements Clusterer<T>{
         return clusters;
     }
 
-    public HashMap<String, Integer> clusterIncrementally(List<T> point) throws NullArgumentException {
+    @Override
+    public HashMap<String, Integer> clusterIncrementally(HashMap<Article, Integer> points) throws NullArgumentException {
+        return null;
+
+    }
+
+    /*public HashMap<String, Integer> clusterIncrementally(List<T> point) throws NullArgumentException {
         HashMap<String, Integer> newArticleMap = new HashMap<>();
         HashMap<T, Integer> articleClusterMap = (HashMap<T, Integer>) DBConnect.getInstance().articleClusterRelationship();
         List<T> total = new ArrayList<T>();
@@ -125,7 +131,7 @@ public class DBScanClusterer<T extends Article> implements Clusterer<T>{
 
         }
         return newArticleMap;
-    }
+    }*/
 
     private Cluster<T> expandCluster(final Cluster<T> cluster,
                                      final T point,
