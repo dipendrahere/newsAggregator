@@ -42,6 +42,7 @@ public class DBConnect {
             return;
         }
         try{
+            Log.debug("Inserting in Db");
             java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles values (?,?,?,?,?,?,?);");
             PreparedStatement clusterPreparedStatement = connnection.prepareStatement("insert into clusterArticleRelationship values (?,?);");
@@ -66,6 +67,7 @@ public class DBConnect {
             }
             preparedStatement.executeBatch();
             clusterPreparedStatement.executeBatch();
+            Log.debug("inserted in DB");
         }
         catch (SQLException e){
             Log.error(e.getMessage());
@@ -97,8 +99,7 @@ public class DBConnect {
     public static synchronized boolean isArticlePresent(String url){
         boolean ret = true;
         try {
-            String id = GlobalFunctions.getMd5(url);
-            String query = "select * from articles where id = \""+id+"\";";
+            String query = "select * from articles where url = \""+url+"\";";
             resultSet = statment.executeQuery(query);
             if (!resultSet.isBeforeFirst() ) {
                 ret = false;
@@ -113,7 +114,7 @@ public class DBConnect {
         List<Article> ret = new ArrayList<>();
         try{
             PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles where category_id = "+categoryType.value.getKey());
-
+            preparedStatement.setInt(1,categoryType.value.getKey());
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 Article a = new ArticleBuilder(resultSet.getString(4))
@@ -157,10 +158,10 @@ public class DBConnect {
 
     }
 
-    public static synchronized HashMap<Article, Integer> articleClusterRelationship(){
+    public static synchronized HashMap<Article, Integer> articleClusterRelationship(CategoryType categoryType){
         HashMap<Article,Integer> ret = new HashMap<>();
         try{
-            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles join clusterArticleRelationship on articles.id = clusterArticleRelationship.articleId");
+            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles join clusterArticleRelationship on articles.id = clusterArticleRelationship.articleId where articles.category_id = ?");
 
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
@@ -178,6 +179,11 @@ public class DBConnect {
         catch (SQLException e){
             Log.error("unable to fetch Article");
         }
+        return ret;
+    }
+
+    public static synchronized List<Article> getNonClusteredArticles(CategoryType categoryType){
+        List<Article> ret = new ArrayList<>();
         return ret;
     }
 

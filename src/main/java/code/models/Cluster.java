@@ -18,6 +18,9 @@ public class Cluster<T> {
         points = new ArrayList<T>();
     }
 
+    public int getClusterId() {
+        return clusterId;
+    }
 
     public void addPoint(final T point) {
         points.add(point);

@@ -17,7 +17,6 @@ https://feeds.howtogeek.com/HowToGeek
 https://www.sciencedaily.com/rss/top/science.xml
 https://www.sciencedaily.com/rss/top/technology.xml
 http://feeds.feedburner.com/sciencealert-latestnews
-http://rss.sciam.com/ScientificAmerican-Global
 http://feeds.feedburner.com/AllDiscovermagazinecomContent
 https://www.wired.com/category/science/feed
 https://www.popsci.com/arcio/rss/
