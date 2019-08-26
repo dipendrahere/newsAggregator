@@ -27,13 +27,13 @@ public class BatchClusterService {
     }
 
     public void start(){
-        IncrementalService.getInstance().shutdown();
+    //    IncrementalService.getInstance().shutdown();
         List<Runnable> runnables = controllers.stream().map(controller -> {
-            Runnable r = () ->  controller.run();
+            Runnable r = () ->  controller.startClustering();
             return r;
         }).collect(Collectors.toList());
         for(Runnable runnable: runnables){
-            service.scheduleAtFixedRate(runnable, 0, 5, TimeUnit.MINUTES);
+            service.scheduleAtFixedRate(runnable, 0, 1, TimeUnit.DAYS);
         }
     }
 }

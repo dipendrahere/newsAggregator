@@ -123,6 +123,7 @@ public class DBConnect {
                         .setRssLink(resultSet.getString(6))
                         .setContent(resultSet.getString(7))
                         .build();
+                a.setId(resultSet.getString(1));
                 ret.add(a);
             }
         }
@@ -132,7 +133,15 @@ public class DBConnect {
         return ret;
     }
 
+    public static synchronized List<Article> fetchArticlesRecent(CategoryType categoryType){
+        //TODO: RECENT ARTICLES
+        return null;
+    }
+
+
     public static synchronized void updateClusterIDs(HashMap<String,Integer> hashMap){
+        Log.debug("Update in Db");
+        System.out.println(hashMap);
         if(hashMap.size() == 0){
             return;
         }
@@ -145,15 +154,13 @@ public class DBConnect {
                 preparedStatement.setString(2,(String)mapElement.getKey());
                 preparedStatement.addBatch();
             }
-            preparedStatement.executeBatch();
+            preparedStatement.executeLargeBatch();
         }
         catch (SQLException e){
             Log.error(e.getMessage());
             e.printStackTrace();
             Log.error("Unable to update Cluster id of Articles");
         }
-
-
 
     }
 
@@ -171,6 +178,7 @@ public class DBConnect {
                         .setRssLink(resultSet.getString(6))
                         .setContent(resultSet.getString(7))
                         .build();
+                a.setId(resultSet.getString(1));
                 int cluster_id = resultSet.getInt(9);
                 ret.put(a,cluster_id);
             }

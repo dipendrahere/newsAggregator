@@ -146,9 +146,9 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             count++;
         }
 
-        printClusters();
-        return null;
-//        return getAllClusters();
+//        printClusters();
+//        return null;
+        return getAllClusters();
     }
 
 
@@ -228,7 +228,7 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             for(int j=0;j<n;j++){
                 if(getParent(dsu[j]) == list.get(i).getValue()){
                     cluster.addPoint(articles.get(j));
-                    System.out.println(articles.get(j).getTitle()+ "  " + articles.get(j).getUrl());
+                //    System.out.println(articles.get(j).getTitle()+ "  " + articles.get(j).getUrl());
                 }
             }
             clusters.add(cluster);
