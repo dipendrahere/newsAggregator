@@ -13,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
 
 
+//        PollingService.getInstance().poll();
 
         // Test for tf-idf function
 //        List<Article> list = new ArrayList<>();
@@ -56,7 +57,7 @@ public class Main {
 
         List<Article> list = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
         System.out.println(list.size());
-        HierarchicalClusterer<Article> hierarchicalCluster = new HierarchicalClusterer<Article>(0.5);
+        HierarchicalClusterer<Article> hierarchicalCluster = new HierarchicalClusterer<Article>(0.45);
         hierarchicalCluster.cluster(list);
 //        List<Cluster<Article>> clusters = hierarchicalCluster.cluster(list);
 //        try {
