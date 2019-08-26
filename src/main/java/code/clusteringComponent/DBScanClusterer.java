@@ -71,15 +71,19 @@ public class DBScanClusterer<T extends Article> implements Clusterer<T>{
 
     public HashMap<String, Integer> clusterIncrementally(List<T> point) throws NullArgumentException {
         HashMap<String, Integer> newArticleMap = new HashMap<>();
-        HashMap<Article, Integer> articleClusterMap = DBConnect.getInstance().articleClusterRelationship();
-        List<T> total = new ArrayList<T>((List<? extends T>) articleClusterMap.keySet());
+        HashMap<T, Integer> articleClusterMap = (HashMap<T, Integer>) DBConnect.getInstance().articleClusterRelationship();
+        List<T> total = new ArrayList<T>();
+        for(T a: articleClusterMap.keySet()){
+            total.add(a);
+        }
         total.addAll(point);
         final Map<T, PointStatus> visited = new HashMap<T, PointStatus>();
-        for (T p: point) {
+        for (T l: point) {
+            Article p = l;
             if(visited.get(point) != null){
                 continue;
             }
-            final List<T> neighbors = getNeighbors(p, point);
+            final List<T> neighbors = getNeighbors(l, total);
             HashMap<Integer, Integer> ccount = new HashMap<>();
             if(neighbors.size() >= minPts){
                 boolean flag = true;

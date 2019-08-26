@@ -24,7 +24,7 @@ public class DBConnect {
     private DBConnect(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsaggregator","root","vipin1407");
+            connnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsaggregator","root","Hello@123");
             statment = connnection.createStatement();
         }
         catch (ClassNotFoundException e) {
@@ -101,8 +101,7 @@ public class DBConnect {
     public static synchronized boolean isArticlePresent(String url){
         boolean ret = true;
         try {
-            String id = GlobalFunctions.getMd5(url);
-            String query = "select * from articles where id = \""+id+"\";";
+            String query = "select * from articles where url = \""+url+"\";";
             resultSet = statment.executeQuery(query);
             if (!resultSet.isBeforeFirst() ) {
                 ret = false;
