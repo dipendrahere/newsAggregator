@@ -114,7 +114,7 @@ public class DBConnect {
         List<Article> ret = new ArrayList<>();
         try{
             PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles where category_id = "+categoryType.value.getKey());
-
+            preparedStatement.setInt(1,categoryType.value.getKey());
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 Article a = new ArticleBuilder(resultSet.getString(4))
@@ -158,10 +158,10 @@ public class DBConnect {
 
     }
 
-    public static synchronized HashMap<Article, Integer> articleClusterRelationship(){
+    public static synchronized HashMap<Article, Integer> articleClusterRelationship(CategoryType categoryType){
         HashMap<Article,Integer> ret = new HashMap<>();
         try{
-            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles join clusterArticleRelationship on articles.id = clusterArticleRelationship.articleId");
+            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles join clusterArticleRelationship on articles.id = clusterArticleRelationship.articleId where articles.category_id = ?");
 
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
@@ -179,6 +179,11 @@ public class DBConnect {
         catch (SQLException e){
             Log.error("unable to fetch Article");
         }
+        return ret;
+    }
+
+    public static synchronized List<Article> getNonClusteredArticles(CategoryType categoryType){
+        List<Article> ret = new ArrayList<>();
         return ret;
     }
 
