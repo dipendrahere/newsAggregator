@@ -17,7 +17,7 @@ public class BatchClusterController {
         this.categoryType = categoryType;
     }
     public void startClustering(){
-        List<Article> list = DBConnect.getInstance().fetchArticles(categoryType);
+        List<Article> list = DBConnect.getInstance().fetchArticlesRecent(categoryType);
         Clusterer clusterer = new HierarchicalClusterer(0.45);
         List<Cluster<Article>> clusters = clusterer.cluster(list);
         HashMap<String,Integer> hashMap = new HashMap<>();

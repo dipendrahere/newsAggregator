@@ -1,10 +1,12 @@
 package code.models;
 
+import code.databaseService.DBConnect;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cluster<T> {
-    private static Integer clusterCount = 0;
+    private static Integer clusterCount = DBConnect.getInstance().maxClusterId();
     private final List<T> points;
     private final T center;
     private int clusterId;
