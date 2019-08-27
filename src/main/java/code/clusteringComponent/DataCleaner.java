@@ -1,11 +1,16 @@
 package code.clusteringComponent;
 
+import code.contentComponent.RssController;
 import code.utility.Log;
 import opennlp.tools.stemmer.PorterStemmer;
 import opennlp.tools.stemmer.Stemmer;
 import opennlp.tools.stemmer.snowball.SnowballStemmer;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -37,10 +42,16 @@ public class DataCleaner {
         if(stopwords != null){
             return;
         }
-        try {
-             stopwords = Files.readAllLines(Paths.get("src/main/resources/english_stopwords.txt"));
-        } catch (IOException e) {
-            Log.error("Unable to fetch stop words");
+        try(InputStream s = RssController.class.getResourceAsStream("/english_stopwords.txt")) {
+            stopwords = new ArrayList<>();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(s));
+            String line;
+            while((line = reader.readLine()) != null) {
+                stopwords.add(line);
+            }
+//            System.out.println(stopwords);
+        } catch (Exception e) {
+            Log.debug(e.getMessage());
         }
     }
 
