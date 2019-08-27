@@ -43,5 +43,9 @@ public class ArticleBuilder {
         return this;
     }
 
+    public ArticleBuilder setId(String id){
+        article.setId(id);
+        return this;
+    }
 
 }

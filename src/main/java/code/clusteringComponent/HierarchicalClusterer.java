@@ -1,11 +1,8 @@
 package code.clusteringComponent;
 
-import code.databaseService.DBConnect;
 import code.exceptions.CategoryNotFoundException;
 import code.exceptions.DissimilarArticleException;
-import code.idfHelper.TfIdfHelper;
 import code.models.Article;
-import code.models.CategoryType;
 import code.models.Cluster;
 import code.utility.GlobalFunctions;
 import javafx.util.Pair;
@@ -63,13 +60,17 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
     private void merge(int i,int j){
         int p = getParent(i);
         int q = getParent(j);
+        if(p == q){
+            return;
+        }
         if(dsuSize[p] >= dsuSize[q]){
             dsuSize[p] += dsuSize[q];
             dsu[q] = p;
         }
         else{
-            dsuSize[q] += p;
+            dsuSize[q] += dsuSize[p];
             dsu[p] = q;
+
         }
     }
 
@@ -229,7 +230,7 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             for(int j=0;j<n;j++){
                 if(getParent(dsu[j]) == list.get(i).getValue()){
                     cluster.addPoint(articles.get(j));
-                    System.out.println(articles.get(j).getTitle()+ "  " + articles.get(j).getUrl());
+                //    System.out.println(articles.get(j).getTitle()+ "  " + articles.get(j).getUrl());
                 }
             }
             clusters.add(cluster);
@@ -263,7 +264,8 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             }
         }
         list.sort(new PairComparatorDesc());
-        for(int i=0;i<Math.min(5,list.size());i++){
+        for(int i=0;i<Math.min(10,list.size());i++){
+            System.out.println(list.get(i).getKey() + " " + list.get(i).getValue());
             for(int j=0;j<n;j++){
                 if(getParent(dsu[j]) == list.get(i).getValue()){
                     System.out.println(articles.get(j).getTitle()+ "  " + articles.get(j).getUrl());

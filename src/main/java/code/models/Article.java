@@ -19,6 +19,10 @@ public class Article {
         this.id = GlobalFunctions.getMd5(url + new Date().toString());
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
     }
