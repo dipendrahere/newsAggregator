@@ -4,8 +4,10 @@ import code.databaseService.DBConnect;
 import code.models.Article;
 import code.models.CategoryType;
 import code.models.Cluster;
+import code.utility.GlobalFunctions;
 import code.utility.Log;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -16,7 +18,6 @@ public class BatchClusterController {
     }
     public void startClustering(){
         List<Article> list = DBConnect.getInstance().fetchArticles(categoryType);
-    //    Log.debug("list of articles " + list);
         Clusterer clusterer = new HierarchicalClusterer(0.45);
         List<Cluster<Article>> clusters = clusterer.cluster(list);
         HashMap<String,Integer> hashMap = new HashMap<>();

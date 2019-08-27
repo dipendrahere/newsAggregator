@@ -147,7 +147,6 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
             pq.get(temp.getValue()).poll();
             count++;
         }
-
 //        printClusters();
 //        return null;
         return getAllClusters();
@@ -161,7 +160,7 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
         Iterator iterator = hashMap.entrySet().iterator();
         while(iterator.hasNext()){
             Map.Entry mapElement = (Map.Entry)iterator.next();
-            if(mapElement.getValue() == null){
+            if((Integer)mapElement.getValue() == 0){
                 NonClusteredArticles.add((Article)mapElement.getKey());
                 continue;
             }
