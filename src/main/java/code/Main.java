@@ -2,6 +2,7 @@ package code;
 
 import code.clusteringComponent.BatchClusterService;
 import code.clusteringComponent.HierarchicalClusterer;
+import code.clusteringComponent.IncrementalService;
 import code.contentComponent.PollingService;
 import code.databaseService.DBConnect;
 import code.models.Article;
@@ -14,8 +15,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        BatchClusterService.getInstance().start();
-     //   PollingService.getInstance().poll();
+    //    BatchClusterService.getInstance().start();
+    //      PollingService.getInstance().poll();
+        IncrementalService.getInstance().start();
 
         // Test for tf-idf function
 //        List<Article> list = new ArrayList<>();
@@ -68,10 +70,10 @@ public class Main {
 //            Log.error("Unable to dump clusters");
 //        }
 
-        HashMap<String,Integer> hashMap = new HashMap<>();
-        hashMap.put("0044625c8241a4728d35bd2b7402fb60",1);
-        hashMap.put("0049220afeb67fd2e2326b203450649b",5);
-        DBConnect.getInstance().updateClusterIDs(hashMap);
+//        HashMap<String,Integer> hashMap = new HashMap<>();
+//        hashMap.put("0044625c8241a4728d35bd2b7402fb60",1);
+//        hashMap.put("0049220afeb67fd2e2326b203450649b",5);
+//        DBConnect.getInstance().updateClusterIDs(hashMap);
 
     }
 }

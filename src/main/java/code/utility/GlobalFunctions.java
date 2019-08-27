@@ -183,7 +183,7 @@ public class GlobalFunctions {
         d.mkdir();
         System.out.println("Total Clusters: "+clusters.size());
         for(Cluster<Article> cluster: clusters){
-            File file = new File("clusters/"+count);
+            File file = new File("clusters/"+cluster.getClusterId());
             count++;
             if (file.createNewFile())
             {

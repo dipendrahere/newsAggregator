@@ -3,7 +3,6 @@ package code.databaseService;
 import code.models.Article;
 import code.models.ArticleBuilder;
 import code.models.CategoryType;
-import code.utility.GlobalFunctions;
 import code.utility.Log;
 
 import java.sql.*;
@@ -110,6 +109,7 @@ public class DBConnect {
         return ret;
     }
 
+    // Todo Donot remove this function
     public static synchronized List<Article> fetchArticles(CategoryType categoryType){
         List<Article> ret = new ArrayList<>();
         try{
@@ -134,8 +134,26 @@ public class DBConnect {
     }
 
     public static synchronized List<Article> fetchArticlesRecent(CategoryType categoryType){
-        //TODO: RECENT ARTICLES
-        return null;
+        List<Article> ret = new ArrayList<>();
+        try{
+            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles where category_id = "+categoryType.value.getKey() + " order by publishedDate desc limit 2000");
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Article a = new ArticleBuilder(resultSet.getString(4))
+                        .setTitle(resultSet.getString(2))
+                        .setCategoryType(CategoryType.values()[resultSet.getInt(3)-1])
+                        .setPublishedDate(resultSet.getDate(5))
+                        .setRssLink(resultSet.getString(6))
+                        .setContent(resultSet.getString(7))
+                        .build();
+                a.setId(resultSet.getString(1));
+                ret.add(a);
+            }
+        }
+        catch (SQLException e){
+            Log.error("unable to fetch Article " +e.getMessage());
+        }
+        return ret;
     }
 
 
@@ -168,7 +186,7 @@ public class DBConnect {
         HashMap<Article,Integer> ret = new HashMap<>();
         try{
             PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles join clusterArticleRelationship on articles.id = clusterArticleRelationship.articleId where articles.category_id = ?");
-
+            preparedStatement.setInt(1,categoryType.value.getKey());
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 Article a = new ArticleBuilder(resultSet.getString(4))
@@ -185,13 +203,10 @@ public class DBConnect {
         }
         catch (SQLException e){
             Log.error("unable to fetch Article");
+            e.printStackTrace();
         }
         return ret;
     }
 
-    public static synchronized List<Article> getNonClusteredArticles(CategoryType categoryType){
-        List<Article> ret = new ArrayList<>();
-        return ret;
-    }
 
 }

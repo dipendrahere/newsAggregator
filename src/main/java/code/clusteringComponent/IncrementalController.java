@@ -13,10 +13,8 @@ public class IncrementalController {
     }
     public void run(){
         HashMap<Article,Integer> hashMap = DBConnect.getInstance().articleClusterRelationship(categoryType);
-        Clusterer<Article> hierarchicalClusterer = new HierarchicalClusterer(0.5);
+        Clusterer<Article> hierarchicalClusterer = new HierarchicalClusterer(0.45);
         HashMap<String,Integer> updatedClusterId = hierarchicalClusterer.clusterIncrementally(hashMap);
         DBConnect.getInstance().updateClusterIDs(updatedClusterId);
     }
-
-
 }
