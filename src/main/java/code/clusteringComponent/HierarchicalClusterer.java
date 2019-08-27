@@ -93,6 +93,8 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
         return performClustering();
     }
 
+
+
     private void calculateDistanceMatrix() throws DissimilarArticleException, CategoryNotFoundException {
         for(int i=0;i<articles.size();i++){
             for(int j=0;j<=i;j++){

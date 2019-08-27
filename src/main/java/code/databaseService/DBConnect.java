@@ -5,9 +5,9 @@ import code.models.ArticleBuilder;
 import code.models.CategoryType;
 import code.utility.GlobalFunctions;
 import code.utility.Log;
+import java.util.*;
 
 import java.sql.*;
-import java.util.*;
 
 public class DBConnect {
     private static Connection connnection;
@@ -24,7 +24,7 @@ public class DBConnect {
     private DBConnect(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsaggregator","root","vipin1407");
+            connnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsaggregator","root","Hello@123");
             statment = connnection.createStatement();
         }
         catch (ClassNotFoundException e) {
@@ -38,11 +38,11 @@ public class DBConnect {
 
     // Todo You transaction to insert to avoid inconsistacy in the database
     public static synchronized void insertArticles(List<Article> articles){
+        Log.debug("INSERTING ARTICLES");
         if(articles.size() == 0){
             return;
         }
         try{
-            Log.debug("Inserting in Db");
             java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles values (?,?,?,?,?,?,?);");
             PreparedStatement clusterPreparedStatement = connnection.prepareStatement("insert into clusterArticleRelationship values (?,?);");
@@ -65,9 +65,12 @@ public class DBConnect {
                 clusterPreparedStatement.setString(2,null);
                 clusterPreparedStatement.addBatch();
             }
+
             preparedStatement.executeBatch();
             clusterPreparedStatement.executeBatch();
-            Log.debug("inserted in DB");
+
+            Log.debug("ARTICLES INSERTION PROCESSED: "+articles.size());
+
         }
         catch (SQLException e){
             Log.error(e.getMessage());
@@ -188,10 +191,4 @@ public class DBConnect {
         }
         return ret;
     }
-
-    public static synchronized List<Article> getNonClusteredArticles(CategoryType categoryType){
-        List<Article> ret = new ArrayList<>();
-        return ret;
-    }
-
 }

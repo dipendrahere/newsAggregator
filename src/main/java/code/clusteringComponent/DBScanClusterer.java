@@ -1,7 +1,9 @@
 package code.clusteringComponent;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
+import code.databaseService.DBConnect;
 import code.exceptions.CategoryNotFoundException;
 import code.exceptions.DissimilarArticleException;
 import code.models.Article;
@@ -72,6 +74,64 @@ public class DBScanClusterer<T extends Article> implements Clusterer<T>{
         HashMap<String,Integer> hashMap = new HashMap<>();
         return hashMap;
     }
+
+    /*public HashMap<String, Integer> clusterIncrementally(List<T> point) throws NullArgumentException {
+        HashMap<String, Integer> newArticleMap = new HashMap<>();
+        HashMap<T, Integer> articleClusterMap = (HashMap<T, Integer>) DBConnect.getInstance().articleClusterRelationship();
+        List<T> total = new ArrayList<T>();
+        for(T a: articleClusterMap.keySet()){
+            total.add(a);
+        }
+        total.addAll(point);
+        final Map<T, PointStatus> visited = new HashMap<T, PointStatus>();
+        for (T l: point) {
+            Article p = l;
+            if(visited.get(point) != null){
+                continue;
+            }
+            final List<T> neighbors = getNeighbors(l, total);
+            HashMap<Integer, Integer> ccount = new HashMap<>();
+            if(neighbors.size() >= minPts){
+                boolean flag = true;
+                for(T n: neighbors){
+                    if(articleClusterMap.get(n) != null){
+                        flag = false;
+                        int clusterid = articleClusterMap.get(n);
+                        if(ccount.containsKey(clusterid)){
+                            ccount.put(clusterid, ccount.get(clusterid)+1);
+                        }
+                        else{
+                            ccount.put(clusterid, 1);
+                        }
+                    }
+                }
+                if(flag){
+                    Cluster<Article> c = new Cluster<>(null);
+                    neighbors.stream().forEach(a -> {
+                        c.addPoint(a);
+                        visited.put(a, PointStatus.PART_OF_CLUSTER);
+                        newArticleMap.put(a.getId(), c.getClusterId());
+                    });
+                }
+                else{
+                    final int[] cid = new int[1];
+                    final int[] mx = {0};
+                    ccount.keySet().forEach(a -> {
+                        if(ccount.get(a) > mx[0]){
+                            mx[0] = ccount.get(a);
+                            cid[0] = a;
+                        }
+                    });
+                    neighbors.stream().forEach(a -> {
+                        visited.put(a, PointStatus.PART_OF_CLUSTER);
+                        newArticleMap.put(a.getId(), cid[0]);
+                    });
+                }
+            }
+
+        }
+        return newArticleMap;
+    }*/
 
     private Cluster<T> expandCluster(final Cluster<T> cluster,
                                      final T point,
