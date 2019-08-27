@@ -44,8 +44,13 @@ public class ArticleBuilder {
         return this;
     }
 
-    public ArticleBuilder setImageUrl(String imageUrl){
+    public ArticleBuilder setImageUrl(String imageUrl) {
         article.setImageUrl(imageUrl);
+        return this;
+    }
+
+    public ArticleBuilder setId(String id){
+        article.setId(id);
         return this;
     }
 

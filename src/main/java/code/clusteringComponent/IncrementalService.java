@@ -1,42 +1,38 @@
-package code.contentComponent;
+package code.clusteringComponent;
 
-import code.databaseService.DBConnect;
 import code.models.CategoryType;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-public class PollingService {
+public class IncrementalService {
     private final static ScheduledExecutorService service = Executors.newScheduledThreadPool(10);
-
-    private List<RssController> controllers;
-    private static PollingService pollingService;
-
-    public static PollingService getInstance(){
-        if (pollingService==null)
-            pollingService = new PollingService();
-        return pollingService;
+    private List<IncrementalController> controllers;
+    private static IncrementalService incrementalService;
+    public static IncrementalService getInstance(){
+        if(incrementalService == null){
+            return new IncrementalService();
+        }
+        return incrementalService;
     }
 
-    private PollingService(){
+    private IncrementalService(){
         controllers = Arrays.stream(CategoryType.values()).map(obj -> {
-            return new RssController(obj);
+            return new IncrementalController(obj);
         }).collect(Collectors.toList());
     }
 
-    public void poll(){
+    public void start(){
         List<Runnable> runnables = controllers.stream().map(controller -> {
-            Runnable r = () ->  controller.visitCategory();
+            Runnable r = () ->  controller.run();
             return r;
         }).collect(Collectors.toList());
         for(Runnable runnable: runnables){
-            service.scheduleAtFixedRate(runnable, 0, 4, TimeUnit.MINUTES);
+            service.scheduleAtFixedRate(runnable, 0, 5, TimeUnit.MINUTES);
         }
     }
 

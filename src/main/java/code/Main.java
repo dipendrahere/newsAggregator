@@ -1,6 +1,8 @@
 package code;
 import code.clusteringComponent.DBScanClusterer;
 
+import code.clusteringComponent.BatchClusterService;
+
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.*;
@@ -13,13 +15,14 @@ import code.models.ArticleBuilder;
 import code.models.CategoryType;
 import code.models.Cluster;
 import code.utility.GlobalFunctions;
+
 import code.clusteringComponent.HierarchicalClusterer;
 import code.contentComponent.PollingService;
 import code.databaseService.DBConnect;
 import code.models.Article;
 import code.models.CategoryType;
 
-import javax.xml.crypto.Data;
+import java.util.HashMap;
 import java.util.List;
 
 public class Main {
@@ -31,6 +34,11 @@ public class Main {
 
         List<Article> articles = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
         DBScanClusterer<Article> clusterer = new DBScanClusterer<>(0.6, 2);
+        BatchClusterService.getInstance().start();
+     //   PollingService.getInstance().poll();
+
+//        List<Article> articles = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
+//        DBScanClusterer<Article> clusterer = new DBScanClusterer<>(0.6, 2);
 ////        int count = 0;
         List<Cluster<Article>> clusters = clusterer.cluster(articles);
         HashMap<String, Integer> hashMap = new HashMap<>();
@@ -122,17 +130,22 @@ public class Main {
 //            e.printStackTrace();
 //        }
 
-        List<Article> list = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
-        System.out.println(list.size());
-        HierarchicalClusterer<Article> hierarchicalCluster = new HierarchicalClusterer<Article>(0.5);
-        hierarchicalCluster.cluster(list);
+//        List<Article> list = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
+//        System.out.println(list.size());
+//        HierarchicalClusterer<Article> hierarchicalCluster = new HierarchicalClusterer<Article>(0.45);
+//        hierarchicalCluster.cluster(list);
 //        List<Cluster<Article>> clusters = hierarchicalCluster.cluster(list);
 //        try {
 //            GlobalFunctions.dumpClusters(clusters);
 //        } catch (IOException e) {
 //            Log.error("Unable to dump clusters");
 //        }
-*/
-//    DataCleaner.removeStopWords("gel");
+
+
+        HashMap<String,Integer> hashMap = new HashMap<>();
+        hashMap.put("0044625c8241a4728d35bd2b7402fb60",1);
+        hashMap.put("0049220afeb67fd2e2326b203450649b",5);
+        DBConnect.getInstance().updateClusterIDs(hashMap);
+        */
     }
 }
