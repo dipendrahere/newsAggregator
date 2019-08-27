@@ -64,7 +64,7 @@ public abstract class TfIdfHelper {
     */
     private Pair<HashMap<String,Integer>,Integer> idf(){
         HashMap<String,Integer> ret = new HashMap<>();
-        List<Article> articles = DBConnect.getInstance().fetchArticles(categoryType);
+        List<Article> articles = DBConnect.getInstance().fetchArticlesRecent(categoryType);
         for(Article article:articles){
             String content = article.getContent();
             String[] words = content.split(" ");

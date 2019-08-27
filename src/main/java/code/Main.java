@@ -3,6 +3,8 @@ import code.clusteringComponent.DBScanClusterer;
 
 import code.clusteringComponent.BatchClusterService;
 
+import code.clusteringComponent.IncrementalClusterService;
+import code.contentComponent.PollingService;
 import code.databaseService.DBConnect;
 import code.models.Article;
 import code.models.CategoryType;
@@ -10,7 +12,7 @@ import code.models.Cluster;
 import code.utility.GlobalFunctions;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
 
         //        System.out.println(DataCleaner.clean("Hello ' th'e of i sas sfdfe ! %$ @, ,,  paying playing player played saying sayer says paid done doer goer goes }} {{ , 303  /["));
 //        PropertyConfigurator.configure("src/main/resources/log4j.properties");
@@ -19,7 +21,8 @@ public class Main {
 //        List<Article> articles = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
 //        DBScanClusterer<Article> clusterer = new DBScanClusterer<>(0.5, 4);
         BatchClusterService.getInstance().start();
-     //   PollingService.getInstance().poll();
+        IncrementalClusterService.getInstance().start();
+        PollingService.getInstance().poll();
 
 //        List<Article> articles = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
 //        DBScanClusterer<Article> clusterer = new DBScanClusterer<>(0.6, 2);

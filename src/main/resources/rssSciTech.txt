@@ -1,5 +1,3 @@
-https://www.cbsnews.com/latest/rss/science
-https://www.cbsnews.com/latest/rss/technology
 http://nautil.us/rss/all
 http://feeds.newscientist.com/science-news
 http://feeds.newscientist.com/space
@@ -19,7 +17,6 @@ https://www.sciencedaily.com/rss/top/technology.xml
 http://feeds.feedburner.com/sciencealert-latestnews
 http://feeds.feedburner.com/AllDiscovermagazinecomContent
 https://www.wired.com/category/science/feed
-https://www.popsci.com/arcio/rss/
 http://www.space.com/feeds/all
 https://www.sciencemag.org/rss/weekly_news_email.xml
 http://www.esa.int/rssfeed/TopNews

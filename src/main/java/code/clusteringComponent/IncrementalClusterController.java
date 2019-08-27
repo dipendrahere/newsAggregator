@@ -17,6 +17,6 @@ public class IncrementalClusterController {
         IncrementalClusterer<Article> hierarchicalClusterer = new IncrementalClusterer<Article>();
         HashMap<String,Integer> updatedClusterId = hierarchicalClusterer.clusterIncrementally(hashMap);
         DBConnect.getInstance().updateClusterIDs(updatedClusterId);
-        Log.debug("newly added cluster map: "+updatedClusterId);
+        Log.debug("INCREMENTAL DONE");
     }
 }

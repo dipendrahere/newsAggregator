@@ -32,7 +32,7 @@ public class IncrementalClusterService {
             return r;
         }).collect(Collectors.toList());
         for(Runnable runnable: runnables){
-            service.scheduleAtFixedRate(runnable, 0, 5, TimeUnit.MINUTES);
+            service.scheduleAtFixedRate(runnable, 0, 6, TimeUnit.MINUTES);
         }
     }
 
