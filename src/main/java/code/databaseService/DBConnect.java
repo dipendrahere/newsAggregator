@@ -23,7 +23,8 @@ public class DBConnect {
     private DBConnect(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsaggregator","root","Hello@123");
+//            connnection = DriverManager.getConnection("jdbc:mysql://172.19.33.103:3306/newsaggregator","root","kEMXdVW9vMvQ");
+            connnection = DriverManager.getConnection("jdbc:mysql://localhost/newsaggregator","root","Hello@123");
             statment = connnection.createStatement();
         }
         catch (ClassNotFoundException e) {
@@ -43,7 +44,8 @@ public class DBConnect {
         }
         try{
             java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles values (?,?,?,?,?,?,?);");
+            String format = "(id, title, category_id, url, publishedDate, rssLink, content, imageUrl)";
+            PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles "+ format +" values (?, ?, ?, ?, ?, ?, ?, ?);");
             PreparedStatement clusterPreparedStatement = connnection.prepareStatement("insert into clusterArticleRelationship values (?,?);");
             for(int i=0;i<articles.size();i++) {
                 Article article = articles.get(i);
@@ -58,6 +60,7 @@ public class DBConnect {
                 preparedStatement.setString(5, exactDate);
                 preparedStatement.setString(6, article.getRssLink());
                 preparedStatement.setString(7, article.getContent());
+                preparedStatement.setString(8, article.getImageUrl());
                 preparedStatement.addBatch();
 
                 clusterPreparedStatement.setString(1, article.getId());
@@ -82,7 +85,7 @@ public class DBConnect {
         try{
             java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String exactDate = simpleDateFormat.format(article.getPublishedDate());
-            PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles values (?,?,?,?,?,?,?);");
+            PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles values (?, ?, ?, ?, ?, ?, ?, ?);");
             preparedStatement.setString(1, article.getId());
             preparedStatement.setString(2, article.getTitle());
             preparedStatement.setInt(3, article.getCategoryType().value.getKey());
@@ -90,6 +93,7 @@ public class DBConnect {
             preparedStatement.setString(5, exactDate);
             preparedStatement.setString(6, article.getRssLink());
             preparedStatement.setString(7, article.getContent());
+            preparedStatement.setString(8, article.getImageUrl());
             int count = preparedStatement.executeUpdate();
             System.out.println("insert row "+count);
         }
@@ -107,7 +111,7 @@ public class DBConnect {
                 ret = false;
             }
         } catch (SQLException e) {
-            Log.error("Unable to query for article present url: " + url);
+            Log.error("Unable to query for article present url: " + url + e.getMessage());
         }
         return ret;
     }
@@ -125,6 +129,7 @@ public class DBConnect {
                         .setPublishedDate(resultSet.getDate(5))
                         .setRssLink(resultSet.getString(6))
                         .setContent(resultSet.getString(7))
+                        .setImageUrl(resultSet.getString(8))
                         .build();
                 a.setId(resultSet.getString(1));
                 ret.add(a);

@@ -5,7 +5,7 @@ import code.exceptions.DissimilarArticleException;
 import code.models.Article;
 import code.models.Cluster;
 import code.utility.GlobalFunctions;
-import javafx.util.Pair;
+import code.utility.Pair;
 import org.apache.commons.lang.NullArgumentException;
 import org.apache.commons.math3.util.MathUtils;
 import java.util.*;

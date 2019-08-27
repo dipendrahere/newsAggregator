@@ -1,8 +1,6 @@
 package code.contentComponent;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
@@ -95,7 +93,8 @@ public class RssController {
 
     private List<String> getRSSLinksfromFile(String filePath){
         ArrayList<String> rssList = new ArrayList<String>();
-        try(BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        try(InputStream s = RssController.class.getResourceAsStream(filePath)) {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(s));
             String line;
             while((line = reader.readLine()) != null) {
                 rssList.add(line);
@@ -157,7 +156,8 @@ public class RssController {
                         .setPublishedDate(item.getPubDate())
                         .setRssLink(item.getRssLink())
                         .setContent(DataCleaner.clean(GlobalFunctions.extractFromUrl(item.getLink())))
-                        .setTitle(item.getTitle());
+                        .setTitle(item.getTitle())
+                        .setImageUrl(item.getImageUrl());
             } catch (BoilerpipeProcessingException e) {
                 Log.error("Unable to extract data from url - boilerpipe");
             } catch (MalformedURLException e) {
