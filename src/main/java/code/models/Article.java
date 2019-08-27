@@ -13,6 +13,7 @@ public class Article {
     private String content;
     private String title;
     private String rssLink;
+    private String imageUrl;
 
     public Article(String url){
         this.url = url;
@@ -21,6 +22,14 @@ public class Article {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public void setTitle(String title) {

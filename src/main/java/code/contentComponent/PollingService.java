@@ -36,7 +36,7 @@ public class PollingService {
             return r;
         }).collect(Collectors.toList());
         for(Runnable runnable: runnables){
-            service.scheduleAtFixedRate(runnable, 0, 1, TimeUnit.HOURS);
+            service.scheduleAtFixedRate(runnable, 0, 4, TimeUnit.MINUTES);
         }
     }
 }

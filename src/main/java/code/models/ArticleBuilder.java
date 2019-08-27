@@ -16,6 +16,7 @@ public class ArticleBuilder {
         a.setPublishedDate(article.getPublishedDate());
         a.setRssLink(article.getRssLink());
         a.setTitle(article.getTitle());
+        a.setImageUrl(article.getImageUrl());
         return a;
     }
 
@@ -43,5 +44,9 @@ public class ArticleBuilder {
         return this;
     }
 
+    public ArticleBuilder setImageUrl(String imageUrl){
+        article.setImageUrl(imageUrl);
+        return this;
+    }
 
 }

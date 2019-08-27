@@ -8,7 +8,6 @@ https://www.theguardian.com/world/rss
 http://feeds.reuters.com/Reuters/worldNews
 https://timesofindia.indiatimes.com/rssfeeds/296589292.cms
 https://www.rt.com/rss/news/
-http://www.independent.co.uk/news/world/rss
 http://feeds.feedburner.com/daily-express-world-news
 https://www.mirror.co.uk/news/world-news/?service=rss
 http://feeds.feedburner.com/time/world

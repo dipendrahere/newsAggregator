@@ -3,7 +3,8 @@ package code.idfHelper;
 import code.databaseService.DBConnect;
 import code.models.Article;
 import code.models.CategoryType;
-import javafx.util.Pair;
+import code.utility.Pair;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;

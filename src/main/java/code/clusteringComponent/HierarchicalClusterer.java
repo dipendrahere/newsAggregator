@@ -1,14 +1,11 @@
 package code.clusteringComponent;
 
-import code.databaseService.DBConnect;
 import code.exceptions.CategoryNotFoundException;
 import code.exceptions.DissimilarArticleException;
-import code.idfHelper.TfIdfHelper;
 import code.models.Article;
-import code.models.CategoryType;
 import code.models.Cluster;
 import code.utility.GlobalFunctions;
-import javafx.util.Pair;
+import code.utility.Pair;
 import org.apache.commons.lang.NullArgumentException;
 import org.apache.commons.math3.util.MathUtils;
 import java.util.*;

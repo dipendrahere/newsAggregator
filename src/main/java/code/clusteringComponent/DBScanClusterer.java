@@ -7,6 +7,7 @@ import code.databaseService.DBConnect;
 import code.exceptions.CategoryNotFoundException;
 import code.exceptions.DissimilarArticleException;
 import code.models.Article;
+import code.models.CategoryType;
 import code.models.Cluster;
 import code.utility.GlobalFunctions;
 import code.utility.Log;
@@ -75,9 +76,10 @@ public class DBScanClusterer<T extends Article> implements Clusterer<T>{
 
     }
 
-    /*public HashMap<String, Integer> clusterIncrementally(List<T> point) throws NullArgumentException {
+    public HashMap<String, Integer> clusterIncrementally(List<T> point) throws NullArgumentException {
         HashMap<String, Integer> newArticleMap = new HashMap<>();
-        HashMap<T, Integer> articleClusterMap = (HashMap<T, Integer>) DBConnect.getInstance().articleClusterRelationship();
+        HashMap<T, Integer> articleClusterMap = null; //TODO REMOVE
+//        (HashMap<T, Integer>) DBConnect.getInstance().articleClusterRelationship();
         List<T> total = new ArrayList<T>();
         for(T a: articleClusterMap.keySet()){
             total.add(a);
@@ -131,7 +133,7 @@ public class DBScanClusterer<T extends Article> implements Clusterer<T>{
 
         }
         return newArticleMap;
-    }*/
+    }
 
     private Cluster<T> expandCluster(final Cluster<T> cluster,
                                      final T point,
