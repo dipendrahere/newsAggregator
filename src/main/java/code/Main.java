@@ -17,7 +17,7 @@ public class Main {
 
     //    BatchClusterService.getInstance().start();
     //      PollingService.getInstance().poll();
-        IncrementalService.getInstance().start();
+    //    IncrementalService.getInstance().start();
 
         // Test for tf-idf function
 //        List<Article> list = new ArrayList<>();
@@ -75,5 +75,6 @@ public class Main {
 //        hashMap.put("0049220afeb67fd2e2326b203450649b",5);
 //        DBConnect.getInstance().updateClusterIDs(hashMap);
 
+        System.out.println(DBConnect.getInstance().maxClusterId());
     }
 }

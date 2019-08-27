@@ -202,11 +202,25 @@ public class DBConnect {
             }
         }
         catch (SQLException e){
-            Log.error("unable to fetch Article");
+            Log.error("unable to fetch Article "+ e.getMessage());
             e.printStackTrace();
         }
         return ret;
     }
 
+    public static synchronized int maxClusterId(){
+        int ret = 1;
+        try {
+            PreparedStatement preparedStatement = connnection.prepareStatement(" select max(cluster_id) from clusterArticleRelationship;");
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                ret = resultSet.getInt(1);
+            }
+        }
+        catch (SQLException e){
+            Log.error("unable to find max clusterId "+ e.getMessage());
+        }
+        return ret;
 
+    }
 }
