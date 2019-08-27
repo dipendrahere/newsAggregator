@@ -1,4 +1,4 @@
-package code.clusteringComponent;
+package code.utility;
 
 import code.contentComponent.RssController;
 import code.utility.Log;

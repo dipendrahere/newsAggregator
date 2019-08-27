@@ -3,28 +3,11 @@ import code.clusteringComponent.DBScanClusterer;
 
 import code.clusteringComponent.BatchClusterService;
 
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.*;
-
-import code.clusteringComponent.DataCleaner;
-import code.contentComponent.PollingService;
 import code.databaseService.DBConnect;
 import code.models.Article;
-import code.models.ArticleBuilder;
 import code.models.CategoryType;
 import code.models.Cluster;
 import code.utility.GlobalFunctions;
-
-import code.clusteringComponent.HierarchicalClusterer;
-import code.clusteringComponent.IncrementalService;
-import code.contentComponent.PollingService;
-import code.databaseService.DBConnect;
-import code.models.Article;
-import code.models.CategoryType;
-
-import java.util.HashMap;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -33,10 +16,25 @@ public class Main {
 //        PropertyConfigurator.configure("src/main/resources/log4j.properties");
 //        PollingService.getInstance().poll();
 
+//        List<Article> articles = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
+//        DBScanClusterer<Article> clusterer = new DBScanClusterer<>(0.5, 4);
+        BatchClusterService.getInstance().start();
+     //   PollingService.getInstance().poll();
 
 //        List<Article> articles = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
 //        DBScanClusterer<Article> clusterer = new DBScanClusterer<>(0.6, 2);
 ////        int count = 0;
+
+//        List<Cluster<Article>> clusters = clusterer.cluster(articles);
+//        HashMap<String, Integer> hashMap = new HashMap<>();
+//        for(Cluster c: clusters){
+//            for(Object a: c.getPoints()){
+//                Article article = (Article) a;
+//                hashMap.put(article.getId(), c.getClusterId());
+//            }
+//        }
+//        DBConnect.getInstance().updateClusterIDs(hashMap);
+////        GlobalFunctions.dumpClusters(clusters);
 
 
 //        Article article = new ArticleBuilder("https://www.tribuneindia.com/news/world/pell-loses-appeal-against-sex-abuse-convictions-returns-to-prison/820587.html ")
