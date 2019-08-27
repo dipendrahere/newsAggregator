@@ -19,6 +19,4 @@ public class IncrementalClusterController {
         DBConnect.getInstance().updateClusterIDs(updatedClusterId);
         Log.debug("newly added cluster map: "+updatedClusterId);
     }
-
-
 }

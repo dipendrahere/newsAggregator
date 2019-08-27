@@ -9,9 +9,6 @@ import code.models.CategoryType;
 import code.models.Cluster;
 import code.utility.GlobalFunctions;
 
-import java.util.HashMap;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) throws Exception {
 
@@ -27,6 +24,7 @@ public class Main {
 //        List<Article> articles = DBConnect.getInstance().fetchArticles(CategoryType.WORLD);
 //        DBScanClusterer<Article> clusterer = new DBScanClusterer<>(0.6, 2);
 ////        int count = 0;
+
 //        List<Cluster<Article>> clusters = clusterer.cluster(articles);
 //        HashMap<String, Integer> hashMap = new HashMap<>();
 //        for(Cluster c: clusters){
@@ -37,6 +35,7 @@ public class Main {
 //        }
 //        DBConnect.getInstance().updateClusterIDs(hashMap);
 ////        GlobalFunctions.dumpClusters(clusters);
+
 
 //        Article article = new ArticleBuilder("https://www.tribuneindia.com/news/world/pell-loses-appeal-against-sex-abuse-convictions-returns-to-prison/820587.html ")
 //                .setCategoryType(CategoryType.WORLD).setPublishedDate(new Date()).setRssLink("url").setTitle("An Australian Court Has Upheld Child Sex Convictions Against Cardinal George Pell")
@@ -129,10 +128,19 @@ public class Main {
 //        }
 
 
+//        HashMap<String,Integer> hashMap = new HashMap<>();
+//        hashMap.put("0044625c8241a4728d35bd2b7402fb60",1);
+//        hashMap.put("0049220afeb67fd2e2326b203450649b",5);
+//        DBConnect.getInstance().updateClusterIDs(hashMap);
+
+        System.out.println(DBConnect.getInstance().maxClusterId());
+
+
         HashMap<String,Integer> hashMap = new HashMap<>();
         hashMap.put("0044625c8241a4728d35bd2b7402fb60",1);
         hashMap.put("0049220afeb67fd2e2326b203450649b",5);
         DBConnect.getInstance().updateClusterIDs(hashMap);
-        */
+
+         */
     }
 }
