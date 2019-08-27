@@ -1,13 +1,9 @@
 package code.clusteringComponent;
 
 import java.util.*;
-import java.util.stream.Collectors;
-
-import code.databaseService.DBConnect;
 import code.exceptions.CategoryNotFoundException;
 import code.exceptions.DissimilarArticleException;
 import code.models.Article;
-import code.models.CategoryType;
 import code.models.Cluster;
 import code.utility.GlobalFunctions;
 import code.utility.Log;
@@ -52,6 +48,7 @@ public class DBScanClusterer<T extends Article> implements Clusterer<T>{
 
         final List<Cluster<T>> clusters = new ArrayList<Cluster<T>>();
         final Map<T, PointStatus> visited = new HashMap<T, PointStatus>();
+        final List<Cluster<T>> noiseClusters = new ArrayList<Cluster<T>>();
 
         for (final T point : points) {
             if (visited.get(point) != null) {
@@ -64,6 +61,9 @@ public class DBScanClusterer<T extends Article> implements Clusterer<T>{
                 clusters.add(expandCluster(cluster, point, neighbors, points, visited));
             } else {
                 visited.put(point, PointStatus.NOISE);
+                final Cluster<T> cluster = new Cluster<T>(null);
+                cluster.addPoint(point);
+                clusters.add(cluster);
             }
         }
 

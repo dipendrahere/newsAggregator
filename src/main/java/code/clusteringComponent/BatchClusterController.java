@@ -11,13 +11,14 @@ import java.util.List;
 
 public class BatchClusterController {
     private CategoryType categoryType;
+
     public BatchClusterController(CategoryType categoryType){
         this.categoryType = categoryType;
     }
+
     public void startClustering(){
         List<Article> list = DBConnect.getInstance().fetchArticles(categoryType);
-    //    Log.debug("list of articles " + list);
-        Clusterer clusterer = new HierarchicalClusterer(0.45);
+        BatchClusterer<Article> clusterer = new BatchClusterer<Article>();
         List<Cluster<Article>> clusters = clusterer.cluster(list);
         HashMap<String,Integer> hashMap = new HashMap<>();
         for(Cluster cluster : clusters){
@@ -27,6 +28,5 @@ public class BatchClusterController {
             }
         }
         DBConnect.getInstance().updateClusterIDs(hashMap);
-
     }
 }

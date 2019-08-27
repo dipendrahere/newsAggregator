@@ -8,7 +8,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
-import code.clusteringComponent.DataCleaner;
+import code.utility.DataCleaner;
 import code.databaseService.DBConnect;
 import code.models.Article;
 import code.models.ArticleBuilder;

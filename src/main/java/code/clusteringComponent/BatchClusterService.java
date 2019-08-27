@@ -1,12 +1,12 @@
 package code.clusteringComponent;
 
 import code.models.CategoryType;
+import code.utility.Log;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 public class BatchClusterService {
@@ -27,7 +27,6 @@ public class BatchClusterService {
     }
 
     public void start(){
-    //    IncrementalService.getInstance().shutdown();
         List<Runnable> runnables = controllers.stream().map(controller -> {
             Runnable r = () ->  controller.startClustering();
             return r;
