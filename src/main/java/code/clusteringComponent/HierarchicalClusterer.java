@@ -183,7 +183,7 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
                 List<Article> articles = (List<Article>)mapElement.getValue();
                 for(Article a : articles){
                     try {
-                        minimumInCluster = Math.min(GlobalFunctions.cosineSimilarity(a,article),minimumInCluster);
+                        minimumInCluster = Math.min(GlobalFunctions.cosineDissimilarity(a,article),minimumInCluster);
                     }
                     catch (Exception e){
                         e.printStackTrace();;

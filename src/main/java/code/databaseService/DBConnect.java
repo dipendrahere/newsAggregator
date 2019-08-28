@@ -23,8 +23,7 @@ public class DBConnect {
     private DBConnect(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-//            connnection = DriverManager.getConnection("jdbc:mysql://172.19.33.103:3306/newsaggregator","root","kEMXdVW9vMvQ");
-            connnection = DriverManager.getConnection("jdbc:mysql://localhost/newsaggregator","root","Hello@123");
+            connnection = DriverManager.getConnection("jdbc:mysql://localhost/newsaggregator","root","vipin1407");
             statment = connnection.createStatement();
         }
         catch (ClassNotFoundException e) {
@@ -36,7 +35,6 @@ public class DBConnect {
         }
     }
 
-    // Todo You transaction to insert to avoid inconsistacy in the database
     public static synchronized void insertArticles(List<Article> articles){
         Log.debug("INSERTING ARTICLES");
         if(articles.size() == 0){
@@ -45,7 +43,7 @@ public class DBConnect {
         try{
             java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String format = "(id, title, category_id, url, publishedDate, rssLink, content, imageUrl)";
-            PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles "+ format +" values (?, ?, ?, ?, ?, ?, ?, ?);");
+            PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles "+ format +" values(?, ?, ?, ?, ?, ?, ?, ?);");
             PreparedStatement clusterPreparedStatement = connnection.prepareStatement("insert into clusterArticleRelationship values (?,?);");
             for(int i=0;i<articles.size();i++) {
                 Article article = articles.get(i);
