@@ -5,7 +5,6 @@ import code.models.Article;
 import code.models.CategoryType;
 import code.models.Cluster;
 import code.utility.GlobalFunctions;
-import code.utility.Log;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -13,12 +12,14 @@ import java.util.List;
 
 public class BatchClusterController {
     private CategoryType categoryType;
+
     public BatchClusterController(CategoryType categoryType){
         this.categoryType = categoryType;
     }
+
     public void startClustering(){
         List<Article> list = DBConnect.getInstance().fetchArticlesRecent(categoryType);
-        Clusterer clusterer = new HierarchicalClusterer(0.45);
+        BatchClusterer<Article> clusterer = new BatchClusterer<Article>();
         List<Cluster<Article>> clusters = clusterer.cluster(list);
         HashMap<String,Integer> hashMap = new HashMap<>();
         for(Cluster cluster : clusters){
@@ -29,5 +30,12 @@ public class BatchClusterController {
         }
         DBConnect.getInstance().updateClusterIDs(hashMap);
 
+
+
+//        try {
+//            GlobalFunctions.dumpClusters(clusters);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }

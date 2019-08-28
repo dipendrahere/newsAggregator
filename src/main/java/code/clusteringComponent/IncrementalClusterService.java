@@ -9,20 +9,20 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-public class IncrementalService {
+public class IncrementalClusterService {
     private final static ScheduledExecutorService service = Executors.newScheduledThreadPool(10);
-    private List<IncrementalController> controllers;
-    private static IncrementalService incrementalService;
-    public static IncrementalService getInstance(){
-        if(incrementalService == null){
-            return new IncrementalService();
+    private List<IncrementalClusterController> controllers;
+    private static IncrementalClusterService incrementalClusterService;
+    public static IncrementalClusterService getInstance(){
+        if(incrementalClusterService == null){
+            return new IncrementalClusterService();
         }
-        return incrementalService;
+        return incrementalClusterService;
     }
 
-    private IncrementalService(){
+    private IncrementalClusterService(){
         controllers = Arrays.stream(CategoryType.values()).map(obj -> {
-            return new IncrementalController(obj);
+            return new IncrementalClusterController(obj);
         }).collect(Collectors.toList());
     }
 
@@ -32,11 +32,15 @@ public class IncrementalService {
             return r;
         }).collect(Collectors.toList());
         for(Runnable runnable: runnables){
-            service.scheduleAtFixedRate(runnable, 0, 5, TimeUnit.MINUTES);
+            service.scheduleAtFixedRate(runnable, 0, 6, TimeUnit.MINUTES);
         }
     }
 
     public void shutdown(){
         service.shutdown();
+    }
+
+    public void shutdownNow() throws Exception{
+        service.shutdownNow();
     }
 }

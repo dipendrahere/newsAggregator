@@ -4,7 +4,6 @@ http://www.cnbc.com/id/19746125/device/rss/rss.xml
 http://rss.cnn.com/rss/money_topstories.rss
 https://fortune.com/feed
 https://www.ft.com/?format=rss
-https://finance.yahoo.com/news/rssindex
 https://www.investing.com/rss/news.rss
 https://economictimes.indiatimes.com/rssfeedsdefault.cms
 https://www.livemint.com/rss/money
@@ -17,6 +16,5 @@ http://www.moneycontrol.com/rss/MCtopnews.xml
 https://www.economist.com/business/rss.xml
 https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml
 https://timesofindia.indiatimes.com/rssfeeds/1898055.cms
-https://www.globenewswire.com/RssFeed/orgclass/1/feedTitle/GlobeNewswire%20-%20News%20about%20Public%20Companies
 https://www.cbc.ca/cmlink/rss-business
 https://www.usnews.com/rss/money

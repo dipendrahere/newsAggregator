@@ -2,8 +2,6 @@ http://www1.cbn.com/app_feeds/rss/news/rss.php?section=world
 https://www.npr.org/rss/rss.php?id=1001
 https://rss.nytimes.com/services/xml/rss/nyt/World.xml
 https://www.cnbc.com/id/100727362/device/rss/rss.html
-https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US:en
-https://www.aljazeera.com/xml/rss/all.xml
 https://www.theguardian.com/world/rss
 http://feeds.reuters.com/Reuters/worldNews
 https://timesofindia.indiatimes.com/rssfeeds/296589292.cms

@@ -1,4 +1,3 @@
-https://sports.yahoo.com/top/rss.xml
 https://www.espn.com/espn/rss/news
 http://rss.cnn.com/rss/edition_sport.rss
 https://www.skysports.com/rss/12040

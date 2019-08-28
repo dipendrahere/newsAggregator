@@ -151,6 +151,7 @@ public class DBConnect {
                         .setPublishedDate(resultSet.getDate(5))
                         .setRssLink(resultSet.getString(6))
                         .setContent(resultSet.getString(7))
+                        .setImageUrl(resultSet.getString(8))
                         .build();
                 a.setId(resultSet.getString(1));
                 ret.add(a);
@@ -165,7 +166,7 @@ public class DBConnect {
 
     public static synchronized void updateClusterIDs(HashMap<String,Integer> hashMap){
         Log.debug("Update in Db");
-        System.out.println(hashMap);
+//        System.out.println(hashMap);
         if(hashMap.size() == 0){
             return;
         }
@@ -201,6 +202,7 @@ public class DBConnect {
                         .setPublishedDate(resultSet.getDate(5))
                         .setRssLink(resultSet.getString(6))
                         .setContent(resultSet.getString(7))
+                        .setImageUrl(resultSet.getString(8))
                         .build();
                 a.setId(resultSet.getString(1));
                 int cluster_id = resultSet.getInt(10);
