@@ -1,9 +1,6 @@
 package code.clusteringComponent;
 
 import code.models.CategoryType;
-import code.utility.Log;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;

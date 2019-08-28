@@ -3,7 +3,6 @@ http://feeds.newscientist.com/science-news
 http://feeds.newscientist.com/space
 https://www.usnews.com/topics/subjects/science/rss
 https://www.cnbc.com/id/19854910/device/rss/rss.html
-https://www.techmeme.com/feed.xml
 http://feeds.feedburner.com/TechCrunch
 https://www.technologyreview.com/topnews.rss
 http://feeds.bbci.co.uk/news/technology/rss.xml
@@ -20,5 +19,4 @@ https://www.wired.com/category/science/feed
 http://www.space.com/feeds/all
 https://www.sciencemag.org/rss/weekly_news_email.xml
 http://www.esa.int/rssfeed/TopNews
-https://www.skyandtelescope.com/feed/
 https://www.universetoday.com/feed/

@@ -7,6 +7,7 @@ import code.utility.Log;
 import java.util.*;
 
 import java.sql.*;
+import java.util.stream.Collectors;
 
 public class DBConnect {
     private static Connection connnection;
@@ -23,7 +24,8 @@ public class DBConnect {
     private DBConnect(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connnection = DriverManager.getConnection("jdbc:mysql://localhost/newsaggregator","root","vipin1407");
+            connnection = DriverManager.getConnection("jdbc:mysql://172.19.33.103:3306/newsaggregator","root","kEMXdVW9vMvQ");
+//            connnection = DriverManager.getConnection("jdbc:mysql://localhost/newsaggregator","root","vipin1407");
             statment = connnection.createStatement();
         }
         catch (ClassNotFoundException e) {
@@ -41,10 +43,13 @@ public class DBConnect {
             return;
         }
         try{
+            articles = articles.stream().filter(article -> {
+                return article.getContent().split(" ").length >= 30 && article.getContent().length() <= 64000;
+            }).collect(Collectors.toList());
             java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String format = "(id, title, category_id, url, publishedDate, rssLink, content, imageUrl)";
             PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles "+ format +" values(?, ?, ?, ?, ?, ?, ?, ?);");
-            PreparedStatement clusterPreparedStatement = connnection.prepareStatement("insert into clusterArticleRelationship values (?,?);");
+            PreparedStatement clusterPreparedStatement = connnection.prepareStatement("insert into clusterArticleRelationship values (?,?,?);");
             for(int i=0;i<articles.size();i++) {
                 Article article = articles.get(i);
                 String exactDate = null;
@@ -63,6 +68,7 @@ public class DBConnect {
 
                 clusterPreparedStatement.setString(1, article.getId());
                 clusterPreparedStatement.setString(2,null);
+                clusterPreparedStatement.setInt(3, article.getCategoryType().value.getKey());
                 clusterPreparedStatement.addBatch();
             }
 
@@ -118,7 +124,7 @@ public class DBConnect {
     public static synchronized List<Article> fetchArticles(CategoryType categoryType){
         List<Article> ret = new ArrayList<>();
         try{
-            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles where category_id = "+categoryType.value.getKey());
+            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles where category_id = "+categoryType.value.getKey()+";");
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 Article a = new ArticleBuilder(resultSet.getString(4))
@@ -230,5 +236,14 @@ public class DBConnect {
         }
         return ret;
 
+    }
+
+    public static synchronized void unassignClusters(CategoryType categoryType){
+        try{
+            PreparedStatement preparedStatement = connnection.prepareStatement("update clusterArticleRelationship set cluster_id = NULL where categoryId = "+categoryType.value.getKey());
+            preparedStatement.executeLargeUpdate();
+        }catch (SQLException e){
+            Log.error("unable to unset clustering " + e.getMessage());
+        }
     }
 }
