@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ClusterInfoHelper {
+
     public List<ClusterInfo> batchInformation(List<Cluster<Article>> clusters){
         return clusters.stream().map(cluster -> {
             ClusterInfo info  = new ClusterInfo();
@@ -54,6 +55,11 @@ public class ClusterInfoHelper {
     public List<ClusterInfo> incrementDiameters(HashMap<String,Integer> assignedCluster, HashMap<Article,Integer> hashMap, List<ClusterInfo> clusterInfos){
 
 
+        HashMap<Integer,ClusterInfo> clusterInfoHashMap = new HashMap<>();
+        for(ClusterInfo clusterInfo : clusterInfos){
+            clusterInfoHashMap.put(clusterInfo.getClusterId(),clusterInfo);
+        }
+
         HashMap<Integer,List<Article>> hmap = new HashMap<>();
         List<Article> NonClusteredArticles = new ArrayList<>();
         Iterator iterator = hashMap.entrySet().iterator();
@@ -72,19 +78,63 @@ public class ClusterInfoHelper {
                 hmap.put((Integer)mapElement.getValue(),list);
             }
         }
+
         List<ClusterInfo> ret = new ArrayList<>();
+
+        HashMap<Integer,List<Article>> newClusters = new HashMap<>();
+
+        HashMap<Integer,ClusterInfo> retHashmap = new HashMap<>();
+
         for(Article article : NonClusteredArticles){
-            Double maxi = 0.0;
             int assignedClusterNo = assignedCluster.get(article.getId());
-            List<Article> alreadyArticlesinClusters = hmap.get(assignedClusterNo);
-            for (Article already : alreadyArticlesinClusters){
-                try {
-                    maxi = Math.max(maxi,GlobalFunctions.cosineDissimilarity(already,article));
+            if(hmap.containsKey(assignedClusterNo)){
+                Double maxi = 0.0;
+                List<Article> alreadyArticlesinClusters = hmap.get(assignedClusterNo);
+                for (Article already : alreadyArticlesinClusters){
+                    try {
+                        maxi = Math.max(maxi,GlobalFunctions.cosineDissimilarity(already,article));
+                    }
+                    catch (Exception e){
+                        Log.error("unable to find cosine dissimilarty "+ e.getMessage());
+                    }
                 }
-                catch (Exception e){
-                    Log.error("unable to find cosine dissimilarty "+ e.getMessage());
+                ClusterInfo clusterInfo;
+                if(retHashmap.containsKey(assignedClusterNo)){
+                    clusterInfo = ret.get(assignedClusterNo);
+                }
+                else{
+                    clusterInfo = clusterInfoHashMap.get(assignedClusterNo);
+                }
+                clusterInfo.setTotalPoints(clusterInfo.getTotalPoints()+1);
+                clusterInfo.setDiameter(Math.max(maxi,clusterInfo.getDiameter()));
+                retHashmap.put(assignedClusterNo,clusterInfo);
+            }
+            else{
+                if(newClusters.containsKey(assignedClusterNo)){
+                    newClusters.get(assignedClusterNo).add(article);
+                }
+                else{
+                    List<Article> temp = new ArrayList<>();
+                    temp.add(article);
+                    newClusters.put(assignedClusterNo,temp);
                 }
             }
+        }
+
+        iterator = newClusters.entrySet().iterator();
+        while (iterator.hasNext()){
+            Map.Entry mapElement = (Map.Entry)iterator.next();
+            ClusterInfo clusterInfo = new ClusterInfo();
+            clusterInfo.setClusterId((Integer)mapElement.getKey());
+            clusterInfo.setDiameter(calculateDiameter((List<Article>)mapElement.getValue()));
+            clusterInfo.setTotalPoints(((List<Article>) mapElement.getValue()).size());
+            ret.add(clusterInfo);
+        }
+
+        iterator = retHashmap.entrySet().iterator();
+        while (iterator.hasNext()){
+            Map.Entry mapElement = (Map.Entry)iterator.next();
+            ret.add((ClusterInfo)mapElement.getValue());
         }
         return ret;
     }
