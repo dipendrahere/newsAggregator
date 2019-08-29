@@ -1,14 +1,26 @@
 package code.models;
 
 import java.util.Date;
+import java.util.Set;
 
 public class ClusterInfo {
     private int clusterId;
-    private double coverageScore;
     private Date recency;
     private int totalPoints;
     private Date averageDate;
     private Double diameter;
+    private Set<String> distinctRss;
+
+    public void addRssLink(String rss){
+        distinctRss.add(rss);
+    }
+    public Set<String> getDistinctRss() {
+        return distinctRss;
+    }
+
+    public void setDistinctRss(Set<String> distinctRss) {
+        this.distinctRss = distinctRss;
+    }
 
     public Double getDiameter() {
         return diameter;
@@ -40,14 +52,6 @@ public class ClusterInfo {
 
     public void setClusterId(int clusterId) {
         this.clusterId = clusterId;
-    }
-
-    public double getCoverageScore() {
-        return coverageScore;
-    }
-
-    public void setCoverageScore(double coverageScore) {
-        this.coverageScore = coverageScore;
     }
 
     public Date getRecency() {

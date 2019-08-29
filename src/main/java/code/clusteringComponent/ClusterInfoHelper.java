@@ -25,8 +25,7 @@ public class ClusterInfoHelper {
                 long bd = b.getTime();
                 return new Date(ad + bd);
             }).get();
-            averageDate = new Date(averageDate.getTime() / count);
-            info.setCoverageScore(distinctRss.size());
+            info.setDistinctRss(distinctRss);
             info.setRecency(mostRecent);
             info.setAverageDate(averageDate);
             info.setTotalPoints(count);
@@ -100,13 +99,19 @@ public class ClusterInfoHelper {
                 }
                 ClusterInfo clusterInfo;
                 if(retHashmap.containsKey(assignedClusterNo)){
-                    clusterInfo = ret.get(assignedClusterNo);
+                    clusterInfo = retHashmap.get(assignedClusterNo);
                 }
                 else{
                     clusterInfo = clusterInfoHashMap.get(assignedClusterNo);
                 }
                 clusterInfo.setTotalPoints(clusterInfo.getTotalPoints()+1);
                 clusterInfo.setDiameter(Math.max(maxi,clusterInfo.getDiameter()));
+                Date newAvgDate = new Date(clusterInfo.getAverageDate().getTime() + article.getPublishedDate().getTime());
+                clusterInfo.setAverageDate(newAvgDate);
+                clusterInfo.addRssLink(article.getRssLink());
+                if(clusterInfo.getRecency().compareTo(article.getPublishedDate()) < 0){
+                    clusterInfo.setRecency(article.getPublishedDate());
+                }
                 retHashmap.put(assignedClusterNo,clusterInfo);
             }
             else{
@@ -120,16 +125,14 @@ public class ClusterInfoHelper {
                 }
             }
         }
-
-        iterator = newClusters.entrySet().iterator();
-        while (iterator.hasNext()){
-            Map.Entry mapElement = (Map.Entry)iterator.next();
-            ClusterInfo clusterInfo = new ClusterInfo();
-            clusterInfo.setClusterId((Integer)mapElement.getKey());
-            clusterInfo.setDiameter(calculateDiameter((List<Article>)mapElement.getValue()));
-            clusterInfo.setTotalPoints(((List<Article>) mapElement.getValue()).size());
-            ret.add(clusterInfo);
-        }
+        List<Cluster<Article>> newClusterList = newClusters.keySet().stream().map(key -> {
+                Cluster<Article> c = new Cluster<>(null);
+                c.setClusterId(key);
+                c.addPoints(newClusters.get(key));
+                return c;
+        }).collect(Collectors.toList());
+        List<ClusterInfo> infos = batchInformation(newClusterList);
+        ret.addAll(infos);
 
         iterator = retHashmap.entrySet().iterator();
         while (iterator.hasNext()){
