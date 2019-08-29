@@ -1,0 +1,9 @@
+2019-08-29 17:23:56 ERROR global:20 - unable to update cluster info null
+2019-08-29 17:24:44 ERROR global:20 - unable to update cluster info null
+2019-08-29 17:26:12 ERROR global:20 - unable to update cluster info null
+2019-08-29 17:26:27 ERROR global:20 - unable to update cluster info null
+2019-08-29 17:27:27 ERROR global:20 - unable to update cluster info null
+2019-08-29 17:28:17 ERROR global:20 - unable to update cluster info You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''2019-08-29 17:28:13'), totalPoints = values(5), averageDate = Values('2019-08-2' at line 1
+2019-08-29 17:31:21 ERROR global:20 - unable to update cluster info You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''2019-08-29 17:31:17'), totalPoints = values(5), averageDate = values('2019-08-2' at line 1
+2019-08-29 17:36:32 ERROR global:20 - unable to update cluster info Table 'newsaggregator.clusterInfo' doesn't exist
+2019-08-29 17:41:25 ERROR global:20 - unable to fetch clusterInfo Cannot convert string 'demo1|demo2|' to java.sql.Date value
