@@ -1,9 +1,10 @@
 package code.databaseService;
 
-import code.models.Article;
-import code.models.ArticleBuilder;
-import code.models.CategoryType;
+import code.models.*;
 import code.utility.Log;
+import org.apache.commons.math3.exception.NullArgumentException;
+import org.apache.commons.math3.util.MathUtils;
+
 import java.util.*;
 
 import java.sql.*;
@@ -24,8 +25,8 @@ public class DBConnect {
     private DBConnect(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connnection = DriverManager.getConnection("jdbc:mysql://172.19.33.103:3306/newsaggregator","root","kEMXdVW9vMvQ");
-//            connnection = DriverManager.getConnection("jdbc:mysql://localhost/newsaggregator","root","vipin1407");
+//            connnection = DriverManager.getConnection("jdbc:mysql://172.19.33.103:3306/newsaggregator","root","kEMXdVW9vMvQ");
+            connnection = DriverManager.getConnection("jdbc:mysql://localhost/newsaggregator","root","vipin1407");
             statment = connnection.createStatement();
         }
         catch (ClassNotFoundException e) {
@@ -244,6 +245,70 @@ public class DBConnect {
             preparedStatement.executeLargeUpdate();
         }catch (SQLException e){
             Log.error("unable to unset clustering " + e.getMessage());
+        }
+    }
+
+    public static synchronized List<ClusterInfo> getClusterInfo(){
+        List<ClusterInfo> list = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connnection.prepareStatement("select * from clusterInfo");
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                ClusterInfo clusterInfo = new ClusterInfo();
+                clusterInfo.setClusterId(resultSet.getInt(1));
+                clusterInfo.setRecency(resultSet.getDate(2));
+                clusterInfo.setTotalPoints(resultSet.getInt(3));
+                clusterInfo.setAverageDate(resultSet.getDate(4));
+                clusterInfo.setDiameter(resultSet.getDouble(5));
+                clusterInfo.addRssLinks(Arrays.asList(resultSet.getString(6).split("\\|")));
+                list.add(clusterInfo);
+            }
+        }
+        catch (Exception e){
+            Log.error("unable to fetch clusterInfo " + e.getMessage());
+        }
+        return list;
+    }
+
+    public static synchronized void updateClusterInfo(List<ClusterInfo> list) throws NullArgumentException {
+        MathUtils.checkNotNull(list);
+        try {
+            java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String exactDate = null;
+            PreparedStatement preparedStatement = connnection.prepareStatement("INSERT INTO clusterInfo VALUES(?,?,?,?,?,?) ON DUPLICATE KEY UPDATE recency=?,totalPoints=?,averageDate=?,diameter=?,rssLinks=?");
+            for(ClusterInfo clusterInfo : list){
+                preparedStatement.setInt(1,clusterInfo.getClusterId());
+                if(clusterInfo.getRecency() != null){
+                    exactDate = simpleDateFormat.format(clusterInfo.getRecency());
+                }
+                preparedStatement.setString(2,exactDate);
+                preparedStatement.setString(7,exactDate);
+                exactDate = null;
+                preparedStatement.setInt(3,clusterInfo.getTotalPoints());
+                preparedStatement.setInt(8,clusterInfo.getTotalPoints());
+                if(clusterInfo.getAverageDate() != null){
+                    exactDate = simpleDateFormat.format(clusterInfo.getAverageDate());
+                }
+                preparedStatement.setString(4,exactDate);
+                preparedStatement.setString(9,exactDate);
+
+                preparedStatement.setDouble(5,clusterInfo.getDiameter());
+                preparedStatement.setDouble(10,clusterInfo.getDiameter());
+                String rssLinks = "";
+                for(String rssLink : clusterInfo.getDistinctRss()){
+                    rssLink= rssLink.trim();
+                    rssLinks += rssLink;
+                    rssLinks += "|";
+                }
+                preparedStatement.setString(6,rssLinks);
+                preparedStatement.setString(11,rssLinks);
+                preparedStatement.addBatch();
+            }
+            preparedStatement.executeBatch();
+        }
+        catch (Exception e){
+            Log.error("unable to update cluster info "+ e.getMessage());
+            e.printStackTrace();
         }
     }
 }

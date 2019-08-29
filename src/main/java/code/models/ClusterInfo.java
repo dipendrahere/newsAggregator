@@ -1,5 +1,7 @@
 package code.models;
 
+import java.util.List;
+
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,6 +16,10 @@ public class ClusterInfo {
 
     public ClusterInfo(){
         distinctRss = new HashSet<>();
+    }
+
+    public void addRssLinks(List<String> rssList){
+        distinctRss.addAll(rssList);
     }
 
     public void addRssLink(String rss){
