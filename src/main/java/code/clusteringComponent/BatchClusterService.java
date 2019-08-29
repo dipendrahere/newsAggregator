@@ -19,7 +19,10 @@ public class BatchClusterService {
 
     private BatchClusterService(){
         controllers = Arrays.stream(CategoryType.values()).map(obj -> {
-            return new BatchClusterController(obj);
+            if(obj == CategoryType.SCITECH)
+                return new BatchClusterController(obj, 0.6, 3);
+            else
+                return new BatchClusterController(obj, 0.5, 4);
         }).collect(Collectors.toList());
     }
 

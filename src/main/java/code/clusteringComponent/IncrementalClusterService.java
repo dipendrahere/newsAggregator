@@ -22,7 +22,10 @@ public class IncrementalClusterService {
 
     private IncrementalClusterService(){
         controllers = Arrays.stream(CategoryType.values()).map(obj -> {
-            return new IncrementalClusterController(obj);
+            if(obj == CategoryType.SCITECH){
+                return new IncrementalClusterController(obj, 0.30);
+            }
+            return new IncrementalClusterController(obj, 0.32);
         }).collect(Collectors.toList());
     }
 

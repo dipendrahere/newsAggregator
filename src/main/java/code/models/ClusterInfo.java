@@ -1,6 +1,7 @@
 package code.models;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 public class ClusterInfo {
@@ -10,6 +11,10 @@ public class ClusterInfo {
     private Date averageDate;
     private Double diameter;
     private Set<String> distinctRss;
+
+    public ClusterInfo(){
+        distinctRss = new HashSet<>();
+    }
 
     public void addRssLink(String rss){
         distinctRss.add(rss);
