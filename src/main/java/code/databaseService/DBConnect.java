@@ -256,11 +256,11 @@ public class DBConnect {
             while (resultSet.next()){
                 ClusterInfo clusterInfo = new ClusterInfo();
                 clusterInfo.setClusterId(resultSet.getInt(1));
-                clusterInfo.setRecency(resultSet.getDate(2));
-                clusterInfo.setTotalPoints(resultSet.getInt(3));
-                clusterInfo.setAverageDate(resultSet.getDate(4));
-                clusterInfo.setDiameter(resultSet.getDouble(5));
-                clusterInfo.addRssLinks(Arrays.asList(resultSet.getString(6).split("\\|")));
+                clusterInfo.setRecency(resultSet.getDate(3));
+                clusterInfo.setTotalPoints(resultSet.getInt(4));
+                clusterInfo.setAverageDate(resultSet.getDate(5));
+                clusterInfo.setDiameter(resultSet.getDouble(6));
+                clusterInfo.addRssLinks(Arrays.asList(resultSet.getString(2).split("\\|")));
                 list.add(clusterInfo);
             }
         }
@@ -281,18 +281,18 @@ public class DBConnect {
                 if(clusterInfo.getRecency() != null){
                     exactDate = simpleDateFormat.format(clusterInfo.getRecency());
                 }
-                preparedStatement.setString(2,exactDate);
+                preparedStatement.setString(3,exactDate);
                 preparedStatement.setString(7,exactDate);
                 exactDate = null;
-                preparedStatement.setInt(3,clusterInfo.getTotalPoints());
+                preparedStatement.setInt(4,clusterInfo.getTotalPoints());
                 preparedStatement.setInt(8,clusterInfo.getTotalPoints());
                 if(clusterInfo.getAverageDate() != null){
                     exactDate = simpleDateFormat.format(clusterInfo.getAverageDate());
                 }
-                preparedStatement.setString(4,exactDate);
+                preparedStatement.setString(5,exactDate);
                 preparedStatement.setString(9,exactDate);
 
-                preparedStatement.setDouble(5,clusterInfo.getDiameter());
+                preparedStatement.setDouble(6,clusterInfo.getDiameter());
                 preparedStatement.setDouble(10,clusterInfo.getDiameter());
                 String rssLinks = "";
                 for(String rssLink : clusterInfo.getDistinctRss()){
@@ -300,7 +300,7 @@ public class DBConnect {
                     rssLinks += rssLink;
                     rssLinks += "|";
                 }
-                preparedStatement.setString(6,rssLinks);
+                preparedStatement.setString(2,rssLinks);
                 preparedStatement.setString(11,rssLinks);
                 preparedStatement.addBatch();
             }

@@ -18,7 +18,7 @@ public class ClusterInfoHelper {
             info.setClusterId(cluster.getClusterId());
             Set<String> distinctRss = cluster.getPoints().stream().map(a -> a.getRssLink()).collect(Collectors.toSet());
             Stream<Date> dates = cluster.getPoints().stream().map(a -> a.getPublishedDate());
-            Date mostRecent = dates.reduce((a, b)-> a.compareTo(b) > 0 ? a:b).get();
+            Date mostRecent = cluster.getPoints().stream().map(a -> a.getPublishedDate()).reduce((a, b)-> a.compareTo(b) > 0 ? a:b).get();
             int count = cluster.getPoints().size();
             Date averageDate = dates.reduce((a, b) -> {
                 long ad = a.getTime();
@@ -36,6 +36,7 @@ public class ClusterInfoHelper {
 
 
     public double calculateDiameter(List<Article> articles){
+//        return 0;
         Double maxi = 0.0;
         for(int i=0;i<articles.size();i++){
             for(int j=i+1;j<articles.size();j++){
