@@ -20,8 +20,16 @@ public class Cluster<T> {
         points = new ArrayList<T>();
     }
 
+    public void setClusterId(int clusterId) {
+        this.clusterId = clusterId;
+    }
+
     public int getClusterId() {
         return clusterId;
+    }
+
+    public void addPoints(final List<T> points){
+        this.points.addAll(points);
     }
 
     public void addPoint(final T point) {
