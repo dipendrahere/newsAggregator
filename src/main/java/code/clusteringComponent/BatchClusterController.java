@@ -31,9 +31,11 @@ public class BatchClusterController {
                 hashMap.put(article.getId(),cluster.getClusterId());
             }
         }
+
+        List<ClusterInfo> info = new ClusterInfoHelper().batchInformation(clusters);
+        DBConnect.getInstance().updateClusterInfo(info);
         DBConnect.getInstance().unassignClusters(categoryType);
         DBConnect.getInstance().updateClusterIDs(hashMap);
-
 //       try {
 //            GlobalFunctions.dumpClusters(clusters);
 //        } catch (IOException e) {
