@@ -11,14 +11,18 @@ import java.util.List;
 
 public class BatchClusterController {
     private CategoryType categoryType;
+    private final double eps;
+    private final int minPts;
 
-    public BatchClusterController(CategoryType categoryType){
+    public BatchClusterController(CategoryType categoryType, double eps, int minPts){
         this.categoryType = categoryType;
+        this.eps = eps;
+        this.minPts = minPts;
     }
 
     public void startClustering(){
         List<Article> list = DBConnect.getInstance().fetchArticles(categoryType);
-        BatchClusterer<Article> clusterer = new BatchClusterer<Article>();
+        BatchClusterer<Article> clusterer = new BatchClusterer<Article>(eps, minPts);
         List<Cluster<Article>> clusters = clusterer.cluster(list);
         HashMap<String,Integer> hashMap = new HashMap<>();
         for(Cluster cluster : clusters){
@@ -27,9 +31,11 @@ public class BatchClusterController {
                 hashMap.put(article.getId(),cluster.getClusterId());
             }
         }
+
+        List<ClusterInfo> info = new ClusterInfoHelper().batchInformation(clusters);
+        DBConnect.getInstance().updateClusterInfo(info);
         DBConnect.getInstance().unassignClusters(categoryType);
         DBConnect.getInstance().updateClusterIDs(hashMap);
-
 //       try {
 //            GlobalFunctions.dumpClusters(clusters);
 //        } catch (IOException e) {
