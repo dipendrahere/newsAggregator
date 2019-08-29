@@ -4,6 +4,8 @@ import code.databaseService.DBConnect;
 import code.models.Article;
 import code.models.CategoryType;
 import code.models.Cluster;
+import code.models.ClusterInfo;
+
 import java.util.HashMap;
 import java.util.List;
 
