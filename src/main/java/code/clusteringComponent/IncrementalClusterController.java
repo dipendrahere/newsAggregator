@@ -17,6 +17,7 @@ public class IncrementalClusterController {
         this.eps = eps;
     }
     public void run(){
+
         HashMap<Article,Integer> hashMap = DBConnect.getInstance().articleClusterRelationship(categoryType);
         IncrementalClusterer<Article> hierarchicalClusterer = new IncrementalClusterer<Article>(eps);
         HashMap<String,Integer> updatedClusterId = hierarchicalClusterer.clusterIncrementally(hashMap);
