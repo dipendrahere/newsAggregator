@@ -6,15 +6,12 @@ import code.models.ClusterInfo;
 import code.utility.GlobalFunctions;
 import code.utility.Log;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ClusterInfoHelper {
-    public List<ClusterInfo> coverageRecencyAndCount(List<Cluster<Article>> clusters){
+    public List<ClusterInfo> batchInformation(List<Cluster<Article>> clusters){
         return clusters.stream().map(cluster -> {
             ClusterInfo info  = new ClusterInfo();
             info.setClusterId(cluster.getClusterId());
@@ -52,4 +49,44 @@ public class ClusterInfoHelper {
         }
         return maxi;
     }
+
+
+    public List<ClusterInfo> incrementDiameters(HashMap<String,Integer> assignedCluster, HashMap<Article,Integer> hashMap, List<ClusterInfo> clusterInfos){
+
+
+        HashMap<Integer,List<Article>> hmap = new HashMap<>();
+        List<Article> NonClusteredArticles = new ArrayList<>();
+        Iterator iterator = hashMap.entrySet().iterator();
+        while(iterator.hasNext()){
+            Map.Entry mapElement = (Map.Entry)iterator.next();
+            if((Integer)mapElement.getValue() == 0){
+                NonClusteredArticles.add((Article)mapElement.getKey());
+                continue;
+            }
+            if(hmap.containsKey(mapElement.getValue())){
+                hmap.get(mapElement.getValue()).add((Article)mapElement.getKey());
+            }
+            else{
+                List<Article> list = new ArrayList<>();
+                list.add((Article)mapElement.getKey());
+                hmap.put((Integer)mapElement.getValue(),list);
+            }
+        }
+        List<ClusterInfo> ret = new ArrayList<>();
+        for(Article article : NonClusteredArticles){
+            Double maxi = 0.0;
+            int assignedClusterNo = assignedCluster.get(article.getId());
+            List<Article> alreadyArticlesinClusters = hmap.get(assignedClusterNo);
+            for (Article already : alreadyArticlesinClusters){
+                try {
+                    maxi = Math.max(maxi,GlobalFunctions.cosineDissimilarity(already,article));
+                }
+                catch (Exception e){
+                    Log.error("unable to find cosine dissimilarty "+ e.getMessage());
+                }
+            }
+        }
+        return ret;
+    }
+
 }
