@@ -59,6 +59,7 @@ public class RssController {
         try {
             List<Article> articles = futureForRss.get();
             articles = articles.stream().filter(article -> article.getContent().length() != 0).collect(Collectors.toList());
+            articles = articles.stream().filter(article -> article.getPublishedDate() != null).collect(Collectors.toList());
             writeInDB(articles);
         } catch (InterruptedException e) {
             e.printStackTrace();

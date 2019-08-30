@@ -44,6 +44,7 @@ public class DBConnect {
             return;
         }
         try{
+            articles = articles.stream().filter(article -> article.getPublishedDate() != null).collect(Collectors.toList());
             articles = articles.stream().filter(article -> {
                 return article.getContent().split(" ").length >= 30 && article.getContent().length() <= 64000;
             }).collect(Collectors.toList());

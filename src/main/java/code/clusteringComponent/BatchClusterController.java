@@ -5,6 +5,7 @@ import code.models.Article;
 import code.models.CategoryType;
 import code.models.Cluster;
 import code.models.ClusterInfo;
+import code.utility.Log;
 
 import java.util.HashMap;
 import java.util.List;
@@ -31,11 +32,11 @@ public class BatchClusterController {
                 hashMap.put(article.getId(),cluster.getClusterId());
             }
         }
-
-        List<ClusterInfo> info = new ClusterInfoHelper().batchInformation(clusters);
-        DBConnect.getInstance().updateClusterInfo(info);
         DBConnect.getInstance().unassignClusters(categoryType);
         DBConnect.getInstance().updateClusterIDs(hashMap);
+        List<ClusterInfo> info = new ClusterInfoHelper().batchInformation(clusters);
+        DBConnect.getInstance().updateClusterInfo(info);
+        Log.debug("BATCH CLUSTERING DONE");
 //       try {
 //            GlobalFunctions.dumpClusters(clusters);
 //        } catch (IOException e) {
