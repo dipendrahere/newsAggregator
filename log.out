@@ -7,3 +7,14 @@
 2019-08-29 17:31:21 ERROR global:20 - unable to update cluster info You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''2019-08-29 17:31:17'), totalPoints = values(5), averageDate = values('2019-08-2' at line 1
 2019-08-29 17:36:32 ERROR global:20 - unable to update cluster info Table 'newsaggregator.clusterInfo' doesn't exist
 2019-08-29 17:41:25 ERROR global:20 - unable to fetch clusterInfo Cannot convert string 'demo1|demo2|' to java.sql.Date value
+2019-08-30 19:00:33 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_business.rss
+2019-08-30 19:00:33 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_sport.rss
+2019-08-30 19:00:33 INFO  global:17 - READ: http://feeds.reuters.com/reuters/businessNews
+2019-08-30 19:00:33 INFO  global:17 - READ: http://www.cnbc.com/id/19746125/device/rss/rss.xml
+2019-08-30 19:00:34 INFO  global:17 - READ: http://www1.cbn.com/app_feeds/rss/news/rss.php?section=world
+2019-08-30 19:00:34 INFO  global:17 - READ: https://www.npr.org/rss/rss.php?id=1001
+2019-08-30 19:00:34 INFO  global:17 - READ: http://nusports.com/rss.aspx?path=general
+2019-08-30 19:00:34 INFO  global:17 - READ: http://nautil.us/rss/all
+2019-08-30 19:00:34 INFO  global:17 - READ: http://feeds.newscientist.com/science-news
+2019-08-30 19:00:34 INFO  global:17 - READ: https://www.skysports.com/rss/12040
+2019-08-30 19:00:34 INFO  global:17 - READ: https://www.espn.com/espn/rss/news
