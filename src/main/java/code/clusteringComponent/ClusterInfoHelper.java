@@ -1,16 +1,19 @@
 package code.clusteringComponent;
 
-import code.models.Article;
-import code.models.Cluster;
-import code.models.ClusterInfo;
+import code.models.*;
 import code.utility.GlobalFunctions;
 import code.utility.Log;
+import code.utility.Pair;
 
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.util.Map.Entry.comparingByValue;
+
 public class ClusterInfoHelper {
+
+
 
     public List<ClusterInfo> batchInformation(List<Cluster<Article>> clusters){
         return clusters.stream().map(cluster -> {
@@ -35,8 +38,7 @@ public class ClusterInfoHelper {
     }
 
 
-    public double calculateDiameter(List<Article> articles){
-//        return 0;
+    private double calculateDiameter(List<Article> articles){
         Double maxi = 0.0;
         for(int i=0;i<articles.size();i++){
             for(int j=i+1;j<articles.size();j++){
@@ -141,6 +143,105 @@ public class ClusterInfoHelper {
             ret.add((ClusterInfo)mapElement.getValue());
         }
         return ret;
+    }
+
+    public HashMap<String,Integer> batchRanking(List<Cluster<Article>> clusters){
+        HashMap<String,Integer> ret = new HashMap<>();
+        for(Cluster cluster : clusters){
+            List<Article> articles = cluster.getPoints();
+            HashMap<String,Double> temp = new HashMap<>();
+            String allContent = "";
+            CategoryType categoryType = CategoryType.SPORTS;
+            for (Article article : articles){
+                allContent += article.getContent();
+                allContent += " ";
+                categoryType = article.getCategoryType();
+            }
+            Article major = new ArticleBuilder("demo")
+                    .setContent(allContent)
+                    .setTitle("demo")
+                    .setCategoryType(categoryType)
+                    .build();
+            for(Article article : articles){
+                try {
+                    temp.put(article.getId(),GlobalFunctions.cosineDissimilarity(major,article));
+                }
+                catch (Exception e){
+                    Log.error("unable to find cosine dissimilarty "+ e.getMessage());
+                }
+            }
+            HashMap<String,Double> sorted = new HashMap<>();
+            temp.entrySet()
+                    .stream()
+                    .sorted(Map.Entry.comparingByValue())
+                    .forEachOrdered(x -> sorted.put(x.getKey(), x.getValue()));
+
+            Iterator iterator = sorted.entrySet().iterator();
+            int i = 1;
+            while (iterator.hasNext()){
+                Map.Entry mapElement = (Map.Entry)iterator.next();
+                ret.put((String)mapElement.getKey(),i);
+                i++;
+
+            }
+
+        }
+        return ret;
+    }
+
+    public HashMap<String,Integer> incrementalRanking(HashMap<String,Integer> assignedCluster, HashMap<Article,Integer> hashMap){
+        HashMap<Integer,List<Article>> hmap = new HashMap<>();
+        List<Article> NonClusteredArticles = new ArrayList<>();
+        Iterator iterator = hashMap.entrySet().iterator();
+        while(iterator.hasNext()){
+            Map.Entry mapElement = (Map.Entry)iterator.next();
+            if((Integer)mapElement.getValue() == 0){
+                NonClusteredArticles.add((Article)mapElement.getKey());
+                continue;
+            }
+            if(hmap.containsKey(mapElement.getValue())){
+                hmap.get(mapElement.getValue()).add((Article)mapElement.getKey());
+            }
+            else{
+                List<Article> list = new ArrayList<>();
+                list.add((Article)mapElement.getKey());
+                hmap.put((Integer)mapElement.getValue(),list);
+            }
+        }
+        List<Cluster<Article>> ret = new ArrayList<>();
+        HashMap<Integer,List<Article>> newClusters = new HashMap<>();
+        for(Article nonArticle : NonClusteredArticles){
+            int cluster_id = assignedCluster.get(nonArticle.getId());
+            if(hmap.containsKey(cluster_id)){
+                List<Article> temp = hmap.get(cluster_id);
+                hmap.get(cluster_id).clear();
+                temp.add(nonArticle);
+                if(!hmap.containsKey(cluster_id)){
+                    newClusters.put(cluster_id,temp);
+                }
+                else{
+                    newClusters.get(cluster_id).add(nonArticle);
+                }
+            }
+            else{
+                if(!newClusters.containsKey(cluster_id)){
+                    List<Article> temp = new ArrayList<>();
+                    temp.add(nonArticle);
+                    newClusters.put(cluster_id,temp);
+                }
+                else{
+                    newClusters.get(cluster_id).add(nonArticle);
+                }
+            }
+        }
+        iterator = newClusters.entrySet().iterator();
+        while (iterator.hasNext()){
+            Map.Entry mapElement = (Map.Entry)iterator.next();
+            Cluster<Article> cluster = new Cluster<>(null);
+            cluster.addPoints((List<Article>) mapElement.getValue());
+            ret.add(cluster);
+        }
+        return batchRanking(ret);
     }
 
 }
