@@ -286,11 +286,8 @@ public class DBConnect {
                 exactDate = null;
                 preparedStatement.setInt(4,clusterInfo.getTotalPoints());
                 preparedStatement.setInt(8,clusterInfo.getTotalPoints());
-                if(clusterInfo.getAverageDate() != null){
-                    exactDate = simpleDateFormat.format(clusterInfo.getAverageDate());
-                }
-                preparedStatement.setString(5,exactDate);
-                preparedStatement.setString(9,exactDate);
+                preparedStatement.setString(5,null);
+                preparedStatement.setString(9,null);
 
                 preparedStatement.setDouble(6,clusterInfo.getDiameter());
                 preparedStatement.setDouble(10,clusterInfo.getDiameter());
@@ -317,7 +314,7 @@ public class DBConnect {
             PreparedStatement preparedStatement = connnection.prepareStatement("update clusterArticleRelationship set articleRank = ? where articleId = ?");
             Iterator iterator = hashMap.entrySet().iterator();
             while (iterator.hasNext()){
-                Map.Entry<String, Integer> mapElement = (Map.Entry)iterator.next();
+                Map.Entry<String, Double> mapElement = (Map.Entry)iterator.next();
                 preparedStatement.setString(2, mapElement.getKey());
                 preparedStatement.setDouble(1, mapElement.getValue());
                 preparedStatement.addBatch();
