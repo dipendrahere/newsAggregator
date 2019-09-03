@@ -234,7 +234,7 @@ public class ClusterInfoHelper {
                 List<Article> temp = hmap.get(cluster_id);
                 hmap.get(cluster_id).clear();
                 temp.add(nonArticle);
-                if(!hmap.containsKey(cluster_id)){
+                if(!newClusters.containsKey(cluster_id)){
                     newClusters.put(cluster_id,temp);
                 }
                 else{
