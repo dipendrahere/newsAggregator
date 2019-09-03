@@ -169,6 +169,7 @@ public class ClusterInfoHelper {
     }
 
     public HashMap<String,Integer> batchRanking(List<Cluster<Article>> clusters){
+        Log.debug("BATCH INFO START");
         HashMap<String,Integer> ret = new HashMap<>();
         for(Cluster cluster : clusters){
             List<Article> articles = cluster.getPoints();
@@ -204,10 +205,12 @@ public class ClusterInfoHelper {
             }
 
         }
+        Log.debug("BATCH INFO DONE");
         return ret;
     }
 
     public HashMap<String,Integer> incrementalRanking(HashMap<String,Integer> assignedCluster, HashMap<Article,Integer> hashMap){
+        Log.debug("INCREMENTAL INFO START");
         HashMap<Integer,List<Article>> hmap = new HashMap<>();
         List<Article> NonClusteredArticles = new ArrayList<>();
         Iterator iterator = hashMap.entrySet().iterator();
@@ -234,7 +237,7 @@ public class ClusterInfoHelper {
                 List<Article> temp = hmap.get(cluster_id);
                 hmap.get(cluster_id).clear();
                 temp.add(nonArticle);
-                if(!hmap.containsKey(cluster_id)){
+                if(!newClusters.containsKey(cluster_id)){
                     newClusters.put(cluster_id,temp);
                 }
                 else{
@@ -259,6 +262,8 @@ public class ClusterInfoHelper {
             cluster.addPoints((List<Article>) mapElement.getValue());
             ret.add(cluster);
         }
+        Log.debug("INCREMENTAL INFO DONE");
+        Log.debug("BATCH FOR INCREMENTAL INFO START");
         return batchRanking(ret);
     }
 
