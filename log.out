@@ -21045,3 +21045,543 @@
 2019-09-03 14:47:50 INFO  global:17 - debug 7 BUSINESS
 2019-09-03 14:47:50 INFO  global:17 - Update in Db
 2019-09-03 14:47:51 INFO  global:17 - INCREMENTAL DONE for BUSINESS
+2019-09-03 16:04:01 INFO  global:17 - Update in Db
+2019-09-03 16:04:01 INFO  global:17 - INCREMENTAL DONE for SPORTS
+2019-09-03 16:04:02 INFO  global:17 - Update in Db
+2019-09-03 16:04:02 INFO  global:17 - INCREMENTAL DONE for BUSINESS
+2019-09-03 16:04:02 INFO  global:17 - Update in Db
+2019-09-03 16:04:02 INFO  global:17 - INCREMENTAL DONE for WORLD
+2019-09-03 16:04:02 INFO  global:17 - Update in Db
+2019-09-03 16:04:02 INFO  global:17 - INCREMENTAL DONE for SCITECH
+2019-09-03 16:11:39 INFO  global:17 - Update in Db
+2019-09-03 16:11:40 INFO  global:17 - INCREMENTAL DONE for SCITECH
+2019-09-03 16:12:10 INFO  global:17 - Update in Db
+2019-09-03 16:12:20 INFO  global:17 - INCREMENTAL DONE for WORLD
+2019-09-03 16:12:49 INFO  global:17 - Update in Db
+2019-09-03 16:13:05 INFO  global:17 - INCREMENTAL DONE for BUSINESS
+2019-09-03 16:13:25 INFO  global:17 - Update in Db
+2019-09-03 16:13:36 INFO  global:17 - INCREMENTAL DONE for SPORTS
+2019-09-03 16:17:16 INFO  global:17 - READ: http://rss.cnn.com/rss/money_topstories.rss
+2019-09-03 16:17:16 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_business.rss
+2019-09-03 16:17:16 INFO  global:17 - READ: http://www.cnbc.com/id/19746125/device/rss/rss.xml
+2019-09-03 16:17:16 INFO  global:17 - READ: http://feeds.reuters.com/reuters/businessNews
+2019-09-03 16:17:16 INFO  global:17 - READ: https://economictimes.indiatimes.com/rssfeedsdefault.cms
+2019-09-03 16:17:16 INFO  global:17 - READ: https://www.livemint.com/rss/money
+2019-09-03 16:17:17 INFO  global:17 - READ: https://fortune.com/feed
+2019-09-03 16:17:19 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_sport.rss
+2019-09-03 16:17:19 INFO  global:17 - READ: https://www.espn.com/espn/rss/news
+2019-09-03 16:17:20 INFO  global:17 - READ: https://www.financialexpress.com/feed/
+2019-09-03 16:17:20 INFO  global:17 - Update in Db
+2019-09-03 16:17:20 INFO  global:17 - INCREMENTAL DONE for SPORTS
+2019-09-03 16:17:20 INFO  global:17 - Update in Db
+2019-09-03 16:17:20 INFO  global:17 - INCREMENTAL DONE for BUSINESS
+2019-09-03 16:17:20 INFO  global:17 - READ: https://www.businesstoday.in/rss/rssstory.jsp?sid=105
+2019-09-03 16:17:20 INFO  global:17 - Update in Db
+2019-09-03 16:17:20 INFO  global:17 - INCREMENTAL DONE for SCITECH
+2019-09-03 16:17:21 INFO  global:17 - Update in Db
+2019-09-03 16:17:21 INFO  global:17 - INCREMENTAL DONE for WORLD
+2019-09-03 16:17:21 INFO  global:17 - READ: http://nautil.us/rss/all
+2019-09-03 16:17:22 INFO  global:17 - READ: http://feeds.newscientist.com/science-news
+2019-09-03 16:17:22 INFO  global:17 - READ: http://feeds.newscientist.com/space
+2019-09-03 16:17:22 INFO  global:17 - READ: https://www.skysports.com/rss/12040
+2019-09-03 16:17:22 INFO  global:17 - READ: https://www.usnews.com/topics/subjects/science/rss
+2019-09-03 16:17:23 INFO  global:17 - READ: https://business.financialpost.com/feed/
+2019-09-03 16:17:24 INFO  global:17 - READ: http://www1.cbn.com/app_feeds/rss/news/rss.php?section=world
+2019-09-03 16:17:24 INFO  global:17 - READ: http://nusports.com/rss.aspx?path=general
+2019-09-03 16:17:24 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:25 INFO  global:17 - READ: https://www.livemint.com/rss/sports
+2019-09-03 16:17:25 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/kotak-mahindra-bank-revised-fd-rates-check-out-the-latest-rates-here-1567488983842.html is fetched
+2019-09-03 16:17:25 INFO  global:17 - READ: http://rssfeeds.wfaa.com/wfaa/sports
+2019-09-03 16:17:25 INFO  global:17 - READ: https://www.businessinsider.in/rss_section_feeds/21807169.cms
+2019-09-03 16:17:25 INFO  global:17 - READ: https://www.cnbc.com/id/19854910/device/rss/rss.html
+2019-09-03 16:17:25 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:25 INFO  global:17 - article with link: https://www.businesstoday.in/current/economy-politics/kerala-fm-thomas-issac-says-no-to-gst-rate-cut-on-cars-bikes/story/377003.html is fetched
+2019-09-03 16:17:25 INFO  global:17 - READ: https://www.npr.org/rss/rss.php?id=1001
+2019-09-03 16:17:25 INFO  global:17 - READ: http://www.moneycontrol.com/rss/MCtopnews.xml
+2019-09-03 16:17:26 INFO  global:17 - READ: http://feeds.feedburner.com/TechCrunch
+2019-09-03 16:17:26 INFO  global:17 - READ: https://www.thehindu.com/sport/feeder/default.rss
+2019-09-03 16:17:27 INFO  global:17 - READ: http://feeds.sport24.co.za/articles/Sport/Featured/TopStories/rss
+2019-09-03 16:17:28 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:28 INFO  global:17 - article with link: https://www.newscientist.com/article/mg24332450-800-are-there-any-aliens-out-there-we-are-close-to-knowing-for-sure/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=space is fetched
+2019-09-03 16:17:29 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:29 INFO  global:17 - article with link: https://www.cnbc.com/2019/09/03/stock-market-wall-street-monitors-latest-us-china-trade-tariffs.html is fetched
+2019-09-03 16:17:29 INFO  global:17 - READ: https://www.si.com/rss/si_topstories.rss
+2019-09-03 16:17:29 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:29 INFO  global:17 - article with link: https://www.businesstoday.in/current/economy-politics/pakistan-allows-import-of-life-saving-drugs-from-india/story/377002.html is fetched
+2019-09-03 16:17:29 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:29 INFO  global:17 - article with link: https://www.businesstoday.in/sectors/auto/tractor-sales-degrow-up-to-7-percent-despite-normal-monsoon/story/377000.html is fetched
+2019-09-03 16:17:29 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:29 INFO  global:17 - article with link: https://www.newscientist.com/article/2214859-we-may-have-seen-signs-of-an-exomoon-spewing-out-volcanic-gas/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=space is fetched
+2019-09-03 16:17:30 INFO  global:17 - READ: https://www.mid-day.com/Resources/midday/rss/sports.xml
+2019-09-03 16:17:30 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:30 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/mirae-has-generated-alpha-through-stock-selection-not-sectoral-calls-neelesh-surana-1567449267284.html is fetched
+2019-09-03 16:17:30 INFO  global:17 - READ: https://www.technologyreview.com/topnews.rss
+2019-09-03 16:17:31 INFO  global:17 - READ: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+2019-09-03 16:17:31 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:31 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/returns-on-my-investments-1567448529402.html is fetched
+2019-09-03 16:17:31 INFO  global:17 - READ: http://feeds.bbci.co.uk/news/technology/rss.xml
+2019-09-03 16:17:32 INFO  global:17 - READ: https://www.telegraph.co.uk/sport/rss.xml
+2019-09-03 16:17:33 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:33 INFO  global:17 - article with link: https://www.businesstoday.in/current/economy-politics/govt-to-increase-ethanol-procurement-price-from-december/story/376999.html is fetched
+2019-09-03 16:17:33 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:33 INFO  global:17 - article with link: https://www.livemint.com/money/ask-mint-money/interest-earned-from-corp-bonds-is-taxable-irrespective-of-residential-status-1567447662194.html is fetched
+2019-09-03 16:17:33 INFO  global:17 - READ: https://www.cbc.ca/cmlink/rss-sports
+2019-09-03 16:17:34 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:34 INFO  global:17 - article with link: https://www.newscientist.com/article/2214685-puzzling-signals-seen-by-ligo-may-be-gravitational-wave-split-in-two/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=space is fetched
+2019-09-03 16:17:34 INFO  global:17 - READ: https://www.economist.com/business/rss.xml
+2019-09-03 16:17:34 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:34 INFO  global:17 - article with link: https://www.cnbc.com/2019/09/02/this-is-how-millennials-are-shaping-the-new-economy.html is fetched
+2019-09-03 16:17:35 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:35 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/give-your-financial-portfolio-a-realty-check-1567446377303.html is fetched
+2019-09-03 16:17:36 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:36 INFO  global:17 - article with link: https://www.businesstoday.in/subscription.html is fetched
+2019-09-03 16:17:37 INFO  global:17 - READ: https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml
+2019-09-03 16:17:37 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:37 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:37 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/new-credit-card-debit-card-facility-from-this-month-to-make-payments-easier-1567417482313.html is fetched
+2019-09-03 16:17:37 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/if-you-use-aadhaar-for-income-tax-returns-itr-filing-pan-card-will-be-auto-generated-1567416295633.html is fetched
+2019-09-03 16:17:38 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:38 INFO  global:17 - article with link: https://www.businesstoday.in/markets/company-stock/knr-constructions-share-price-rises-over-6-on-bagging-rs-850-crore-order/story/376997.html is fetched
+2019-09-03 16:17:39 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:39 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/over-2-crore-income-tax-return-filers-yet-to-verify-their-itrs-how-to-do-it-1567409956470.html is fetched
+2019-09-03 16:17:39 INFO  global:17 - READ: http://feeds.feedburner.com/typepad/alleyinsider/silicon_alley_insider
+2019-09-03 16:17:39 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:39 INFO  global:17 - article with link: https://www.businesstoday.in/latest/trends/chandrayaan-2-mission-lander-vikram-reaches-closer-to-moon-nears-landing-stage-rover-pragyan/story/376986.html is fetched
+2019-09-03 16:17:40 INFO  global:17 - READ: https://www.cnbc.com/id/100727362/device/rss/rss.html
+2019-09-03 16:17:40 INFO  global:17 - READ: https://timesofindia.indiatimes.com/rssfeeds/1898055.cms
+2019-09-03 16:17:40 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:40 INFO  global:17 - article with link: https://www.newscientist.com/article/2214517-spacexs-starhopper-has-made-its-highest-and-final-test-flight/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=space is fetched
+2019-09-03 16:17:41 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:41 INFO  global:17 - article with link: https://www.businesstoday.in/sectors/energy/ongc-fire-hits-cng-png-gas-supply-in-mumbai/story/376985.html is fetched
+2019-09-03 16:17:41 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:41 INFO  global:17 - article with link: https://www.newscientist.com/article/2209151-quiz-how-good-is-your-knowledge-of-the-moon/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=space is fetched
+2019-09-03 16:17:41 INFO  global:17 - READ: http://feeds.reuters.com/reuters/technologyNews
+2019-09-03 16:17:41 INFO  global:17 - READ: https://www.cbc.ca/cmlink/rss-business
+2019-09-03 16:17:42 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:42 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/pnb-revises-savings-bank-account-fixed-deposit-rates-latest-fd-rates-here-1567404718443.html is fetched
+2019-09-03 16:17:42 INFO  global:17 - READ: http://feeds.washingtonpost.com/rss/business/technology
+2019-09-03 16:17:42 INFO  global:17 - READ: https://www.theguardian.com/world/rss
+2019-09-03 16:17:43 INFO  global:17 - READ: http://feeds.feedburner.com/Makeuseof
+2019-09-03 16:17:43 INFO  global:17 - READ: https://www.usnews.com/rss/money
+2019-09-03 16:17:43 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:43 INFO  global:17 - article with link: https://www.businesstoday.in/subscription.html is fetched
+2019-09-03 16:17:45 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:45 INFO  global:17 - article with link: https://www.livemint.com/sports/cricket-news/virat-kohli-becomes-india-s-most-successful-test-captain-1567449257367.html is fetched
+2019-09-03 16:17:45 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:45 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/will-liquidity-infusion-in-hfcs-help-revive-the-realty-sector-1567360643469.html is fetched
+2019-09-03 16:17:45 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:45 INFO  global:17 - article with link: https://economictimes.indiatimes.com/markets/stocks/news/watch-out-gdp-slowdown-has-jhunjhunwala-among-its-victims/articleshow/70957714.cms is fetched
+2019-09-03 16:17:45 INFO  global:17 - READ: http://feeds.reuters.com/Reuters/worldNews
+2019-09-03 16:17:46 INFO  global:17 - READ: https://timesofindia.indiatimes.com/rssfeeds/296589292.cms
+2019-09-03 16:17:47 INFO  global:17 - READ: https://feeds.howtogeek.com/HowToGeek
+2019-09-03 16:17:47 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:47 INFO  global:17 - article with link: https://economictimes.indiatimes.com/markets/bonds/bonds-rally-rupee-falls-as-weak-gdp-spurs-rate-cut-bets/articleshow/70958853.cms is fetched
+2019-09-03 16:17:47 INFO  global:17 - crawl :: status code string: Not Found :: status code: 404
+2019-09-03 16:17:47 INFO  global:17 - article with link: https://economictimes.indiatimes.com/news/politics-and-nation/chidambaram-cbi-bail-plea-supreme-court-ed-live-news-updates/articleshow/70955378.cms is fetched
+2019-09-03 16:17:48 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:48 INFO  global:17 - article with link: https://www.livemint.com/sports/cricket-news/hanuma-vihari-joins-sachin-tendulkar-in-elite-list-after-2nd-innings-fifty-1567438654048.html is fetched
+2019-09-03 16:17:48 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:48 INFO  global:17 - article with link: https://economictimes.indiatimes.com/markets/commodities/news/oil-falls-1-pressured-by-trade-war-and-swelling-output/articleshow/70960074.cms is fetched
+2019-09-03 16:17:49 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:49 INFO  global:17 - article with link: https://www.livemint.com/sports/cricket-news/rishabh-pant-becomes-fastest-indian-to-impressive-test-record-1567431691403.html is fetched
+2019-09-03 16:17:49 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:49 INFO  global:17 - article with link: https://www.livemint.com/sports/cricket-news/sri-lanka-s-lasith-malinga-sets-t20-record-with-99-wickets-1567367095798.html is fetched
+2019-09-03 16:17:50 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:50 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/income-tax-return-filings-surge-to-a-record-1567359816802.html is fetched
+2019-09-03 16:17:51 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:51 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:51 INFO  global:17 - article with link: https://www.cnbc.com/2019/09/03/at-least-25-confirmed-dead-in-boat-fire-in-california.html is fetched
+2019-09-03 16:17:51 INFO  global:17 - article with link: https://www.cnbc.com/2019/09/03/trump-wants-to-save-christmas-but-shoppers-still-fear-tariffs.html is fetched
+2019-09-03 16:17:52 INFO  global:17 - READ: https://www.sciencedaily.com/rss/top/science.xml
+2019-09-03 16:17:52 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:52 INFO  global:17 - article with link: https://www.livemint.com/sports/cricket-news/mohammed-shami-reaches-test-milestone-for-india-1567352400027.html is fetched
+2019-09-03 16:17:52 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:52 INFO  global:17 - article with link: https://www.businesstoday.in/current/economy-politics/iaf-inducts-8-apache-ah-64e-choppers-here-how-part-india-defence/story/376977.html is fetched
+2019-09-03 16:17:52 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:52 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/top-15-banks-that-offer-the-lowest-personal-loan-rates-1567348308525.html is fetched
+2019-09-03 16:17:53 INFO  global:17 - READ: https://www.sciencedaily.com/rss/top/technology.xml
+2019-09-03 16:17:53 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:53 INFO  global:17 - article with link: https://www.livemint.com/money/ask-mint-money/transfer-of-shares-from-parents-to-kids-doesn-t-trigger-any-tax-liability-1567347781489.html is fetched
+2019-09-03 16:17:53 INFO  global:17 - READ: http://feeds.feedburner.com/sciencealert-latestnews
+2019-09-03 16:17:53 INFO  global:17 - READ: http://feeds.feedburner.com/AllDiscovermagazinecomContent
+2019-09-03 16:17:54 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:54 INFO  global:17 - article with link: https://www.skysports.com/tennis/news/12040/11801250/rafael-nadal-defeats-former-champion-marin-cilic-to-reach-us-open-quarter-finals is fetched
+2019-09-03 16:17:54 INFO  global:17 - READ: http://feeds.feedburner.com/daily-express-world-news
+2019-09-03 16:17:55 INFO  global:17 - READ: https://www.wired.com/category/science/feed
+2019-09-03 16:17:56 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:56 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:56 INFO  global:17 - article with link: https://www.livemint.com/money/ask-mint-money/don-t-forget-to-encash-your-unutilized-leaves-1567346895480.html is fetched
+2019-09-03 16:17:56 INFO  global:17 - article with link: https://www.skysports.com/golf/news/12040/11796164/solheim-cup-watch-europe-vs-usa-at-gleneagles-live-on-sky-sports is fetched
+2019-09-03 16:17:57 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:57 INFO  global:17 - article with link: https://www.livemint.com/sports/news/ferrari-s-charles-leclerc-wins-belgian-grand-prix-in-solemn-atmosphere-1567349476052.html is fetched
+2019-09-03 16:17:57 INFO  global:17 - READ: https://www.mirror.co.uk/news/world-news/?service=rss
+2019-09-03 16:17:57 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:57 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/how-your-investments-in-nps-are-faring-1567346338782.html is fetched
+2019-09-03 16:17:57 INFO  global:17 - READ: http://feeds.feedburner.com/time/world
+2019-09-03 16:17:57 INFO  global:17 - READ: http://www.space.com/feeds/all
+2019-09-03 16:17:58 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:58 INFO  global:17 - article with link: http://nautil.us/blog/what-color-really-evolved-for?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication is fetched
+2019-09-03 16:17:59 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:17:59 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/how-gains-from-different-forms-of-gold-investments-are-taxed-1567344086775.html is fetched
+2019-09-03 16:18:00 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:00 INFO  global:17 - article with link: http://nautil.us/blog/-butterfly-wonk-robert-pyle-pens-his-first-novel-44-years-in-the-making?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication is fetched
+2019-09-03 16:18:01 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:01 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/the-curious-cases-of-sim-swap-frauds-in-recent-times-1567345049648.html is fetched
+2019-09-03 16:18:01 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:01 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/how-initial-discounts-can-get-you-hooked-to-a-product-or-service-1567342874254.html is fetched
+2019-09-03 16:18:01 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:01 INFO  global:17 - article with link: https://www.livemint.com/sports/football-news/ansu-fati-become-barca-s-youngest-la-liga-scorer-but-whose-record-did-he-break-1567348052385.html is fetched
+2019-09-03 16:18:01 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:01 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/on-deadline-day-a-record-49-29-121-itrs-were-filed-on-saturday-1567343420477.html is fetched
+2019-09-03 16:18:02 INFO  global:17 - READ: https://www.rt.com/rss/news/
+2019-09-03 16:18:02 INFO  global:17 - READ: http://www.esa.int/rssfeed/TopNews
+2019-09-03 16:18:02 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:02 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/sbi-card-to-soon-issue-rupay-credit-cards-ceo-hardayal-prasad-1567339811275.html is fetched
+2019-09-03 16:18:02 INFO  global:17 - READ: https://www.sciencemag.org/rss/weekly_news_email.xml
+2019-09-03 16:18:03 INFO  global:17 - READ: https://www.universetoday.com/feed/
+2019-09-03 16:18:04 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:04 INFO  global:17 - article with link: https://economictimes.indiatimes.com/markets/stocks/news/npas-may-come-down-to-rs-9-1-lakh-crore-by-march-2020/articleshow/70960128.cms is fetched
+2019-09-03 16:18:04 INFO  global:17 - READ: https://abcnews.go.com/abcnews/internationalheadlines
+2019-09-03 16:18:04 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:04 INFO  global:17 - article with link: https://www.livemint.com/sports/cricket-news/i-owe-my-hat-trick-to-captain-jasprit-bumrah-1567341372697.html is fetched
+2019-09-03 16:18:06 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:06 INFO  global:17 - article with link: https://economictimes.indiatimes.com/news/economy/foreign-trade/pakistan-allows-import-of-life-saving-drugs-from-india/articleshow/70959985.cms is fetched
+2019-09-03 16:18:06 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:06 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/sbi-s-repo-linked-home-loan-rate-falls-to-8-05-from-today-emis-to-drop-1567144720044.html is fetched
+2019-09-03 16:18:06 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:06 INFO  global:17 - article with link: https://economictimes.indiatimes.com/news/economy/policy/cabinet-clear-over-rs-9000-crore-capital-infusion-in-idbi-bank/articleshow/70959650.cms is fetched
+2019-09-03 16:18:07 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:07 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/new-income-tax-rules-come-into-effect-from-today-latest-changes-explained-1567148143444.html is fetched
+2019-09-03 16:18:08 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:08 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/latest-bank-fd-rates-what-sbi-hdfc-bank-axis-bank-icici-bank-and-bob-offer-1567164507602.html is fetched
+2019-09-03 16:18:09 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:09 INFO  global:17 - article with link: https://www.skysports.com/football/news/12040/11801230/christian-eriksen-i-wish-deciding-future-was-like-football-manager is fetched
+2019-09-03 16:18:10 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:10 INFO  global:17 - article with link: https://economictimes.indiatimes.com/news/economy/indicators/india-may-have-entered-quasi-recession-as-gdp-growth-plummets/articleshow/70959236.cms is fetched
+2019-09-03 16:18:10 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:10 INFO  global:17 - article with link: http://nautil.us/issue/75/story/the-tricky-problem-with-other-minds?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication is fetched
+2019-09-03 16:18:10 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:10 INFO  global:17 - article with link: https://economictimes.indiatimes.com/news/defence/no-change-in-pakistans-nuclear-policy-fo-says-on-imrans-statement/articleshow/70958633.cms is fetched
+2019-09-03 16:18:10 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:10 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/tds-on-cash-withdrawals-above-rs-1-crore-kicks-in-from-1-september-1567182650809.html is fetched
+2019-09-03 16:18:11 INFO  global:17 - READ: http://feeds.skynews.com/feeds/rss/world.xml
+2019-09-03 16:18:11 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:11 INFO  global:17 - article with link: https://www.skysports.com/football/news/12040/11801269/emiliano-salas-family-want-truth-about-plane-crash-revealed is fetched
+2019-09-03 16:18:13 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:13 INFO  global:17 - article with link: https://www.skysports.com/football/news/12040/11801240/jadon-sancho-says-racism-could-drive-players-out-of-football is fetched
+2019-09-03 16:18:13 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:13 INFO  global:17 - article with link: https://fortune.com/2019/09/03/climate-change-supply-chain-mckinsey/ is fetched
+2019-09-03 16:18:13 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:14 INFO  global:17 - article with link: https://fortune.com/2019/09/03/editor-publisher-sale/ is fetched
+2019-09-03 16:18:14 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:14 INFO  global:17 - article with link: https://www.livemint.com/money/personal-finance/what-do-psb-mergers-mean-for-account-holders-1567167252031.html is fetched
+2019-09-03 16:18:14 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:14 INFO  global:17 - article with link: http://nautil.us/issue/75/story/human-emotions-are-personal-narratives?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication is fetched
+2019-09-03 16:18:15 INFO  global:17 - crawl :: status code string: Not Found :: status code: 404
+2019-09-03 16:18:15 INFO  global:17 - article with link: https://www.skysports.com/gaelic-football/news/12040/11801195/seamus-mcenaney-confirmed-as-new-monaghan-manager is fetched
+2019-09-03 16:18:15 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:15 INFO  global:17 - article with link: https://www.skysports.com/racing/news/12040/11801251/charlie-hills-khaadem-set-for-sprint-cup-at-haydock is fetched
+2019-09-03 16:18:16 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:16 INFO  global:17 - article with link: https://www.livemint.com/sports/football-news/neymar-to-stay-at-psg-reports-1567339367583.html is fetched
+2019-09-03 16:18:17 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:17 INFO  global:17 - article with link: https://fortune.com/2019/09/03/cvs-teen-vaping-fears-ceo-daily/ is fetched
+2019-09-03 16:18:17 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:17 INFO  global:17 - article with link: https://www.livemint.com/sports/cricket-news/ashes-hero-ben-stokes-confirms-which-premier-league-football-club-he-will-now-support-1567157598511.html is fetched
+2019-09-03 16:18:17 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:17 INFO  global:17 - article with link: https://www.npr.org/2019/09/03/755532368/for-many-authors-celebrity-book-clubs-are-a-ticket-to-success?utm_medium=RSS&utm_campaign=news is fetched
+2019-09-03 16:18:18 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:18 INFO  global:17 - article with link: https://www.skysports.com/cricket/news/12040/11801214/somersets-tom-banton-named-pca-player-of-the-month-for-august is fetched
+2019-09-03 16:18:19 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:19 INFO  global:17 - article with link: https://www.npr.org/2019/09/03/756007555/states-upgrade-election-equipment-wary-of-a-race-without-a-finish-line?utm_medium=RSS&utm_campaign=news is fetched
+2019-09-03 16:18:19 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:19 INFO  global:17 - article with link: https://fortune.com/2019/09/03/hurricane-dorian-eastern-seaboard-historic-tragedy-bahamas/ is fetched
+2019-09-03 16:18:21 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:21 INFO  global:17 - article with link: https://www.financialexpress.com/india-news/israeli-pm-benjamin-netanyahu-cancels-planned-day-long-visit-to-india-on-september-9/1694908/ is fetched
+2019-09-03 16:18:21 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:21 INFO  global:17 - article with link: https://fortune.com/2019/09/03/electric-cars-sales-fall-for-the-first-time-ever/ is fetched
+2019-09-03 16:18:21 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:21 INFO  global:17 - article with link: https://www.financialexpress.com/market/idbi-bank-to-get-capitalised-with-rs-9000-crore-from-govt-lic-shares-surge-10/1694753/ is fetched
+2019-09-03 16:18:21 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:21 INFO  global:17 - article with link: https://economictimes.indiatimes.com/news/politics-and-nation/rahul-writes-to-vijayan-munda-for-reconstruction-steps-in-flood-hit-areas-in-kerala/articleshow/70959499.cms is fetched
+2019-09-03 16:18:21 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:21 INFO  global:17 - article with link: http://nautil.us/issue/75/story/homo-narrativus-and-the-trouble-with-fame-rp?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication is fetched
+2019-09-03 16:18:22 INFO  global:17 - READ: https://www.washingtontimes.com/rss/headlines/news/world
+2019-09-03 16:18:22 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:22 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:22 INFO  global:17 - article with link: https://www.financialexpress.com/india-news/mulayam-singh-yadav-jumps-to-azam-khans-defence-as-number-of-cases-against-rampur-mp-mount-to-78/1694870/ is fetched
+2019-09-03 16:18:22 INFO  global:17 - article with link: https://www.livemint.com/sports/football-news/barcelona-and-psg-reach-agreement-on-value-of-neymar-report-1567152798217.html is fetched
+2019-09-03 16:18:24 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:24 INFO  global:17 - article with link: https://www.financialexpress.com/infrastructure/dont-rub-your-eyes-delhi-metro-passengers-left-behind-rs-2-8-cr-in-cash-since-2016-laptops-and-gold-too/1694840/ is fetched
+2019-09-03 16:18:25 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:25 INFO  global:17 - article with link: https://economictimes.indiatimes.com/markets/stocks/news/sbi-shares-on-gaining-spree-hit-record-high/articleshow/6306241.cms is fetched
+2019-09-03 16:18:25 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:25 INFO  global:17 - article with link: https://www.financialexpress.com/india-news/floods-maharashtra-karnataka-to-form-panel-for-better-dam-management/1694891/ is fetched
+2019-09-03 16:18:25 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:25 INFO  global:17 - article with link: https://www.npr.org/2019/09/03/754044732/as-rising-heat-bakes-u-s-cities-the-poor-often-feel-it-most?utm_medium=RSS&utm_campaign=news is fetched
+2019-09-03 16:18:26 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:26 INFO  global:17 - article with link: https://business.financialpost.com/technology/as-traditional-retail-markets-flail-the-digital-economy-shrugs-off-global-instability is fetched
+2019-09-03 16:18:27 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:27 INFO  global:17 - article with link: https://business.financialpost.com/pmn/business-pmn/uk-stocks-fall-as-brexit-fears-hammer-sterling is fetched
+2019-09-03 16:18:27 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:27 INFO  global:17 - article with link: https://business.financialpost.com/pmn/business-pmn/u-s-presidential-candidate-booker-proposes-3-trillion-climate-change-plan is fetched
+2019-09-03 16:18:28 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:28 INFO  global:17 - article with link: https://business.financialpost.com/pmn/business-pmn/huawei-offers-to-make-source-code-available-to-japanese-govt-kyodo is fetched
+2019-09-03 16:18:29 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:29 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:29 INFO  global:17 - article with link: https://www.financialexpress.com/defence/no-change-in-pakistans-nuclear-policy-foreign-office-says-on-imran-khans-statement/1694871/ is fetched
+2019-09-03 16:18:29 INFO  global:17 - article with link: https://www.financialexpress.com/jobs/upsc-exam-2019-application-process-for-nda-na-ii-ends-today-at-upsc-gov-in-apply-now/1694789/ is fetched
+2019-09-03 16:18:29 INFO  global:17 - READ: http://www.globalissues.org/news/feed
+2019-09-03 16:18:30 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:30 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:30 INFO  global:17 - article with link: https://www.livemint.com/sports/news/-fastest-woman-on-four-wheels-dies-in-car-crash-1567099368311.html is fetched
+2019-09-03 16:18:30 INFO  global:17 - article with link: https://www.npr.org/sections/health-shots/2019/09/03/755990796/what-would-trumpcare-look-like-follow-gops-choice-and-competition-clues?utm_medium=RSS&utm_campaign=news is fetched
+2019-09-03 16:18:31 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:31 INFO  global:17 - article with link: https://www.financialexpress.com/economy/bonus-for-sugar-industry-govt-allows-sugar-syrup-for-ethanol-production/1694855/ is fetched
+2019-09-03 16:18:31 INFO  global:17 - READ: http://feeds.news24.com/articles/news24/World/rss
+2019-09-03 16:18:32 INFO  global:17 - READ: https://globalnews.ca/world/feed/
+2019-09-03 16:18:33 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:33 INFO  global:17 - article with link: https://www.skysports.com/football/news/12040/11800761/arsenal-reshape-their-squad-and-put-the-emphasis-on-youth-in-summer-of-change is fetched
+2019-09-03 16:18:33 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:33 INFO  global:17 - article with link: https://www.livemint.com/sports/cricket-news/india-vs-sa-t20-dhoni-not-included-fit-again-hardik-back-in-squad-1567094374598.html is fetched
+2019-09-03 16:18:33 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:33 INFO  global:17 - article with link: https://www.financialexpress.com/defence/eastern-economic-forum-pm-modi-says-india-russia-want-to-diversify-strengthen-bilateral-relations/1694861/ is fetched
+2019-09-03 16:18:33 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:33 INFO  global:17 - article with link: https://business.financialpost.com/pmn/business-pmn/iranian-tanker-adrian-darya-1-goes-dark-off-syria is fetched
+2019-09-03 16:18:33 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:33 INFO  global:17 - article with link: https://nusports.com/news/2019/6/21/general-dear-northwestern-class-of-2019.aspx is fetched
+2019-09-03 16:18:34 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:34 INFO  global:17 - article with link: https://www.financialexpress.com/industry/signature-global-to-invest-rs-385-crore-on-new-housing-project-in-gurugram/1694836/ is fetched
+2019-09-03 16:18:36 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:36 INFO  global:17 - article with link: https://www.financialexpress.com/india-news/not-enough-evidence-on-kashmir-to-move-icj-pakistans-top-lawyer-embarrasses-imran-khan-govt/1694717/ is fetched
+2019-09-03 16:18:36 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:36 INFO  global:17 - article with link: https://www.financialexpress.com/sports/im-all-for-it-it-makes-total-sense-virat-kohli-on-concussion-substitutes/1694787/ is fetched
+2019-09-03 16:18:37 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:37 INFO  global:17 - article with link: https://www.financialexpress.com/health-3/ayushman-bharat-report-card-total-beneficiaries/1694781/ is fetched
+2019-09-03 16:18:37 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:37 INFO  global:17 - article with link: https://www.financialexpress.com/industry/technology/curve-monitors-take-immersive-gaming-a-notch-above/1677295/ is fetched
+2019-09-03 16:18:37 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:37 INFO  global:17 - article with link: http://feeds.reuters.com/~r/reuters/businessNews/~3/U6ayMglDHug/executives-flight-to-psa-highlights-renault-nissan-alliance-tensions-idUSKCN1VO0XH is fetched
+2019-09-03 16:18:37 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:37 INFO  global:17 - article with link: https://business.financialpost.com/news/stocks-stumble-towards-two-month-lows-as-u-s-data-looms/ is fetched
+2019-09-03 16:18:39 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:39 INFO  global:17 - article with link: http://feeds.reuters.com/~r/reuters/businessNews/~3/RKnju6nU0OE/global-stocks-stumble-toward-two-month-lows-as-u-s-data-looms-idUSKCN1VO01L is fetched
+2019-09-03 16:18:40 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:40 INFO  global:17 - article with link: https://www.newscientist.com/article/mg24332453-300-arctic-and-amazon-climate-tipping-points-put-our-future-in-doubt/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:18:40 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:40 INFO  global:17 - article with link: https://economictimes.indiatimes.com/et-search/articleshow/21646857.cms is fetched
+2019-09-03 16:18:40 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-a=E6NoTtiLV2T7rUQYpjyZdd; Expires=Wed, 02 Sep 2020 10:33:28 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 02 Sep 2020 10:33:28 GMT
+2019-09-03 16:18:40 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-gdpr=0; Expires=Tue, 03 Sep 2019 16:33:28 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:33:28 GMT
+2019-09-03 16:18:40 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-purr=cfh; Expires=Wed, 02 Sep 2020 10:33:28 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 02 Sep 2020 10:33:28 GMT
+2019-09-03 16:18:40 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-us=1; Expires=Tue, 03 Sep 2019 16:33:28 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:33:28 GMT
+2019-09-03 16:18:40 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-geo=US; Expires=Tue, 03 Sep 2019 16:33:28 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:33:28 GMT
+2019-09-03 16:18:41 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:41 INFO  global:17 - article with link: https://www.si.com/soccer/2019/09/03/el-real-madrid-inscribe-vinicius-como-futbolista-de-la-primera-plantilla is fetched
+2019-09-03 16:18:41 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:41 INFO  global:17 - article with link: https://www.nytimes.com/2019/09/03/world/europe/brexit-parliament-uk-election.html?emc=rss&partner=rss is fetched
+2019-09-03 16:18:41 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:41 INFO  global:17 - article with link: https://www.newscientist.com/article/2214829-bananas-have-benefited-from-climate-change-but-they-wont-in-future/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:18:41 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:41 INFO  global:17 - article with link: https://business.financialpost.com/pmn/business-pmn/trade-tensions-take-toll-on-stocks-and-currencies-turkish-lira-outperforms is fetched
+2019-09-03 16:18:42 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:42 INFO  global:17 - article with link: https://business.financialpost.com/pmn/business-pmn/fashion-brand-zara-seeks-to-distance-itself-from-hong-kong-controversy is fetched
+2019-09-03 16:18:44 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:44 INFO  global:17 - article with link: https://www.financialexpress.com/india-news/over-250-flood-protection-works-being-executed-at-vulnerable-spots-in-jammu-region-officials/1694788/ is fetched
+2019-09-03 16:18:44 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:44 INFO  global:17 - article with link: https://www.newscientist.com/article/2214987-strong-support-for-trump-linked-to-willingness-to-persecute-immigrants/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:18:45 WARN  ResponseProcessCookies:123 - Cookie rejected [_col_uuid="d4d31d04-0c69-4df5-b0fe-b0ae37e1c2fb-10nqk", version:0, domain:clmbtech.com, path:/, expiry:Fri Aug 31 14:19:48 IST 2029] Illegal 'domain' attribute "clmbtech.com". Domain of origin: "www.businessinsider.in"
+2019-09-03 16:18:45 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:45 INFO  global:17 - article with link: https://www.newscientist.com/article/2214952-climate-change-has-created-more-bird-winners-than-losers-in-england/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:18:45 WARN  ResponseProcessCookies:123 - Cookie rejected [_col_uuid="3e7f4e4f-339c-4a07-a469-c90635e1377e-10nqk", version:0, domain:clmbtech.com, path:/, expiry:Fri Aug 31 14:23:51 IST 2029] Illegal 'domain' attribute "clmbtech.com". Domain of origin: "www.businessinsider.in"
+2019-09-03 16:18:45 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:45 INFO  global:17 - article with link: http://www.businessinsider.in/This-is-the-19-slide-pitch-deck-two-22-year-olds-used-to-nab-57-million-in-funding-from-Silicon-Valley/articleshow/70952498.cms?utm_source=ten_minutes_with&utm_medium=Referral&utm_campaign=Content_Patnership is fetched
+2019-09-03 16:18:45 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:45 INFO  global:17 - article with link: https://www.newscientist.com/article/2214937-hurricane-dorian-is-joint-strongest-atlantic-storm-ever-to-hit-land/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:18:45 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-a=4X7yS_vBp6Pjm15TBvM7ql; Expires=Wed, 02 Sep 2020 10:05:18 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 02 Sep 2020 10:05:18 GMT
+2019-09-03 16:18:45 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-gdpr=0; Expires=Tue, 03 Sep 2019 16:05:18 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:05:18 GMT
+2019-09-03 16:18:45 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-purr=cfh; Expires=Wed, 02 Sep 2020 10:05:18 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 02 Sep 2020 10:05:18 GMT
+2019-09-03 16:18:45 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-us=1; Expires=Tue, 03 Sep 2019 16:05:18 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:05:18 GMT
+2019-09-03 16:18:45 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-geo=US; Expires=Tue, 03 Sep 2019 16:05:18 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:05:18 GMT
+2019-09-03 16:18:46 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:46 INFO  global:17 - article with link: http://www.businessinsider.in/The-digital-trends-disrupting-the-banking-industry-in-2019/articleshow/70951049.cms?utm_source=ten_minutes_with&utm_medium=Referral&utm_campaign=Content_Patnership is fetched
+2019-09-03 16:18:46 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:46 INFO  global:17 - article with link: https://www.nytimes.com/2019/09/03/briefing/boat-fire-brexit-naomi-osaka.html?emc=rss&partner=rss is fetched
+2019-09-03 16:18:47 INFO  global:17 - crawl :: status code string: CRAWL_BLOCKED_THIS_MINUTE :: status code: 1503
+2019-09-03 16:18:47 INFO  global:17 - article with link: http://www.businessinsider.in/SMB-LENDING-REPORT-How-alt-lenders-are-providing-SMBs-with-new-funding-options-and-the-ways-incumbents-can-respond-to-stay-ahead/articleshow/70950822.cms?utm_source=ten_minutes_with&utm_medium=Referral&utm_campaign=Content_Patnership is fetched
+2019-09-03 16:18:48 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:48 INFO  global:17 - article with link: https://www.financialexpress.com/india-news/chidambarams-cbi-custody-in-inx-media-case-to-continue-till-september-5-sc/1694750/ is fetched
+2019-09-03 16:18:48 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:48 INFO  global:17 - article with link: https://www.livemint.com/sports/cricket-news/ms-dhoni-kedar-jadhav-enjoy-golf-in-us-on-india-s-national-sports-day-1567084633906.html is fetched
+2019-09-03 16:18:49 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:49 INFO  global:17 - article with link: https://www.financialexpress.com/industry/banking-finance/merger-woes-bank-officers-associations-to-meet-in-delhi-on-september/1694709/ is fetched
+2019-09-03 16:18:49 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:49 INFO  global:17 - article with link: https://www.si.com/soccer/2019/09/03/altas-y-bajas-definitivas-de-los-20-equipos-de-laliga is fetched
+2019-09-03 16:18:49 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:49 INFO  global:17 - article with link: https://www.financialexpress.com/sports/ravi-shastris-advice-to-flex-my-knees-while-batting-helped-my-batting-hanuma-vihari/1694774/ is fetched
+2019-09-03 16:18:50 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:50 INFO  global:17 - article with link: https://www.financialexpress.com/india-news/rahul-gandhi-writes-to-pinarayi-vijayan-arjun-munda-for-reconstruction-steps-in-flood-hit-areas-in-kerala/1694769/ is fetched
+2019-09-03 16:18:51 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:51 INFO  global:17 - article with link: https://www.si.com/soccer/2019/09/03/wilfred-ndidi-insists-leicester-city-can-break-premier-league-top-three-season is fetched
+2019-09-03 16:18:51 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:51 INFO  global:17 - article with link: https://www.financialexpress.com/sports/mithali-raj-announces-retirement-from-t20i/1694764/ is fetched
+2019-09-03 16:18:52 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:52 INFO  global:17 - article with link: https://www.si.com/soccer/2019/09/03/serie-announce-plans-anti-discrimination-initiative-following-romelu-lukaku-incident is fetched
+2019-09-03 16:18:52 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:52 INFO  global:17 - article with link: https://www.newscientist.com/article/2214938-great-barrier-reef-now-has-very-poor-outlook-due-to-climate-change/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:18:53 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:53 INFO  global:17 - article with link: https://www.livemint.com/sports/football-news/juventus-overtake-man-united-to-become-third-most-followed-club-on-instagram-but-who-else-is-there-in-top-five-1567081264065.html is fetched
+2019-09-03 16:18:53 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:53 INFO  global:17 - article with link: https://www.financialexpress.com/india-news/cec-sunil-arora-assumes-charge-as-chairman-of-association-of-world-election-bodies/1694759/ is fetched
+2019-09-03 16:18:53 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-a=NHpcJ63clCVgaj3GmcProf; Expires=Wed, 02 Sep 2020 10:13:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 02 Sep 2020 10:13:25 GMT
+2019-09-03 16:18:53 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-gdpr=0; Expires=Tue, 03 Sep 2019 16:13:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:13:25 GMT
+2019-09-03 16:18:53 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-purr=cfh; Expires=Wed, 02 Sep 2020 10:13:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 02 Sep 2020 10:13:25 GMT
+2019-09-03 16:18:53 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-us=1; Expires=Tue, 03 Sep 2019 16:13:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:13:25 GMT
+2019-09-03 16:18:53 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-geo=US; Expires=Tue, 03 Sep 2019 16:13:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:13:25 GMT
+2019-09-03 16:18:54 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:54 INFO  global:17 - article with link: https://www.nytimes.com/2019/09/03/technology/denmark-tech-ambassador.html?emc=rss&partner=rss is fetched
+2019-09-03 16:18:54 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:54 INFO  global:17 - article with link: https://www.financialexpress.com/money/income-tax/will-recommendations-of-direct-tax-panel-for-taxing-individuals-help-india-deal-with-job-drought-reset-priorities/1693829/ is fetched
+2019-09-03 16:18:55 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:55 INFO  global:17 - article with link: https://www.financialexpress.com/education-2/gate-2020-application-process-begins-check-details/1694681/ is fetched
+2019-09-03 16:18:56 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:56 INFO  global:17 - article with link: https://www.newscientist.com/article/2214891-harbour-seals-are-breeding-in-the-river-thames-and-have-had-138-pups/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:18:56 INFO  global:17 - crawl :: status code string: CRAWL_BLOCKED_THIS_MINUTE :: status code: 1503
+2019-09-03 16:18:56 INFO  global:17 - article with link: http://www.businessinsider.in/Read-the-pitch-deck-that-helped-Divvy-raise-30-million-to-provide-alternate-financing-for-prospective-homebuyers/articleshow/70950230.cms?utm_source=ten_minutes_with&utm_medium=Referral&utm_campaign=Content_Patnership is fetched
+2019-09-03 16:18:56 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:56 INFO  global:17 - article with link: https://www.mid-day.com/articles/mithali-raj-announces-retirement-from-t20is/21664175 is fetched
+2019-09-03 16:18:56 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:56 INFO  global:17 - article with link: https://www.financialexpress.com/money/kyc-deadline-for-e-wallets-extended-know-how-to-do-kyc-for-paytm-amazon-pay/1694744/ is fetched
+2019-09-03 16:18:58 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:58 INFO  global:17 - article with link: https://www.livemint.com/sports/cricket-news/predicted-india-line-up-for-second-test-against-west-indies-in-jamaica-1567078940568.html is fetched
+2019-09-03 16:18:58 WARN  ResponseProcessCookies:123 - Cookie rejected [_col_uuid="f54a87d1-c9eb-4ff7-a1c3-638017b69507-h0k8", version:0, domain:clmbtech.com, path:/, expiry:Fri Aug 31 16:03:42 IST 2029] Illegal 'domain' attribute "clmbtech.com". Domain of origin: "timesofindia.indiatimes.com"
+2019-09-03 16:18:58 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:58 INFO  global:17 - article with link: https://timesofindia.indiatimes.com/business/india-business/sensex-crashes-770-points-nifty-ends-below-10800-key-factors-weighing-on-markets/articleshow/70958827.cms is fetched
+2019-09-03 16:18:58 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:18:58 INFO  global:17 - article with link: https://www.newscientist.com/article/2214751-crispr-could-lead-to-gene-editing-fix-for-a-form-of-male-infertility/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:18:59 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-a=e4zzkPYbASq0F9hci7fKFI; Expires=Wed, 02 Sep 2020 10:45:16 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 02 Sep 2020 10:45:16 GMT
+2019-09-03 16:18:59 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-gdpr=0; Expires=Tue, 03 Sep 2019 16:45:16 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:45:16 GMT
+2019-09-03 16:18:59 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-purr=cfs; Expires=Wed, 02 Sep 2020 10:45:16 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 02 Sep 2020 10:45:16 GMT
+2019-09-03 16:18:59 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-us=1; Expires=Tue, 03 Sep 2019 16:45:16 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:45:16 GMT
+2019-09-03 16:18:59 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-geo=US; Expires=Tue, 03 Sep 2019 16:45:16 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:45:16 GMT
+2019-09-03 16:19:00 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:00 INFO  global:17 - article with link: https://www.financialexpress.com/industry/deepak-parekh-on-realty-sector-slowdown-no-one-willing-to-lend-fresh-funds-to-developers/1694686/ is fetched
+2019-09-03 16:19:00 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:00 INFO  global:17 - article with link: https://www.nytimes.com/2019/09/03/world/middleeast/isis-alhol-camp-syria.html?emc=rss&partner=rss is fetched
+2019-09-03 16:19:00 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:00 INFO  global:17 - article with link: https://www.newscientist.com/article/2214663-giant-virus-has-evolved-its-own-kind-of-crispr-to-destroy-invaders/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:19:00 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:00 INFO  global:17 - article with link: https://www.si.com/soccer/2019/09/03/mason-greenwood-among-6-teenagers-set-new-manchester-united-contracts is fetched
+2019-09-03 16:19:01 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: ak_bmsc=F58F719BE40BD10CB0FDBC37712FA059172EEF4FF65F00005618685DFDC3323E~plzW5JLDAOWzl5pUYpv6+t8b1UgRHmuG9SxTB46SbqyuAhHapIBmC3Nc/sHgpE3c2Cg4CHjvSyLeV1ykxQcMrW/RsuUYrDv9307ku2rdR0vEPtEiIQ0r4OsKRyrg9SvF8zxH0k893R+pZrA2MzrdV+EqVEpbPorWpvy24XYhapolNrB4b3RtC+sYywfiVKuRyxwNuY6Q9c3ftIQrx6D7lwWnyp6VNhcRcHOV1DUBsDyAs=; expires=Thu, 01 Jan 1970 00:00:01 GMT; max-age=0; path=/; domain=.usnews.com; HttpOnly". Invalid 'expires' attribute: Thu, 01 Jan 1970 00:00:01 GMT
+2019-09-03 16:19:02 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: akacd_www=2177452799~rv=69~id=368cd04c2b22a0f76e7af6d67eb68c19; path=/; Expires=Mon, 31 Dec 2038 23:59:59 GMT". Invalid 'expires' attribute: Mon, 31 Dec 2038 23:59:59 GMT
+2019-09-03 16:19:02 INFO  global:17 - crawl :: status code string: Forbidden :: status code: 403
+2019-09-03 16:19:02 INFO  global:17 - article with link: https://www.usnews.com/news/best-countries/articles/2018-11-25/ap-exclusive-first-gene-edited-babies-claimed-in-china is fetched
+2019-09-03 16:19:02 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:02 INFO  global:17 - article with link: https://www.usnews.com/news/best-countries/articles/2019-08-29/europes-hottest-days-increase-at-record-levels-research-shows is fetched
+2019-09-03 16:19:02 WARN  ResponseProcessCookies:123 - Cookie rejected [_col_uuid="a88b0a0c-f63e-4237-aa92-edd2ea81a9ee-10oct", version:0, domain:clmbtech.com, path:/, expiry:Fri Aug 31 15:19:38 IST 2029] Illegal 'domain' attribute "clmbtech.com". Domain of origin: "www.businessinsider.in"
+2019-09-03 16:19:03 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:03 INFO  global:17 - article with link: http://www.businessinsider.in/Bitcoin-101-Your-essential-guide-to-cryptocurrency/articleshow/70948794.cms?utm_source=ten_minutes_with&utm_medium=Referral&utm_campaign=Content_Patnership is fetched
+2019-09-03 16:19:03 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:03 INFO  global:17 - article with link: https://www.livemint.com/sports/football-news/stats-show-arsenal-start-favourites-against-tottenham-in-north-london-derby-1567074298655.html is fetched
+2019-09-03 16:19:03 INFO  global:17 - crawl :: status code string: CRAWL_BLOCKED_THIS_MINUTE :: status code: 1503
+2019-09-03 16:19:03 INFO  global:17 - article with link: http://www.businessinsider.in/Goldman-Sachs-says-Argentina-faces-a-longer-and-deeper-recession-after-a-month-from-hell-Heres-why-things-could-get-as-bad-as-2001s-crisis-/articleshow/70948230.cms?utm_source=ten_minutes_with&utm_medium=Referral&utm_campaign=Content_Patnership is fetched
+2019-09-03 16:19:03 INFO  global:17 - crawl :: status code string: CRAWL_BLOCKED_THIS_MINUTE :: status code: 1503
+2019-09-03 16:19:03 INFO  global:17 - article with link: http://www.businessinsider.in/FREE-SLIDE-DECK-The-Future-of-Fintech/articleshow/70947501.cms?utm_source=ten_minutes_with&utm_medium=Referral&utm_campaign=Content_Patnership is fetched
+2019-09-03 16:19:03 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:03 INFO  global:17 - article with link: https://www.si.com/soccer/2019/09/03/adrian-set-intense-training-liverpool-look-bring-goalie-speed-international-break is fetched
+2019-09-03 16:19:05 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: ak_bmsc=1DA739CA19987BF9AA700D29012DC14917C91FD6B7730000E7F65B5D69512C54~pljeCgCJ/Bk8X76CjiCWsKrWpITrMJxc7TUuiwm4XIOhSKSoUIsF8jwNzmfU81v0tQkXl3Ki4L0ZmUM4DBnrBQadxmMiod0aiv8wJI3F+49gKFDTJ8HCajezjap4cWzRZbL0o7uyjlGXmUBboHBn+C0vxNWE85GeYRkI24Jm2s6vBAibpGJEaW2Im8QylGDPspWljQLSV5o2aCG8Y6E2IjcHMVcWXxcWg/UUGRoH4k03s=; expires=Tue, 20 Aug 2019 15:34:31 GMT; max-age=7200; path=/; domain=.usnews.com; HttpOnly". Invalid 'expires' attribute: Tue, 20 Aug 2019 15:34:31 GMT
+2019-09-03 16:19:05 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: akacd_www=2177452799~rv=1~id=2004d884ec131cb84c8fe4fba2b38caf; path=/; Expires=Mon, 31 Dec 2038 23:59:59 GMT". Invalid 'expires' attribute: Mon, 31 Dec 2038 23:59:59 GMT
+2019-09-03 16:19:05 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:05 INFO  global:17 - article with link: https://www.newscientist.com/article/2214790-quantum-x-ray-machine-takes-razor-sharp-pictures-with-less-radiation/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:19:06 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:06 INFO  global:17 - article with link: https://www.usnews.com/news/stem-solutions/photos/2018/05/09/photos-first-robotics-championship-prepares-students-for-real-world is fetched
+2019-09-03 16:19:06 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-a=iDaHwEMP9PLvbzxagKsuYT; Expires=Wed, 02 Sep 2020 10:45:16 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 02 Sep 2020 10:45:16 GMT
+2019-09-03 16:19:06 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-gdpr=0; Expires=Tue, 03 Sep 2019 16:45:16 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Tue, 03 Sep 2019 16:45:16 GMT
+2019-09-03 16:19:06 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-purr=cfs; Expires=Wed, 02 Sep 2020 10:45:16 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 02 Sep 2020 10:45:16 GMT
+2019-09-03 16:19:07 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: wsjregion=na%2Cus; Domain=.wsj.com; Path=/; Expires=Thu, 03 Oct 2019 08:12:57 GMT". Invalid 'expires' attribute: Thu, 03 Oct 2019 08:12:57 GMT
+2019-09-03 16:19:07 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: usr_prof_v2=eyJpYyI6MH0%3D; Domain=.wsj.com; Path=/; Expires=Wed, 04 Sep 2019 08:12:57 GMT". Invalid 'expires' attribute: Wed, 04 Sep 2019 08:12:57 GMT
+2019-09-03 16:19:07 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: ab_uuid=ec78c1fc-2241-441e-8309-66e72260a4f2; Domain=.wsj.com; Path=/; Expires=Fri, 31 Aug 2029 08:12:57 GMT". Invalid 'expires' attribute: Fri, 31 Aug 2029 08:12:57 GMT
+2019-09-03 16:19:07 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: usr_bkt=91GjW1q7Zg; Domain=.wsj.com; Path=/; Expires=Fri, 31 Aug 2029 08:12:57 GMT". Invalid 'expires' attribute: Fri, 31 Aug 2029 08:12:57 GMT
+2019-09-03 16:19:07 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:07 INFO  global:17 - article with link: https://www.cnbc.com/2019/09/01/adrolls-annual-dog-show-is-a-celebration-of-the-companys-pet-friendly-culture.html is fetched
+2019-09-03 16:19:07 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:07 INFO  global:17 - article with link: https://www.cnbc.com/2019/09/01/myia-and-other-smart-device-makers-are-tracking-chronic-illnesses.html is fetched
+2019-09-03 16:19:07 INFO  global:17 - crawl :: status code string: CRAWL_BLOCKED_THIS_MINUTE :: status code: 1503
+2019-09-03 16:19:07 INFO  global:17 - article with link: http://www.businessinsider.in/The-Future-of-Payments-2018/articleshow/70941135.cms?utm_source=ten_minutes_with&utm_medium=Referral&utm_campaign=Content_Patnership is fetched
+2019-09-03 16:19:07 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:07 INFO  global:17 - article with link: https://www.nytimes.com/video/world/asia/100000006682566/shes-a-protester-hes-a-police-officer-in-hong-kong-spouses-spar-too.html?emc=rss&partner=rss is fetched
+2019-09-03 16:19:07 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:07 INFO  global:17 - article with link: https://www.wsj.com/articles/economy-week-ahead-manufacturing-trade-and-august-jobs-report-11567364400?mod=pls_whats_news_us_business_f is fetched
+2019-09-03 16:19:09 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:09 INFO  global:17 - article with link: https://www.newscientist.com/article/2214743-ais-that-deblur-faces-could-make-people-on-cctv-easier-to-identify/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:19:10 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:10 INFO  global:17 - article with link: http://feeds.reuters.com/~r/reuters/technologyNews/~3/NBjdB8nOuic/huawei-offers-to-make-source-code-available-to-japanese-government-kyodo-idUSKCN1VO0Z3 is fetched
+2019-09-03 16:19:11 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:11 INFO  global:17 - article with link: https://www.cnbc.com/2019/09/01/microsoft-releases-excel-xlookup-feature-spreadsheet-jockeys-rejoice.html is fetched
+2019-09-03 16:19:11 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:11 INFO  global:17 - article with link: https://www.cnbc.com/2019/08/31/best-budget-phones-2019.html is fetched
+2019-09-03 16:19:11 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:11 INFO  global:17 - article with link: https://www.cnbc.com/2019/08/31/samsung-is-the-latest-in-a-long-line-of-headphone-jack-ditchers.html is fetched
+2019-09-03 16:19:11 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:11 INFO  global:17 - article with link: http://feeds.reuters.com/~r/reuters/technologyNews/~3/CqZItud5Hg8/dutch-central-bank-to-regulate-crypto-firms-from-january-10-orders-them-to-register-idUSKCN1VO0ST is fetched
+2019-09-03 16:19:11 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:11 INFO  global:17 - article with link: https://www.cnbc.com/2019/08/31/the-trade-war-has-already-cost-electronics-companies-10-billion.html is fetched
+2019-09-03 16:19:13 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:13 INFO  global:17 - article with link: https://www.newscientist.com/article/2214792-people-who-are-naturally-slim-have-smaller-and-more-active-fat-cells/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:19:13 WARN  ResponseProcessCookies:123 - Cookie rejected [_col_uuid="a06ec8b2-4ee4-48fb-9093-e052d2678ab9-10ol4", version:0, domain:clmbtech.com, path:/, expiry:Fri Aug 31 15:44:04 IST 2029] Illegal 'domain' attribute "clmbtech.com". Domain of origin: "timesofindia.indiatimes.com"
+2019-09-03 16:19:13 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:13 INFO  global:17 - article with link: https://timesofindia.indiatimes.com/business/india-business/government-approves-recapitalisation-of-idbi-bank-with-over-rs-9000-crore-fund-infusion/articleshow/70959629.cms is fetched
+2019-09-03 16:19:14 WARN  ResponseProcessCookies:123 - Cookie rejected [_col_uuid="fdf738af-4955-4310-bb3d-d27a07fa8f76-10ni8", version:0, domain:clmbtech.com, path:/, expiry:Fri Aug 31 15:32:21 IST 2029] Illegal 'domain' attribute "clmbtech.com". Domain of origin: "timesofindia.indiatimes.com"
+2019-09-03 16:19:14 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:14 INFO  global:17 - article with link: https://timesofindia.indiatimes.com/business/international-business/xiaomi-plans-1-5-billion-buyback-to-arrest-stock-tumble/articleshow/70958641.cms is fetched
+2019-09-03 16:19:14 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:14 INFO  global:17 - article with link: https://www.newscientist.com/article/2214797-gel-that-makes-teeth-repair-themselves-could-spell-the-end-of-fillings/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:19:15 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:15 INFO  global:17 - article with link: https://www.si.com/soccer/2019/09/03/deschamps-manda-un-recado-areola-tras-su-fichaje-por-el-real-madrid is fetched
+2019-09-03 16:19:15 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:15 INFO  global:17 - article with link: https://www.livemint.com/sports/cricket-news/the-art-of-batting-with-the-tail-1567055283508.html is fetched
+2019-09-03 16:19:15 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:15 INFO  global:17 - article with link: https://www.si.com/soccer/2019/09/03/el-mensaje-de-gareth-bale-en-sus-redes-sociales-por-el-sexto-aniversario-de-su-fichaje-por-el-madrid is fetched
+2019-09-03 16:19:16 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:16 INFO  global:17 - article with link: https://www.newscientist.com/article/2214875-military-now-controls-myanmars-scientifically-important-amber-mines/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:19:18 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:18 INFO  global:17 - article with link: http://feeds.reuters.com/~r/reuters/technologyNews/~3/o_SY7X2f5a4/huawei-says-to-spend-more-than-300-million-a-year-in-funding-for-universities-idUSKCN1VO0PP is fetched
+2019-09-03 16:19:18 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:18 INFO  global:17 - article with link: https://www.cnbc.com/2019/08/30/apple-will-fix-some-apple-watches-with-cracked-screens-for-free.html is fetched
+2019-09-03 16:19:18 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:18 INFO  global:17 - article with link: https://www.newscientist.com/article/2214859-we-may-have-seen-signs-of-an-exomoon-spewing-out-volcanic-gas/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:19:18 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:18 INFO  global:17 - article with link: https://www.cnbc.com/2019/08/30/twitter-ceo-jack-dorsey-has-account-hacked.html is fetched
+2019-09-03 16:19:18 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:18 INFO  global:17 - article with link: https://www.newscientist.com/article/2214783-theres-no-such-thing-as-a-gay-gene-finds-largest-study-of-sexuality/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=news is fetched
+2019-09-03 16:19:19 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-03 16:19:19 INFO  global:17 - article with link: http://feeds.reuters.com/~r/Reuters/worldNews/~3/fdjuTxPGTls/activists-urge-taiwan-to-join-fight-for-hong-kong-democracy-idUSKCN1VO123 is fetched
+2019-09-03 16:19:52 INFO  global:17 - Update in Db
+2019-09-03 16:19:53 INFO  global:17 - INCREMENTAL DONE for SPORTS
+2019-09-03 16:19:56 INFO  global:17 - Update in Db
+2019-09-03 16:19:57 INFO  global:17 - INCREMENTAL DONE for SCITECH
+2019-09-03 16:20:01 INFO  global:17 - Update in Db
+2019-09-03 16:20:02 INFO  global:17 - INCREMENTAL DONE for BUSINESS
+2019-09-03 16:20:05 INFO  global:17 - Update in Db
+2019-09-03 16:20:06 INFO  global:17 - INCREMENTAL DONE for WORLD
+2019-09-03 16:20:58 INFO  global:17 - READ: http://www1.cbn.com/app_feeds/rss/news/rss.php?section=world
+2019-09-03 16:20:58 INFO  global:17 - READ: http://www.cnbc.com/id/19746125/device/rss/rss.xml
+2019-09-03 16:20:59 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_business.rss
+2019-09-03 16:20:59 INFO  global:17 - READ: https://www.npr.org/rss/rss.php?id=1001
+2019-09-03 16:20:59 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_sport.rss
+2019-09-03 16:20:59 INFO  global:17 - READ: http://nautil.us/rss/all
+2019-09-03 16:20:59 INFO  global:17 - READ: https://www.espn.com/espn/rss/news
+2019-09-03 16:21:21 INFO  global:17 - READ: http://rss.cnn.com/rss/money_topstories.rss
+2019-09-03 16:21:31 INFO  global:17 - READ: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+2019-09-03 16:21:34 INFO  global:17 - READ: https://www.cnbc.com/id/100727362/device/rss/rss.html
+2019-09-03 16:21:41 INFO  global:17 - READ: https://www.skysports.com/rss/12040
+2019-09-03 16:21:48 INFO  global:17 - READ: https://fortune.com/feed
+2019-09-03 16:21:48 INFO  global:17 - Update in Db
+2019-09-03 16:21:48 INFO  global:17 - INCREMENTAL DONE for BUSINESS
+2019-09-03 16:21:50 INFO  global:17 - READ: https://economictimes.indiatimes.com/rssfeedsdefault.cms
+2019-09-03 16:22:02 INFO  global:17 - READ: https://www.livemint.com/rss/money
+2019-09-03 16:22:06 INFO  global:17 - Update in Db
+2019-09-03 16:22:06 INFO  global:17 - INCREMENTAL DONE for SPORTS
+2019-09-03 16:22:06 INFO  global:17 - READ: http://nusports.com/rss.aspx?path=general
+2019-09-03 16:22:15 INFO  global:17 - READ: https://www.theguardian.com/world/rss
+2019-09-03 16:22:23 INFO  global:17 - READ: https://www.financialexpress.com/feed/
+2019-09-03 16:22:30 INFO  global:17 - Update in Db
+2019-09-03 16:22:30 INFO  global:17 - INCREMENTAL DONE for SCITECH

@@ -44,7 +44,7 @@ public class BatchClusterController {
         List<ClusterInfo> info = new ClusterInfoHelper().batchInformation(clusters);
         DBConnect.getInstance().updateClusterInfo(info);
 
-        HashMap<String,Integer> clusterRank = new ClusterInfoHelper().batchRanking(clusters);
+        HashMap<String,Double> clusterRank = new ClusterInfoHelper().batchRanking(clusters);
         DBConnect.getInstance().updateClusterRank(clusterRank);
 
         Log.debug("Everything finished");
