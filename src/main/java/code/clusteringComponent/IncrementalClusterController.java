@@ -23,8 +23,11 @@ public class IncrementalClusterController {
         HashMap<String,Integer> updatedClusterId = hierarchicalClusterer.clusterIncrementally(hashMap);
         List<ClusterInfo> existingInfo = DBConnect.getInstance().getClusterInfo();
         List<ClusterInfo> info = new ClusterInfoHelper().incrementDiameters(updatedClusterId, hashMap, existingInfo);
+        HashMap<String,Integer> clusterRank = new ClusterInfoHelper().incrementalRanking(updatedClusterId,hashMap);
+        DBConnect.getInstance().updateClusterRank(clusterRank);
         DBConnect.getInstance().updateClusterInfo(info);
         DBConnect.getInstance().updateClusterIDs(updatedClusterId);
+
         Log.debug("INCREMENTAL DONE");
     }
 }
