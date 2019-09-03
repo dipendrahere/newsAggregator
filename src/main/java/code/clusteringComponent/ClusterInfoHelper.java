@@ -17,8 +17,8 @@ public class ClusterInfoHelper {
             ClusterInfo info  = new ClusterInfo();
             info.setClusterId(cluster.getClusterId());
             Set<String> distinctRss = cluster.getPoints().stream().map(a -> a.getRssLink()).collect(Collectors.toSet());
-            Stream<Date> dates = cluster.getPoints().stream().map(a -> a.getPublishedDate());
-            Date mostRecent = cluster.getPoints().stream().map(a -> a.getPublishedDate()).reduce((a, b)-> a.compareTo(b) > 0 ? a:b).get();
+            Stream<Date> dates = cluster.getPoints().stream().filter(a->a.getPublishedDate()!=null).map(a -> a.getPublishedDate());
+            Date mostRecent = cluster.getPoints().stream().filter(a->a.getPublishedDate()!=null).map(a -> a.getPublishedDate()).reduce((a, b)-> a.compareTo(b) > 0 ? a:b).get();
             int count = cluster.getPoints().size();
             Date averageDate = dates.reduce((a, b) -> {
                 long ad = a.getTime();
