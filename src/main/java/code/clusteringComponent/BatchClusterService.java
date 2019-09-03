@@ -1,6 +1,8 @@
 package code.clusteringComponent;
 
 import code.models.CategoryType;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
@@ -18,6 +20,7 @@ public class BatchClusterService {
     }
 
     private BatchClusterService(){
+
         controllers = Arrays.stream(CategoryType.values()).map(obj -> {
             if(obj == CategoryType.SCITECH)
                 return new BatchClusterController(obj, 0.6, 3);
