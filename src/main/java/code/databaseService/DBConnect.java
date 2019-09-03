@@ -51,7 +51,7 @@ public class DBConnect {
             java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String format = "(id, title, category_id, url, publishedDate, rssLink, content, imageUrl)";
             PreparedStatement preparedStatement = connnection.prepareStatement("insert into articles "+ format +" values(?, ?, ?, ?, ?, ?, ?, ?);");
-            PreparedStatement clusterPreparedStatement = connnection.prepareStatement("insert into clusterArticleRelationship values (?,?,?);");
+            PreparedStatement clusterPreparedStatement = connnection.prepareStatement("insert into clusterArticleRelationship(articleId,categoryId) values (?,?);");
             for(int i=0;i<articles.size();i++) {
                 Article article = articles.get(i);
                 String exactDate = null;
@@ -69,8 +69,7 @@ public class DBConnect {
                 preparedStatement.addBatch();
 
                 clusterPreparedStatement.setString(1, article.getId());
-                clusterPreparedStatement.setString(2,null);
-                clusterPreparedStatement.setInt(3, article.getCategoryType().value.getKey());
+                clusterPreparedStatement.setInt(2, article.getCategoryType().value.getKey());
                 clusterPreparedStatement.addBatch();
             }
 
