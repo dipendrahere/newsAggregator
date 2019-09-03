@@ -10,8 +10,9 @@ import code.models.ClusterInfo;
 import java.util.*;
 
 public class Main {
+
     public static void main(String[] args)  {
-        BatchClusterService.getInstance().start();
+    //    BatchClusterService.getInstance().start();
     //    IncrementalClusterService.getInstance().start();
     //    PollingService.getInstance().poll();
     }
