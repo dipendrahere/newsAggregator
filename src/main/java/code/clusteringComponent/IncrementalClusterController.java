@@ -28,6 +28,6 @@ public class IncrementalClusterController {
         DBConnect.getInstance().updateClusterInfo(info);
         DBConnect.getInstance().updateClusterIDs(updatedClusterId);
 
-        Log.debug("INCREMENTAL DONE - "+categoryType.value.getKey());
+        Log.debug("INCREMENTAL DONE for " + categoryType);
     }
 }
