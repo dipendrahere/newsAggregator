@@ -23,10 +23,10 @@ public class BatchClusterController {
 
     public void startClustering(){
         List<Article> list = DBConnect.getInstance().fetchArticles(categoryType);
-        Log.debug("article fetching finished");
+//        Log.debug("article fetching finished");
         BatchClusterer<Article> clusterer = new BatchClusterer<Article>(eps, minPts);
         List<Cluster<Article>> clusters = clusterer.cluster(list);
-        Log.debug("clustering finished " + clusters.size());
+        Log.debug("clustering finished " + clusters.size() + "  category: "+categoryType);
         HashMap<String,Integer> hashMap = new HashMap<>();
         for(Cluster cluster : clusters){
             List<Article> articles = cluster.getPoints();

@@ -43,8 +43,8 @@ public class ClusterInfoHelper {
             ClusterInfo info  = new ClusterInfo();
             info.setClusterId(cluster.getClusterId());
             Set<String> distinctRss = cluster.getPoints().stream().map(a -> a.getRssLink()).collect(Collectors.toSet());
-            Stream<Date> dates = cluster.getPoints().stream().map(a -> a.getPublishedDate());
-            Date mostRecent = cluster.getPoints().stream().map(a -> a.getPublishedDate()).reduce((a, b)-> a.compareTo(b) > 0 ? a:b).get();
+            Stream<Date> dates = cluster.getPoints().stream().filter(a->a.getPublishedDate()!=null).map(a -> a.getPublishedDate());
+            Date mostRecent = cluster.getPoints().stream().filter(a->a.getPublishedDate()!=null).map(a -> a.getPublishedDate()).reduce((a, b)-> a.compareTo(b) > 0 ? a:b).get();
             int count = cluster.getPoints().size();
             Date averageDate = dates.reduce((a, b) -> {
                 long ad = a.getTime();
@@ -169,6 +169,7 @@ public class ClusterInfoHelper {
     }
 
     public HashMap<String,Integer> batchRanking(List<Cluster<Article>> clusters){
+        Log.debug("BATCH INFO START");
         HashMap<String,Integer> ret = new HashMap<>();
         for(Cluster cluster : clusters){
             List<Article> articles = cluster.getPoints();
@@ -204,10 +205,12 @@ public class ClusterInfoHelper {
             }
 
         }
+        Log.debug("BATCH INFO DONE");
         return ret;
     }
 
     public HashMap<String,Integer> incrementalRanking(HashMap<String,Integer> assignedCluster, HashMap<Article,Integer> hashMap){
+        Log.debug("INCREMENTAL INFO START");
         HashMap<Integer,List<Article>> hmap = new HashMap<>();
         List<Article> NonClusteredArticles = new ArrayList<>();
         Iterator iterator = hashMap.entrySet().iterator();
@@ -259,6 +262,8 @@ public class ClusterInfoHelper {
             cluster.addPoints((List<Article>) mapElement.getValue());
             ret.add(cluster);
         }
+        Log.debug("INCREMENTAL INFO DONE");
+        Log.debug("BATCH FOR INCREMENTAL INFO START");
         return batchRanking(ret);
     }
 
