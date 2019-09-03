@@ -25,8 +25,8 @@ public class DBConnect {
     private DBConnect(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connnection = DriverManager.getConnection("jdbc:mysql://172.19.33.103:3306/newsaggregator","root","kEMXdVW9vMvQ");
-//            connnection = DriverManager.getConnection("jdbc:mysql://localhost/newsaggregator","root","vipin1407");
+//            connnection = DriverManager.getConnection("jdbc:mysql://172.19.33.103:3306/newsaggregator","root","kEMXdVW9vMvQ");
+            connnection = DriverManager.getConnection("jdbc:mysql://localhost/newsaggregator","root","vipin1407");
             statment = connnection.createStatement();
         }
         catch (ClassNotFoundException e) {
@@ -310,6 +310,23 @@ public class DBConnect {
         catch (Exception e){
             Log.error("unable to update cluster info "+ e.getMessage());
             e.printStackTrace();
+        }
+    }
+
+    public static synchronized void updateClusterRank(HashMap<String,Integer> hashMap){
+        try {
+            PreparedStatement preparedStatement = connnection.prepareStatement("update clusterArticleRelationship set articleRank = ? where articleId = ?");
+            Iterator iterator = hashMap.entrySet().iterator();
+            while (iterator.hasNext()){
+                Map.Entry<String, Integer> mapElement = (Map.Entry)iterator.next();
+                preparedStatement.setString(2, mapElement.getKey());
+                preparedStatement.setInt(1, mapElement.getValue());
+                preparedStatement.addBatch();
+            }
+            preparedStatement.executeBatch();
+        }
+        catch (Exception e){
+            Log.error("unable to update cluster rank" + e.getMessage());
         }
     }
 }
