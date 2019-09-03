@@ -13,6 +13,29 @@ import static java.util.Map.Entry.comparingByValue;
 
 public class ClusterInfoHelper {
 
+    public static HashMap<String, Double> sortByValue(HashMap<String, Double> hm)
+    {
+        // Create a list from elements of HashMap
+        List<Map.Entry<String, Double> > list =
+                new LinkedList<Map.Entry<String, Double> >(hm.entrySet());
+
+        // Sort the list
+        Collections.sort(list, new Comparator<Map.Entry<String, Double> >() {
+            public int compare(Map.Entry<String, Double> o1,
+                               Map.Entry<String, Double> o2)
+            {
+                return (o1.getValue()).compareTo(o2.getValue());
+            }
+        });
+
+        // put data from sorted list to hashmap
+        HashMap<String, Double> temp = new LinkedHashMap<String, Double>();
+        for (Map.Entry<String, Double> aa : list) {
+            temp.put(aa.getKey(), aa.getValue());
+        }
+        return temp;
+    }
+
 
 
     public List<ClusterInfo> batchInformation(List<Cluster<Article>> clusters){
@@ -170,11 +193,7 @@ public class ClusterInfoHelper {
                     Log.error("unable to find cosine dissimilarty "+ e.getMessage());
                 }
             }
-            HashMap<String,Double> sorted = new HashMap<>();
-            temp.entrySet()
-                    .stream()
-                    .sorted(Map.Entry.comparingByValue())
-                    .forEachOrdered(x -> sorted.put(x.getKey(), x.getValue()));
+            HashMap<String,Double> sorted = sortByValue(temp);
 
             Iterator iterator = sorted.entrySet().iterator();
             int i = 1;
@@ -182,7 +201,6 @@ public class ClusterInfoHelper {
                 Map.Entry mapElement = (Map.Entry)iterator.next();
                 ret.put((String)mapElement.getKey(),i);
                 i++;
-
             }
 
         }
