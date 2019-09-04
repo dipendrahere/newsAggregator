@@ -15,3 +15,10 @@ https://www.washingtontimes.com/rss/headlines/news/world
 http://www.globalissues.org/news/feed
 http://feeds.news24.com/articles/news24/World/rss
 https://globalnews.ca/world/feed/
+http://feeds.foxnews.com/foxnews/world
+https://thehill.com/rss/syndicator/19110
+https://www.politico.com/rss/politics08.xml
+http://rss.cnn.com/rss/cnn_topstories.rss
+http://newsrss.bbc.co.uk/rss/newsonline_world_edition/americas/rss.xml
+http://rssfeeds.usatoday.com/UsatodaycomWorld-TopStories
+https://news.yahoo.com/rss/world
