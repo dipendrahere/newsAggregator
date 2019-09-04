@@ -29,6 +29,7 @@ import java.util.*;
 public class GlobalFunctions {
 
     public static String extractFromUrl(String url) throws Exception {
+        Log.debug("Will crawl: "+url);
         UserAgentManager userAgentManager = new RandomUserAgentManager();
         CrawlerConfig crawlerConfig = new DefaultProxyCrawlerConfig("Taxonomy-Test", userAgentManager);
         SyncCrawlResponse response = null;
@@ -39,7 +40,11 @@ public class GlobalFunctions {
             Log.error("Caught an exception while trying to crawl :: " +e.getMessage());
         }
         Log.debug("crawl :: status code string: "+ response.getStatusString() + " :: status code: " +response.getStatusCode());
-        return extractFromHtml(response.getContent());
+        return response.getContent();
+    }
+
+    public static String getContent(String html) throws BoilerpipeProcessingException {
+        return extractFromHtml(html);
     }
 
     public static String extractFromUrl(URL url) throws BoilerpipeProcessingException {
@@ -206,20 +211,8 @@ public class GlobalFunctions {
         url = url.trim();
         String ret = "";
         try {
-            UserAgentManager userAgentManager = new RandomUserAgentManager();
-            CrawlerConfig crawlerConfig = new DefaultProxyCrawlerConfig("Taxonomy-Test", userAgentManager);
-            SyncCrawlResponse response = null;
-            try {
-                SyncCrawler syncCrawler = new SyncCrawler(crawlerConfig);
-                response = syncCrawler.crawl(url);
-            }catch(Exception e){
-                Log.error("Caught an exception while trying to crawl :: " +e.getMessage());
-            }
-            Log.debug("crawl :: status code string: "+ response.getStatusString() + " :: status code: " +response.getStatusCode());
-            String html = response.getContent();
-            Document document = Jsoup.parse(html);
-            ret = document.select("meta[property=og:image]").first().absUrl("content");
-            System.out.println(ret);
+            String html = extractFromUrl(url);
+            ret = getImageFromHTML(html);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {

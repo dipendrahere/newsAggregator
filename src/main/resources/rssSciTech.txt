@@ -23,3 +23,5 @@ https://www.wired.com/feed
 https://www.theverge.com/rss/index.xml
 http://rssfeeds.usatoday.com/usatoday-TechTopStories
 https://www.cnet.com/rss/news/
+http://feeds.arstechnica.com/arstechnica/index
+http://feeds.feedburner.com/TechCrunch/

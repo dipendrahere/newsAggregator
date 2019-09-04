@@ -2,6 +2,7 @@ package code.contentComponent;
 
 import code.models.CategoryType;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -22,9 +23,11 @@ public class PollingService {
     }
 
     private PollingService(){
-        controllers = Arrays.stream(CategoryType.values()).map(obj -> {
-            return new RssController(obj);
-        }).collect(Collectors.toList());
+//        controllers = Arrays.stream(CategoryType.values()).map(obj -> {
+//            return new RssController(obj);
+//        }).collect(Collectors.toList());
+        controllers = new ArrayList<>();
+        controllers.add(new RssController(CategoryType.SPORTS));
     }
 
     public void poll(){
