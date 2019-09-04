@@ -23,10 +23,10 @@ public class BatchClusterController {
 
     public void startClustering(){
         List<Article> list = DBConnect.getInstance().fetchArticles(categoryType);
-//        Log.debug("article fetching finished");
+        Log.debug("Batch clustering start");
         BatchClusterer<Article> clusterer = new BatchClusterer<Article>(eps, minPts);
         List<Cluster<Article>> clusters = clusterer.cluster(list);
-        Log.debug("clustering finished " + clusters.size() + "  category: "+categoryType);
+        Log.debug("Batch clustering finished " + clusters.size() + "  category: "+categoryType);
         HashMap<String,Integer> hashMap = new HashMap<>();
         for(Cluster cluster : clusters){
             List<Article> articles = cluster.getPoints();
@@ -37,17 +37,17 @@ public class BatchClusterController {
 
         DBConnect.getInstance().unassignClusters(categoryType);
         DBConnect.getInstance().updateClusterIDs(hashMap);
-        Log.debug("BATCH CLUSTERING DONE");
+       // Log.debug("BATCH CLUSTERING DONE");
 
 
-        Log.debug("BatchInfo start ");
+        //Log.debug("BatchInfo start ");
         List<ClusterInfo> info = new ClusterInfoHelper().batchInformation(clusters);
-        DBConnect.getInstance().updateClusterInfo(info);
+       // DBConnect.getInstance().updateClusterInfo(info);
 
         HashMap<String,Double> clusterRank = new ClusterInfoHelper().batchRanking(clusters);
         DBConnect.getInstance().updateClusterRank(clusterRank);
 
-        Log.debug("Everything finished");
+        //Log.debug("Everything finished");
 //       try {
 //            GlobalFunctions.dumpClusters(clusters);
 //        } catch (IOException e) {

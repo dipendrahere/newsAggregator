@@ -13,13 +13,15 @@ import net.media.mnetcrawler.SyncCrawler;
 import net.media.mnetcrawler.bean.SyncCrawlResponse;
 import net.media.mnetcrawler.util.RandomUserAgentManager;
 import net.media.mnetcrawler.util.UserAgentManager;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.math.BigInteger;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
@@ -198,5 +200,36 @@ public class GlobalFunctions {
             }
             writer.close();
         }
+    }
+
+    public static String getImageFromUrl(String url) throws Exception{
+        url = url.trim();
+        String ret = "";
+        try {
+            UserAgentManager userAgentManager = new RandomUserAgentManager();
+            CrawlerConfig crawlerConfig = new DefaultProxyCrawlerConfig("Taxonomy-Test", userAgentManager);
+            SyncCrawlResponse response = null;
+            try {
+                SyncCrawler syncCrawler = new SyncCrawler(crawlerConfig);
+                response = syncCrawler.crawl(url);
+            }catch(Exception e){
+                Log.error("Caught an exception while trying to crawl :: " +e.getMessage());
+            }
+            Log.debug("crawl :: status code string: "+ response.getStatusString() + " :: status code: " +response.getStatusCode());
+            String html = response.getContent();
+            Document document = Jsoup.parse(html);
+            ret = document.select("meta[property=og:image]").first().absUrl("content");
+            System.out.println(ret);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return ret;
+    }
+
+    public static String getImageFromHTML(String html){
+        Document document = Jsoup.parse(html);
+        return document.select("meta[property=og:image]").first().absUrl("content");
     }
 }
