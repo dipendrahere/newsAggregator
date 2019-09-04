@@ -1,0 +1,166 @@
+2019-09-03 17:52:34 INFO  global:17 - clustering finished 50  category: BUSINESS
+2019-09-03 17:52:34 INFO  global:17 - clustering finished 50  category: SPORTS
+2019-09-03 17:52:34 INFO  global:17 - clustering finished 50  category: SCITECH
+2019-09-03 17:52:34 INFO  global:17 - Update in Db
+2019-09-03 17:52:35 INFO  global:17 - clustering finished 50  category: WORLD
+2019-09-03 17:52:35 INFO  global:17 - BATCH CLUSTERING DONE
+2019-09-03 17:52:35 INFO  global:17 - BatchInfo start 
+2019-09-03 17:52:35 INFO  global:17 - Update in Db
+2019-09-03 17:52:35 INFO  global:17 - BATCH CLUSTERING DONE
+2019-09-03 17:52:35 INFO  global:17 - BatchInfo start 
+2019-09-03 17:52:35 INFO  global:17 - Update in Db
+2019-09-03 17:52:35 INFO  global:17 - BATCH CLUSTERING DONE
+2019-09-03 17:52:35 INFO  global:17 - BatchInfo start 
+2019-09-03 17:52:35 INFO  global:17 - Update in Db
+2019-09-03 17:52:35 INFO  global:17 - BATCH CLUSTERING DONE
+2019-09-03 17:52:35 INFO  global:17 - BatchInfo start 
+2019-09-03 17:52:35 INFO  global:17 - BATCH INFO START
+2019-09-03 17:52:35 INFO  global:17 - BATCH INFO DONE
+2019-09-03 17:52:35 INFO  global:17 - BATCH INFO START
+2019-09-03 17:52:35 INFO  global:17 - BATCH INFO DONE
+2019-09-03 17:52:35 INFO  global:17 - BATCH INFO START
+2019-09-03 17:52:35 INFO  global:17 - BATCH INFO DONE
+2019-09-03 17:52:35 INFO  global:17 - BATCH INFO START
+2019-09-03 17:52:35 INFO  global:17 - BATCH INFO DONE
+2019-09-03 17:52:35 INFO  global:17 - Everything finished
+2019-09-03 17:52:35 INFO  global:17 - Everything finished
+2019-09-03 17:52:35 INFO  global:17 - Everything finished
+2019-09-03 17:52:35 INFO  global:17 - Everything finished
+2019-09-03 19:04:04 INFO  global:17 - clustering finished 344  category: WORLD
+2019-09-03 19:04:04 INFO  global:17 - Update in Db
+2019-09-03 19:04:05 INFO  global:17 - BATCH CLUSTERING DONE
+2019-09-03 19:04:05 INFO  global:17 - BatchInfo start 
+2019-09-03 19:04:05 INFO  global:17 - BATCH INFO START
+2019-09-03 19:04:05 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:04:05 INFO  global:17 - Everything finished
+2019-09-03 19:04:06 INFO  global:17 - clustering finished 340  category: SPORTS
+2019-09-03 19:04:06 INFO  global:17 - Update in Db
+2019-09-03 19:04:06 INFO  global:17 - BATCH CLUSTERING DONE
+2019-09-03 19:04:06 INFO  global:17 - BatchInfo start 
+2019-09-03 19:04:06 INFO  global:17 - BATCH INFO START
+2019-09-03 19:04:06 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:04:07 INFO  global:17 - Everything finished
+2019-09-03 19:04:08 INFO  global:17 - clustering finished 350  category: SCITECH
+2019-09-03 19:04:08 INFO  global:17 - Update in Db
+2019-09-03 19:04:08 INFO  global:17 - BATCH CLUSTERING DONE
+2019-09-03 19:04:08 INFO  global:17 - BatchInfo start 
+2019-09-03 19:04:09 INFO  global:17 - BATCH INFO START
+2019-09-03 19:04:09 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:04:09 INFO  global:17 - Everything finished
+2019-09-03 19:04:12 INFO  global:17 - clustering finished 336  category: BUSINESS
+2019-09-03 19:04:12 INFO  global:17 - Update in Db
+2019-09-03 19:04:12 INFO  global:17 - BATCH CLUSTERING DONE
+2019-09-03 19:04:12 INFO  global:17 - BatchInfo start 
+2019-09-03 19:04:13 INFO  global:17 - BATCH INFO START
+2019-09-03 19:04:13 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:04:13 INFO  global:17 - Everything finished
+2019-09-03 19:06:01 INFO  global:17 - INCREMENTAL INFO START
+2019-09-03 19:06:01 INFO  global:17 - INCREMENTAL INFO DONE
+2019-09-03 19:06:01 INFO  global:17 - BATCH FOR INCREMENTAL INFO START
+2019-09-03 19:06:01 INFO  global:17 - BATCH INFO START
+2019-09-03 19:06:02 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:06:03 INFO  global:17 - Update in Db
+2019-09-03 19:06:05 INFO  global:17 - INCREMENTAL DONE for SPORTS
+2019-09-03 19:06:13 INFO  global:17 - INCREMENTAL INFO START
+2019-09-03 19:06:13 INFO  global:17 - INCREMENTAL INFO DONE
+2019-09-03 19:06:13 INFO  global:17 - BATCH FOR INCREMENTAL INFO START
+2019-09-03 19:06:13 INFO  global:17 - BATCH INFO START
+2019-09-03 19:06:13 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:06:16 INFO  global:17 - Update in Db
+2019-09-03 19:06:17 INFO  global:17 - INCREMENTAL DONE for SCITECH
+2019-09-03 19:06:39 INFO  global:17 - Incremental start for WORLD
+2019-09-03 19:06:39 INFO  global:17 - Incremental start for BUSINESS
+2019-09-03 19:06:39 INFO  global:17 - Incremental start for SPORTS
+2019-09-03 19:06:39 INFO  global:17 - Incremental start for SCITECH
+2019-09-03 19:06:41 INFO  global:17 - INCREMENTAL INFO START
+2019-09-03 19:06:41 INFO  global:17 - INCREMENTAL INFO DONE
+2019-09-03 19:06:41 INFO  global:17 - BATCH FOR INCREMENTAL INFO START
+2019-09-03 19:06:41 INFO  global:17 - BATCH INFO START
+2019-09-03 19:06:41 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:06:42 INFO  global:17 - Update in Db
+2019-09-03 19:06:42 INFO  global:17 - INCREMENTAL DONE for SCITECH
+2019-09-03 19:06:42 INFO  global:17 - INCREMENTAL INFO START
+2019-09-03 19:06:42 INFO  global:17 - INCREMENTAL INFO DONE
+2019-09-03 19:06:42 INFO  global:17 - BATCH FOR INCREMENTAL INFO START
+2019-09-03 19:06:42 INFO  global:17 - BATCH INFO START
+2019-09-03 19:06:42 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:06:42 INFO  global:17 - Update in Db
+2019-09-03 19:06:42 INFO  global:17 - INCREMENTAL DONE for SPORTS
+2019-09-03 19:07:00 INFO  global:17 - clustering finished 340  category: SPORTS
+2019-09-03 19:07:00 INFO  global:17 - Update in Db
+2019-09-03 19:07:00 INFO  global:17 - BATCH CLUSTERING DONE
+2019-09-03 19:07:00 INFO  global:17 - BatchInfo start 
+2019-09-03 19:07:00 INFO  global:17 - BATCH INFO START
+2019-09-03 19:07:00 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:07:00 INFO  global:17 - Everything finished
+2019-09-03 19:07:02 INFO  global:17 - clustering finished 350  category: SCITECH
+2019-09-03 19:07:02 INFO  global:17 - Update in Db
+2019-09-03 19:07:03 INFO  global:17 - BATCH CLUSTERING DONE
+2019-09-03 19:07:03 INFO  global:17 - BatchInfo start 
+2019-09-03 19:07:03 INFO  global:17 - BATCH INFO START
+2019-09-03 19:07:03 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:07:03 INFO  global:17 - Everything finished
+2019-09-03 19:07:19 INFO  global:17 - clustering finished 344  category: WORLD
+2019-09-03 19:07:19 INFO  global:17 - Update in Db
+2019-09-03 19:07:19 INFO  global:17 - BATCH CLUSTERING DONE
+2019-09-03 19:07:19 INFO  global:17 - BatchInfo start 
+2019-09-03 19:07:22 INFO  global:17 - Incremental start for SPORTS
+2019-09-03 19:07:22 INFO  global:17 - Incremental start for SCITECH
+2019-09-03 19:07:22 INFO  global:17 - Incremental start for BUSINESS
+2019-09-03 19:07:22 INFO  global:17 - Incremental start for WORLD
+2019-09-03 19:07:54 INFO  global:17 - Incremental start for WORLD
+2019-09-03 19:07:54 INFO  global:17 - Incremental start for BUSINESS
+2019-09-03 19:07:54 INFO  global:17 - Incremental start for SPORTS
+2019-09-03 19:07:54 INFO  global:17 - Incremental start for SCITECH
+2019-09-03 19:08:41 INFO  global:17 - Incremental start for SPORTS
+2019-09-03 19:08:41 INFO  global:17 - Incremental start for SCITECH
+2019-09-03 19:08:41 INFO  global:17 - Incremental start for BUSINESS
+2019-09-03 19:08:41 INFO  global:17 - Incremental start for WORLD
+2019-09-03 19:09:21 INFO  global:17 - Batch clustering finished 340  category: SPORTS
+2019-09-03 19:09:21 INFO  global:17 - Update in Db
+2019-09-03 19:09:22 INFO  global:17 - BatchInfo start 
+2019-09-03 19:09:22 INFO  global:17 - BATCH INFO START
+2019-09-03 19:09:22 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:09:31 INFO  global:17 - Batch clustering finished 344  category: WORLD
+2019-09-03 19:09:31 INFO  global:17 - Update in Db
+2019-09-03 19:09:32 INFO  global:17 - BatchInfo start 
+2019-09-03 19:09:32 INFO  global:17 - BATCH INFO START
+2019-09-03 19:09:32 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:09:34 INFO  global:17 - Batch clustering finished 350  category: SCITECH
+2019-09-03 19:09:34 INFO  global:17 - Update in Db
+2019-09-03 19:09:34 INFO  global:17 - BatchInfo start 
+2019-09-03 19:09:34 INFO  global:17 - BATCH INFO START
+2019-09-03 19:09:35 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:09:36 INFO  global:17 - Batch clustering finished 336  category: BUSINESS
+2019-09-03 19:09:36 INFO  global:17 - Update in Db
+2019-09-03 19:09:36 INFO  global:17 - BatchInfo start 
+2019-09-03 19:09:36 INFO  global:17 - BATCH INFO START
+2019-09-03 19:09:36 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:10:00 INFO  global:17 - Incremental start for SPORTS
+2019-09-03 19:10:00 INFO  global:17 - Incremental start for BUSINESS
+2019-09-03 19:10:00 INFO  global:17 - Incremental start for SCITECH
+2019-09-03 19:10:00 INFO  global:17 - Incremental start for WORLD
+2019-09-03 19:10:01 INFO  global:17 - Batch clustering start
+2019-09-03 19:10:01 INFO  global:17 - Batch clustering start
+2019-09-03 19:10:02 INFO  global:17 - Batch clustering start
+2019-09-03 19:10:02 INFO  global:17 - Batch clustering start
+2019-09-03 19:10:47 INFO  global:17 - Batch clustering start
+2019-09-03 19:10:47 INFO  global:17 - Batch clustering start
+2019-09-03 19:10:47 INFO  global:17 - Batch clustering start
+2019-09-03 19:10:47 INFO  global:17 - Batch clustering start
+2019-09-03 19:15:01 INFO  global:17 - Batch clustering finished 1241  category: SPORTS
+2019-09-03 19:15:01 INFO  global:17 - Update in Db
+2019-09-03 19:15:02 INFO  global:17 - BATCH INFO START
+2019-09-03 19:15:02 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:15:15 INFO  global:17 - Batch clustering finished 1266  category: SCITECH
+2019-09-03 19:15:15 INFO  global:17 - Update in Db
+2019-09-03 19:15:16 INFO  global:17 - BATCH INFO START
+2019-09-03 19:15:17 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:16:18 INFO  global:17 - Batch clustering finished 1178  category: WORLD
+2019-09-03 19:16:18 INFO  global:17 - Update in Db
+2019-09-03 19:16:20 INFO  global:17 - BATCH INFO START
+2019-09-03 19:16:20 INFO  global:17 - BATCH INFO DONE
+2019-09-03 19:23:02 INFO  global:17 - Batch clustering finished 1922  category: BUSINESS
+2019-09-03 19:23:02 INFO  global:17 - Update in Db
+2019-09-03 19:23:09 INFO  global:17 - BATCH INFO START
+2019-09-03 19:23:15 INFO  global:17 - BATCH INFO DONE

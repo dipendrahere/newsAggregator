@@ -173,6 +173,9 @@ public class HierarchicalClusterer<T extends Article> implements Clusterer<T>{
                 hmap.put((Integer)mapElement.getValue(),list);
             }
         }
+        if(hmap.size() == 0){
+            return ret;
+        }
         for(Article article : NonClusteredArticles){
             double mini = 10;
             int ans = 0;

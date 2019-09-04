@@ -13,13 +13,15 @@ import net.media.mnetcrawler.SyncCrawler;
 import net.media.mnetcrawler.bean.SyncCrawlResponse;
 import net.media.mnetcrawler.util.RandomUserAgentManager;
 import net.media.mnetcrawler.util.UserAgentManager;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.math.BigInteger;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
@@ -198,5 +200,30 @@ public class GlobalFunctions {
             }
             writer.close();
         }
+    }
+
+    public String getImageFromUrl(String a) throws Exception{
+        URL url;
+        String ret = "";
+        try {
+            url = new URL(a);
+            URLConnection conn = url.openConnection();
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String html = "";
+            String inputLine;
+            while ((inputLine = br.readLine()) != null) {
+                html += inputLine;
+                html += "\n";
+            }
+            br.close();
+            Document document = Jsoup.parse(html);
+            ret = document.select("meta[property=og:image]").first().absUrl("content");
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return ret;
     }
 }

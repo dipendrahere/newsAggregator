@@ -18,15 +18,17 @@ public class IncrementalClusterController {
     }
     public void run(){
 
+        Log.debug("Incremental start for "+ categoryType);
+
         HashMap<Article,Integer> hashMap = DBConnect.getInstance().articleClusterRelationship(categoryType);
         IncrementalClusterer<Article> hierarchicalClusterer = new IncrementalClusterer<Article>(eps);
         HashMap<String,Integer> updatedClusterId = hierarchicalClusterer.clusterIncrementally(hashMap);
         List<ClusterInfo> existingInfo = DBConnect.getInstance().getClusterInfo();
         List<ClusterInfo> info = new ClusterInfoHelper().incrementDiameters(updatedClusterId, hashMap, existingInfo);
         HashMap<String,Double> clusterRank = new ClusterInfoHelper().incrementalRanking(updatedClusterId,hashMap);
-        DBConnect.getInstance().updateClusterRank(clusterRank);
-        DBConnect.getInstance().updateClusterInfo(info);
         DBConnect.getInstance().updateClusterIDs(updatedClusterId);
+        DBConnect.getInstance().updateClusterInfo(info);
+        DBConnect.getInstance().updateClusterRank(clusterRank);
 
         Log.debug("INCREMENTAL DONE for " + categoryType);
     }

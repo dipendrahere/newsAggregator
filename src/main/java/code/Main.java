@@ -7,9 +7,10 @@ import code.contentComponent.PollingService;
 
 public class Main {
 
-    public static void main(String[] args)  {
-    //    BatchClusterService.getInstance().start();
+    public static void main(String[] args) throws Exception {
+        BatchClusterService.getInstance().start();
         IncrementalClusterService.getInstance().start();
         PollingService.getInstance().poll();
+
     }
 }
