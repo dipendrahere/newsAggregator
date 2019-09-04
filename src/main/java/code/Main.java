@@ -28,10 +28,11 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-//        BatchClusterService.getInstance().start();
-//        IncrementalClusterService.getInstance().start();
-//        PollingService.getInstance().poll();
-
-        updateImageUrls();
+//        String res = GlobalFunctions.extractFromUrl("https://www.nytimes.com/2019/08/30/business/dealbook/talking-ourselves-into-recession.html?emc=rss&partner=rss");
+//        System.out.println(GlobalFunctions.extractFromHtml(res));
+//        System.out.println(GlobalFunctions.getImageFromHTML(res));
+        IncrementalClusterService.getInstance().start();
+        BatchClusterService.getInstance().start();
+        PollingService.getInstance().poll();
     }
 }

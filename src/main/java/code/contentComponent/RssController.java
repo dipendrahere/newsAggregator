@@ -126,6 +126,7 @@ public class RssController {
 
         List<RSSItem> rssItems = new ArrayList<>();
         try (XmlReader reader = new XmlReader(new URL(path))) {
+            Log.debug("Will READ: " +  path);
             SyndFeed feed = new SyndFeedInput().build(reader);
             for (SyndEntry entry : feed.getEntries()) {
                 RSSItem item = new RSSItem(entry, path);
@@ -153,12 +154,19 @@ public class RssController {
         return CompletableFuture.supplyAsync(() -> {
             ArticleBuilder articleBuilder = new ArticleBuilder(item.getLink());
             try {
+                String html = GlobalFunctions.extractFromUrl(item.getLink());
+                Thread.sleep(2);
+                String imageUrl = GlobalFunctions.getImageFromHTML(html);
+                if(imageUrl == null){
+                    imageUrl = item.getImageUrl();
+                }
+
                 articleBuilder.setCategoryType(categoryType)
                         .setPublishedDate(item.getPubDate())
                         .setRssLink(item.getRssLink())
-                        .setContent(DataCleaner.clean(GlobalFunctions.extractFromUrl(item.getLink())))
+                        .setContent(DataCleaner.clean(GlobalFunctions.getContent(html)))
                         .setTitle(item.getTitle())
-                        .setImageUrl(item.getImageUrl());
+                        .setImageUrl(imageUrl);
             } catch (BoilerpipeProcessingException e) {
                 Log.error("Unable to extract data from url - boilerpipe");
             } catch (MalformedURLException e) {

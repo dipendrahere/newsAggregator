@@ -1,0 +1,168 @@
+2019-09-04 20:20:38 INFO  global:17 - Incremental start for WORLD
+2019-09-04 20:20:38 INFO  global:17 - Incremental start for SCITECH
+2019-09-04 20:20:38 INFO  global:17 - Incremental start for SPORTS
+2019-09-04 20:20:38 INFO  global:17 - Incremental start for BUSINESS
+2019-09-04 20:20:39 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_sport.rss
+2019-09-04 20:20:39 INFO  global:17 - READ: http://feeds.reuters.com/reuters/businessNews
+2019-09-04 20:20:40 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_business.rss
+2019-09-04 20:20:40 INFO  global:17 - READ: http://feeds.newscientist.com/space
+2019-09-04 20:20:40 INFO  global:17 - READ: http://nautil.us/rss/all
+2019-09-04 20:20:40 INFO  global:17 - READ: http://www1.cbn.com/app_feeds/rss/news/rss.php?section=world
+2019-09-04 20:20:40 INFO  global:17 - READ: https://www.npr.org/rss/rss.php?id=1001
+2019-09-04 20:20:41 INFO  global:17 - READ: http://feeds.newscientist.com/science-news
+2019-09-04 20:20:41 INFO  global:17 - READ: https://www.usnews.com/topics/subjects/science/rss
+2019-09-04 20:20:41 INFO  global:17 - READ: https://www.skysports.com/rss/12040
+2019-09-04 20:20:41 INFO  global:17 - READ: https://www.espn.com/espn/rss/news
+2019-09-04 20:20:45 INFO  global:17 - Batch clustering start
+2019-09-04 20:20:59 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:20:59 INFO  global:17 - article with link: https://www.skysports.com/racing/news/12040/11802135/oz-test-unlikely-for-shine-so-bright is fetched
+2019-09-04 20:21:04 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:21:04 INFO  global:17 - article with link: https://www.skysports.com/football/news/12040/11802099/hugo-lloris-says-tottenham-are-missing-something-to-win-league is fetched
+2019-09-04 20:21:09 INFO  global:17 - crawl :: status code string: Not Found :: status code: 404
+2019-09-04 20:21:09 ERROR global:20 - Something went wrong
+2019-09-04 20:21:09 INFO  global:17 - article with link: https://www.skysports.com/gaelic-football/news/12040/11801465/galways-next-football-manager-contenders-to-replace-kevin-walsh is fetched
+2019-09-04 20:21:14 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:21:14 INFO  global:17 - article with link: https://www.skysports.com/athletics/news/12040/11802145/justin-gatlin-to-return-to-training-after-injury-scare is fetched
+2019-09-04 20:21:19 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:21:19 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:21:19 INFO  global:17 - article with link: http://www.cbn.com/api/urlredirect.aspx?u=http://www1.cbn.com/cbnnews/world/2019/september/each-day-is-torture-six-year-old-savagely-beaten-over-parents-christian-faith-and-refusal-to-engage-in-ancestor-worship is fetched
+2019-09-04 20:21:19 INFO  global:17 - article with link: https://www.skysports.com/racing/news/12040/11802172/ryan-moore-set-to-ride-sir-dragonet-in-st-leger is fetched
+2019-09-04 20:21:23 INFO  global:17 - READ: http://www.cnbc.com/id/19746125/device/rss/rss.xml
+2019-09-04 20:21:24 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:21:24 INFO  global:17 - article with link: https://www.skysports.com/football/news/12040/11802151/granit-xhaka-hits-back-at-arsenal-critics-after-tottenham-draw is fetched
+2019-09-04 20:21:25 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:21:27 INFO  global:17 - Incremental start for SPORTS
+2019-09-04 20:21:27 INFO  global:17 - Incremental start for BUSINESS
+2019-09-04 20:21:27 INFO  global:17 - Incremental start for SCITECH
+2019-09-04 20:21:27 INFO  global:17 - Incremental start for WORLD
+2019-09-04 20:21:27 INFO  global:17 - READ: http://www1.cbn.com/app_feeds/rss/news/rss.php?section=world
+2019-09-04 20:21:28 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_business.rss
+2019-09-04 20:21:28 INFO  global:17 - READ: http://feeds.reuters.com/reuters/businessNews
+2019-09-04 20:21:28 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_sport.rss
+2019-09-04 20:21:28 INFO  global:17 - READ: http://feeds.newscientist.com/space
+2019-09-04 20:21:28 INFO  global:17 - READ: http://www.cnbc.com/id/19746125/device/rss/rss.xml
+2019-09-04 20:21:28 INFO  global:17 - READ: http://nautil.us/rss/all
+2019-09-04 20:21:29 INFO  global:17 - READ: https://www.usnews.com/topics/subjects/science/rss
+2019-09-04 20:21:29 INFO  global:17 - READ: https://www.espn.com/espn/rss/news
+2019-09-04 20:21:29 INFO  global:17 - READ: https://www.npr.org/rss/rss.php?id=1001
+2019-09-04 20:21:32 INFO  global:17 - READ: http://feeds.newscientist.com/science-news
+2019-09-04 20:21:35 INFO  global:17 - Batch clustering start
+2019-09-04 20:21:53 INFO  global:17 - READ: https://www.cnbc.com/id/19854910/device/rss/rss.html
+2019-09-04 20:22:05 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:22:05 INFO  global:17 - article with link: https://www.cnbc.com/2019/09/04/pete-buttigieg-unveils-1point1-trillion-climate-change-plan.html is fetched
+2019-09-04 20:22:09 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:22:09 INFO  global:17 - article with link: https://www.cnbc.com/2019/09/04/the-age-when-americans-start-saving-for-retirement.html is fetched
+2019-09-04 20:22:15 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:22:15 INFO  global:17 - article with link: https://www.cnbc.com/2019/09/04/weekly-mortgage-refinances-fall-further-despite-lower-interest-rates.html is fetched
+2019-09-04 20:22:16 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:22:17 INFO  global:17 - article with link: http://feeds.reuters.com/~r/reuters/businessNews/~3/rHzyP_ZhjUM/labor-pains-japanese-jobs-for-south-korean-graduates-dry-up-amid-trade-row-idUSKCN1VP15J is fetched
+2019-09-04 20:22:18 INFO  global:17 - Batch clustering start
+2019-09-04 20:22:19 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:22:19 INFO  global:17 - Batch clustering start
+2019-09-04 20:22:20 INFO  global:17 - article with link: http://www.cbn.com/api/urlredirect.aspx?u=http://www1.cbn.com/cbnnews/world/2019/september/each-day-is-torture-six-year-old-savagely-beaten-over-parents-christian-faith-and-refusal-to-engage-in-ancestor-worship is fetched
+2019-09-04 20:22:20 INFO  global:17 - Batch clustering start
+2019-09-04 20:22:23 INFO  global:17 - INCREMENTAL INFO START
+2019-09-04 20:22:23 INFO  global:17 - INCREMENTAL INFO DONE
+2019-09-04 20:22:23 INFO  global:17 - BATCH FOR INCREMENTAL INFO START
+2019-09-04 20:22:23 INFO  global:17 - BATCH INFO START
+2019-09-04 20:22:23 INFO  global:17 - BATCH INFO DONE
+2019-09-04 20:22:24 INFO  global:17 - INCREMENTAL INFO START
+2019-09-04 20:22:24 INFO  global:17 - INCREMENTAL INFO DONE
+2019-09-04 20:22:24 INFO  global:17 - BATCH FOR INCREMENTAL INFO START
+2019-09-04 20:22:24 INFO  global:17 - BATCH INFO START
+2019-09-04 20:22:24 INFO  global:17 - BATCH INFO DONE
+2019-09-04 20:22:25 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:22:25 INFO  global:17 - article with link: http://feeds.reuters.com/~r/reuters/businessNews/~3/xsF1ohuCfIs/share-index-relegation-a-sign-of-the-times-for-once-mighty-ms-idUSKCN1VP19S is fetched
+2019-09-04 20:22:27 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:22:27 INFO  global:17 - article with link: http://www.cbn.com/api/urlredirect.aspx?u=http://www1.cbn.com/cbnnews/cwn/2019/september/hong-kong-leader-withdraws-extradition-bill-after-weeks-of-protests is fetched
+2019-09-04 20:22:29 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:22:29 INFO  global:17 - article with link: https://www.cnbc.com/2019/09/04/wall-street-strategists-are-finding-it-tougher-to-forecast-sp-500.html is fetched
+2019-09-04 20:22:31 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:22:31 INFO  global:17 - article with link: http://feeds.reuters.com/~r/reuters/businessNews/~3/r_YEUjE1Z6s/u-s-effort-to-disqualify-huaweis-lead-lawyer-goes-to-court-idUSKCN1VP148 is fetched
+2019-09-04 20:22:34 INFO  global:17 - READ: http://rss.cnn.com/rss/money_topstories.rss
+2019-09-04 20:22:35 INFO  global:17 - READ: http://nusports.com/rss.aspx?path=general
+2019-09-04 20:22:36 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:22:36 INFO  global:17 - article with link: http://feeds.reuters.com/~r/reuters/businessNews/~3/KI3LPooQ1-M/cathay-chairman-slosar-resigns-weeks-after-ceo-left-deepening-reshuffle-idUSKCN1VP0XK is fetched
+2019-09-04 20:22:45 INFO  global:17 - Incremental start for BUSINESS
+2019-09-04 20:22:45 INFO  global:17 - Incremental start for SPORTS
+2019-09-04 20:22:45 INFO  global:17 - Incremental start for WORLD
+2019-09-04 20:22:45 INFO  global:17 - Incremental start for SCITECH
+2019-09-04 20:22:45 INFO  global:17 - READ: http://www1.cbn.com/app_feeds/rss/news/rss.php?section=world
+2019-09-04 20:22:46 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_business.rss
+2019-09-04 20:22:46 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_sport.rss
+2019-09-04 20:22:46 INFO  global:17 - READ: http://feeds.reuters.com/reuters/businessNews
+2019-09-04 20:22:46 INFO  global:17 - READ: http://nusports.com/rss.aspx?path=general
+2019-09-04 20:22:46 INFO  global:17 - READ: http://rssfeeds.wfaa.com/wfaa/sports
+2019-09-04 20:22:47 INFO  global:17 - READ: http://feeds.newscientist.com/science-news
+2019-09-04 20:22:47 INFO  global:17 - READ: http://feeds.newscientist.com/space
+2019-09-04 20:22:47 INFO  global:17 - READ: http://nautil.us/rss/all
+2019-09-04 20:22:47 INFO  global:17 - READ: https://www.espn.com/espn/rss/news
+2019-09-04 20:22:47 INFO  global:17 - READ: https://www.npr.org/rss/rss.php?id=1001
+2019-09-04 20:22:52 INFO  global:17 - Batch clustering start
+2019-09-04 20:23:03 INFO  global:17 - READ: https://www.livemint.com/rss/sports
+2019-09-04 20:23:05 INFO  global:17 - READ: https://www.thehindu.com/sport/feeder/default.rss
+2019-09-04 20:23:15 INFO  global:17 - Batch clustering start
+2019-09-04 20:23:16 INFO  global:17 - Batch clustering start
+2019-09-04 20:23:17 INFO  global:17 - Batch clustering start
+2019-09-04 20:23:20 INFO  global:17 - INCREMENTAL INFO START
+2019-09-04 20:23:20 INFO  global:17 - INCREMENTAL INFO DONE
+2019-09-04 20:23:20 INFO  global:17 - BATCH FOR INCREMENTAL INFO START
+2019-09-04 20:23:20 INFO  global:17 - BATCH INFO START
+2019-09-04 20:23:20 INFO  global:17 - BATCH INFO DONE
+2019-09-04 20:23:22 INFO  global:17 - INCREMENTAL INFO START
+2019-09-04 20:23:22 INFO  global:17 - INCREMENTAL INFO DONE
+2019-09-04 20:23:22 INFO  global:17 - BATCH FOR INCREMENTAL INFO START
+2019-09-04 20:23:22 INFO  global:17 - BATCH INFO START
+2019-09-04 20:23:22 INFO  global:17 - BATCH INFO DONE
+2019-09-04 20:23:24 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:23:24 INFO  global:17 - article with link: http://feeds.reuters.com/~r/reuters/businessNews/~3/rHzyP_ZhjUM/labor-pains-japanese-jobs-for-south-korean-graduates-dry-up-amid-trade-row-idUSKCN1VP15J is fetched
+2019-09-04 20:23:30 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:23:30 INFO  global:17 - article with link: http://feeds.reuters.com/~r/reuters/businessNews/~3/xsF1ohuCfIs/share-index-relegation-a-sign-of-the-times-for-once-mighty-ms-idUSKCN1VP19S is fetched
+2019-09-04 20:23:33 INFO  global:17 - READ: http://www.cnbc.com/id/19746125/device/rss/rss.xml
+2019-09-04 20:23:39 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:23:39 INFO  global:17 - article with link: http://feeds.reuters.com/~r/reuters/businessNews/~3/r_YEUjE1Z6s/u-s-effort-to-disqualify-huaweis-lead-lawyer-goes-to-court-idUSKCN1VP148 is fetched
+2019-09-04 20:23:45 INFO  global:17 - Incremental start for SPORTS
+2019-09-04 20:23:45 INFO  global:17 - Incremental start for SCITECH
+2019-09-04 20:23:45 INFO  global:17 - Incremental start for BUSINESS
+2019-09-04 20:23:45 INFO  global:17 - Incremental start for WORLD
+2019-09-04 20:23:45 INFO  global:17 - READ: http://www1.cbn.com/app_feeds/rss/news/rss.php?section=world
+2019-09-04 20:23:45 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_sport.rss
+2019-09-04 20:23:45 INFO  global:17 - READ: http://feeds.reuters.com/reuters/businessNews
+2019-09-04 20:23:46 INFO  global:17 - READ: http://rss.cnn.com/rss/edition_business.rss
+2019-09-04 20:23:46 INFO  global:17 - READ: http://feeds.newscientist.com/science-news
+2019-09-04 20:23:46 INFO  global:17 - READ: http://rssfeeds.wfaa.com/wfaa/sports
+2019-09-04 20:23:47 INFO  global:17 - READ: https://www.npr.org/rss/rss.php?id=1001
+2019-09-04 20:23:47 INFO  global:17 - READ: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+2019-09-04 20:23:48 INFO  global:17 - READ: http://nautil.us/rss/all
+2019-09-04 20:23:48 INFO  global:17 - READ: https://www.espn.com/espn/rss/news
+2019-09-04 20:23:49 INFO  global:17 - READ: http://nusports.com/rss.aspx?path=general
+2019-09-04 20:23:53 INFO  global:17 - Batch clustering start
+2019-09-04 20:24:05 INFO  global:17 - READ: http://feeds.newscientist.com/space
+2019-09-04 20:54:55 INFO  global:17 - Will crawl: https://www.nytimes.com/2019/08/30/business/economy/recession-trump.html?emc=rss&partner=rss
+2019-09-04 20:55:01 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-a=4_gAX3nJX4-oWcLVLXz2a7; Expires=Thu, 03 Sep 2020 15:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Thu, 03 Sep 2020 15:18:25 GMT
+2019-09-04 20:55:01 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-gdpr=0; Expires=Wed, 04 Sep 2019 21:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 04 Sep 2019 21:18:25 GMT
+2019-09-04 20:55:01 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-purr=cfs; Expires=Thu, 03 Sep 2020 15:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Thu, 03 Sep 2020 15:18:25 GMT
+2019-09-04 20:55:01 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-us=1; Expires=Wed, 04 Sep 2019 21:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 04 Sep 2019 21:18:25 GMT
+2019-09-04 20:55:01 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-geo=US; Expires=Wed, 04 Sep 2019 21:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 04 Sep 2019 21:18:25 GMT
+2019-09-04 20:55:02 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:55:57 INFO  global:17 - Will crawl: https://www.nytimes.com/2019/08/30/business/dealbook/talking-ourselves-into-recession.html?emc=rss&partner=rss
+2019-09-04 20:56:05 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-a=-Sv-u-q2e7eTpSp_DsixRS; Expires=Thu, 03 Sep 2020 15:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Thu, 03 Sep 2020 15:18:25 GMT
+2019-09-04 20:56:05 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-gdpr=0; Expires=Wed, 04 Sep 2019 21:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 04 Sep 2019 21:18:25 GMT
+2019-09-04 20:56:05 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-purr=cfs; Expires=Thu, 03 Sep 2020 15:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Thu, 03 Sep 2020 15:18:25 GMT
+2019-09-04 20:56:05 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-us=1; Expires=Wed, 04 Sep 2019 21:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 04 Sep 2019 21:18:25 GMT
+2019-09-04 20:56:05 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-geo=US; Expires=Wed, 04 Sep 2019 21:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 04 Sep 2019 21:18:25 GMT
+2019-09-04 20:56:06 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:56:29 INFO  global:17 - Will crawl: https://www.nytimes.com/2019/08/30/business/dealbook/talking-ourselves-into-recession.html?emc=rss&partner=rss
+2019-09-04 20:56:35 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-a=-Sv-u-q2e7eTpSp_DsixRS; Expires=Thu, 03 Sep 2020 15:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Thu, 03 Sep 2020 15:18:25 GMT
+2019-09-04 20:56:35 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-gdpr=0; Expires=Wed, 04 Sep 2019 21:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 04 Sep 2019 21:18:25 GMT
+2019-09-04 20:56:35 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-purr=cfs; Expires=Thu, 03 Sep 2020 15:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Thu, 03 Sep 2020 15:18:25 GMT
+2019-09-04 20:56:35 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-us=1; Expires=Wed, 04 Sep 2019 21:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 04 Sep 2019 21:18:25 GMT
+2019-09-04 20:56:35 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-geo=US; Expires=Wed, 04 Sep 2019 21:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 04 Sep 2019 21:18:25 GMT
+2019-09-04 20:56:35 INFO  global:17 - crawl :: status code string: OK :: status code: 200
+2019-09-04 20:57:04 INFO  global:17 - Will crawl: https://www.nytimes.com/2019/08/30/business/dealbook/talking-ourselves-into-recession.html?emc=rss&partner=rss
+2019-09-04 20:57:11 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-a=-Sv-u-q2e7eTpSp_DsixRS; Expires=Thu, 03 Sep 2020 15:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Thu, 03 Sep 2020 15:18:25 GMT
+2019-09-04 20:57:11 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-gdpr=0; Expires=Wed, 04 Sep 2019 21:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 04 Sep 2019 21:18:25 GMT
+2019-09-04 20:57:11 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-purr=cfs; Expires=Thu, 03 Sep 2020 15:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Thu, 03 Sep 2020 15:18:25 GMT
+2019-09-04 20:57:11 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-us=1; Expires=Wed, 04 Sep 2019 21:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 04 Sep 2019 21:18:25 GMT
+2019-09-04 20:57:11 WARN  ResponseProcessCookies:130 - Invalid cookie header: "Set-Cookie: nyt-geo=US; Expires=Wed, 04 Sep 2019 21:18:25 GMT; Path=/; Domain=.nytimes.com". Invalid 'expires' attribute: Wed, 04 Sep 2019 21:18:25 GMT
+2019-09-04 20:57:11 INFO  global:17 - crawl :: status code string: OK :: status code: 200
