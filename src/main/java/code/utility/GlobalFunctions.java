@@ -202,28 +202,34 @@ public class GlobalFunctions {
         }
     }
 
-    public String getImageFromUrl(String a) throws Exception{
-        URL url;
+    public static String getImageFromUrl(String url) throws Exception{
+        url = url.trim();
         String ret = "";
         try {
-            url = new URL(a);
-            URLConnection conn = url.openConnection();
-            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String html = "";
-            String inputLine;
-            while ((inputLine = br.readLine()) != null) {
-                html += inputLine;
-                html += "\n";
+            UserAgentManager userAgentManager = new RandomUserAgentManager();
+            CrawlerConfig crawlerConfig = new DefaultProxyCrawlerConfig("Taxonomy-Test", userAgentManager);
+            SyncCrawlResponse response = null;
+            try {
+                SyncCrawler syncCrawler = new SyncCrawler(crawlerConfig);
+                response = syncCrawler.crawl(url);
+            }catch(Exception e){
+                Log.error("Caught an exception while trying to crawl :: " +e.getMessage());
             }
-            br.close();
+            Log.debug("crawl :: status code string: "+ response.getStatusString() + " :: status code: " +response.getStatusCode());
+            String html = response.getContent();
             Document document = Jsoup.parse(html);
             ret = document.select("meta[property=og:image]").first().absUrl("content");
-
+            System.out.println(ret);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return ret;
+    }
+
+    public static String getImageFromHTML(String html){
+        Document document = Jsoup.parse(html);
+        return document.select("meta[property=og:image]").first().absUrl("content");
     }
 }

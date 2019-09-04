@@ -325,4 +325,42 @@ public class DBConnect {
             Log.error("unable to update cluster rank " + e.getMessage());
         }
     }
+
+    public static synchronized void updateClusterImage(Article article){
+        try {
+            PreparedStatement preparedStatement = connnection.prepareStatement("update articles set imageURL = ? where id = ?");
+            preparedStatement.setString(1,article.getImageUrl());
+            preparedStatement.setString(2,article.getId());
+            preparedStatement.addBatch();
+            preparedStatement.executeBatch();
+
+        }
+        catch (Exception e){
+            Log.error("unable to update article images" + e.getMessage());
+        }
+    }
+
+    public static synchronized List<Article> fetchAllArticles(){
+        List<Article> ret = new ArrayList<>();
+        try{
+            PreparedStatement preparedStatement = connnection.prepareStatement("select * from articles where imageUrl is null order by publishedDate desc limit 6000");
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Article a = new ArticleBuilder(resultSet.getString(4))
+                        .setTitle(resultSet.getString(2))
+                        .setCategoryType(CategoryType.values()[resultSet.getInt(3)-1])
+                        .setPublishedDate(resultSet.getDate(5))
+                        .setRssLink(resultSet.getString(6))
+                        .setContent(resultSet.getString(7))
+                        .setImageUrl(resultSet.getString(8))
+                        .build();
+                a.setId(resultSet.getString(1));
+                ret.add(a);
+            }
+        }
+        catch (SQLException e){
+            Log.error("unable to fetch Article " +e.getMessage());
+        }
+        return ret;
+    }
 }
