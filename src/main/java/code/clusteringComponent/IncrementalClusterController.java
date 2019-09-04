@@ -31,5 +31,6 @@ public class IncrementalClusterController {
         DBConnect.getInstance().updateClusterRank(clusterRank);
 
         Log.debug("INCREMENTAL DONE for " + categoryType);
+
     }
 }
