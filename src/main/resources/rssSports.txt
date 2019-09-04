@@ -10,3 +10,10 @@ https://www.si.com/rss/si_topstories.rss
 https://www.mid-day.com/Resources/midday/rss/sports.xml
 https://www.telegraph.co.uk/sport/rss.xml
 https://www.cbc.ca/cmlink/rss-sports
+https://rss.cbssports.com/rss/headlines/
+https://www.nbcnewyork.com/news/sports/?rss=y&embedThumb=y&summary=y
+https://api.foxsports.com/v1/rss
+http://rssfeeds.usatoday.com/UsatodaycomSports-TopStories
+https://nypost.com/sports/feed/
+https://www.thestar.com.my/rss/Sport
+https://www.nba.com/jazz/rss.xml

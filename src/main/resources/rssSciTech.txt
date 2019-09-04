@@ -15,8 +15,11 @@ https://www.sciencedaily.com/rss/top/science.xml
 https://www.sciencedaily.com/rss/top/technology.xml
 http://feeds.feedburner.com/sciencealert-latestnews
 http://feeds.feedburner.com/AllDiscovermagazinecomContent
-https://www.wired.com/category/science/feed
 http://www.space.com/feeds/all
 https://www.sciencemag.org/rss/weekly_news_email.xml
 http://www.esa.int/rssfeed/TopNews
 https://www.universetoday.com/feed/
+https://www.wired.com/feed
+https://www.theverge.com/rss/index.xml
+http://rssfeeds.usatoday.com/usatoday-TechTopStories
+https://www.cnet.com/rss/news/

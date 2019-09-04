@@ -15,3 +15,6 @@ https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml
 https://timesofindia.indiatimes.com/rssfeeds/1898055.cms
 https://www.cbc.ca/cmlink/rss-business
 https://www.usnews.com/rss/money
+https://www.thestar.com.my/rss/Business
+https://rss.nytimes.com/services/xml/rss/nyt/Business.xml
+http://rssfeeds.usatoday.com/UsatodaycomMoney-TopStories
